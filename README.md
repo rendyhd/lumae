@@ -7,6 +7,8 @@ It is a third-party app and a separate project from AudioMuse-AI. You need your
 own AudioMuse-AI instance and a self-hosted music server to use it. The app is
 still early, Android-first, and currently only works with Navidrome.
 
+Sign up for the beta: https://forms.gle/4MYsAvnMfVqAtvjC6
+
 ## Why This Exists
 
 Lumae started from one question:
