@@ -231,18 +231,10 @@ It supports:
 - Albums.
 - Artists.
 - Playlists.
-- Cross-field token matching.
-- Exact artist/title improvements.
-- Personalized result boosting from your selection history.
-- Structured search selection history.
-- Cached local search work for faster repeated queries.
-- Promotion of likely top results.
 
 Search can also feed Quick Vibe and discovery pickers.
 
 ### Playback
-
-Lumae includes a full player surface, not just recommendation screens.
 
 Playback features include:
 
@@ -251,14 +243,11 @@ Playback features include:
 - Queue peek and queue sheet.
 - Swipe removal for upcoming queue items.
 - Anti-shuffle ordering.
-- Autoplay continuation.
 - Steering chips to bend a queue brighter, darker, calmer, or more intense.
-- Lyrics overlay when provider lyrics are available.
 - Track ratings.
 - SmoothFade for smart transitions.
 - Loudness normalization.
-- Streaming format controls.
-- Lock-screen and media-session controls.
+- Obsession Mode
 
 Anti-shuffle is central to the app. The goal is not randomness. The goal is a
 sequence that makes musical sense.
@@ -274,12 +263,6 @@ It includes:
 - Playlists.
 - Saved Vibes.
 - Obsessions.
-- Want List.
-- Album sorting by recent, A-Z, year, and rating.
-- Album filters for rated, 5-star, journey, downloads, and unrated albums.
-- Active library filtering for multi-library setups.
-- Album detail pages with tracks, ratings, Deep Listen, Rabbit Hole, similar
-  albums, and hot-track markers.
 
 ### Offline and Caching
 
@@ -293,46 +276,9 @@ Current offline and cache features include:
 - Smart Downloads.
 - Full-library mirror.
 - SD-card/external storage support on Android.
-- Offline mode: auto, forced offline, or always online.
-- Download network policy.
-- Cache format controls.
-- Persistent artist metadata cache.
-- Persistent provider popular-track cache.
-- Persistent similar-artist result cache.
-- Persistent artwork file cache.
-- Local artist and album view snapshots.
-- Stale-while-revalidate behavior for artist and album pages.
-- Cache cleanup and invalidation on sync/provider changes.
 
 The intended behavior is simple: if Lumae knows enough to render something, it
 should render it immediately and refresh quietly in the background.
-
-### Taste Learning
-
-Lumae learns from explicit and implicit signals.
-
-Signals include:
-
-- Plays.
-- Skips.
-- Ratings.
-- Obsession outcomes.
-- Deep Listen completions.
-- Pulse dismissals.
-- Queue steering.
-- Vibe usage.
-
-These feed:
-
-- Personalized weighting.
-- Sonic DNA.
-- Pulse behavior.
-- Discovery ranking.
-- Momentum cards.
-- Consensus checks.
-
-There is also **Stealth Mode**, which temporarily prevents listens from being
-recorded into history, scrobbles, Pulse, Momentum, or taste learning.
 
 ### Casting and Output
 
@@ -348,25 +294,6 @@ Lumae supports several output paths:
 
 LAN casting is one of the more advanced areas and may still need real-device
 testing across different setups.
-
-### In-Car - EARLY ALPHA
-
-Android Auto support is included through a config plugin and native bridge.
-
-Current in-car work includes:
-
-- Browsable media tree.
-- Pulse.
-- Right Now.
-- Continue.
-- Palettes and context vibes.
-- Albums.
-- Shuffle.
-- Voice search.
-- Configurable in-car pins.
-
-CarPlay is planned as a later phase, gated on Apple's audio entitlement and a
-runnable iPhone port.
 
 ## Relationship to AudioMuse-AI
 
