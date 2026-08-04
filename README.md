@@ -17,6 +17,8 @@
     ·
     <a href="#setup">Setup</a>
     ·
+    <a href="PRIVACY.md">Privacy</a>
+    ·
     <a href="https://github.com/rendyhd/lumae/issues">Give feedback</a>
   </p>
 </div>
