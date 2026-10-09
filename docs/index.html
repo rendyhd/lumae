@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lumae · Rediscover the music you already own</title>
+    <meta
+      name="description"
+      content="Lumae is a music player for Android and iPhone that knows how every song on your own music server sounds. Mixes that flow, queues that never jolt, and albums played the way they were made. No account, no ads, no tracking."
+    />
+    <link rel="canonical" href="https://lumaemusic.app/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Lumae · Rediscover the music you already own" />
+    <meta
+      property="og:description"
+      content="A music player for your own music server that knows how every song sounds. Mixes that flow, queues that never jolt, albums played whole."
+    />
+    <meta property="og:url" content="https://lumaemusic.app/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae on two phones: Home with The Pulse, and Now Playing with large album art." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/geist-400-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/geist-mono-500.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 44 14"><path d="M1 7h40M35 1.5 41 7l-6 5.5" /></symbol>
+      <symbol id="i-drift" viewBox="0 0 24 24"><path d="M3 15c2.5-5 5-5 7.5 0s5 5 7.5 0" /><circle cx="20.5" cy="10" r="1.6" /></symbol>
+      <symbol id="i-bridge" viewBox="0 0 24 24"><circle cx="4.5" cy="16" r="2" /><circle cx="19.5" cy="16" r="2" /><path d="M6.5 15c2.5-8 8.5-8 11 0" /></symbol>
+      <symbol id="i-memory" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1" /><path d="M3.5 4.5v4h4" /><path d="M12 8v4.2l2.8 1.8" /></symbol>
+      <symbol id="i-hole" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5.2" /><circle cx="12" cy="12" r="1.6" /></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H10l-6 4.5Z" /><path d="M9 10.5h6" /></symbol>
+      <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="2.4" /><path d="M16.5 6.5a6.5 6.5 0 0 1 1.9 3.4" /></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="m15.6 8.4-2.1 5.1-5.1 2.1 2.1-5.1Z" /></symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M6 4v16M12 4v16M18 4v16" /><circle cx="6" cy="14" r="2" /><circle cx="12" cy="8" r="2" /><circle cx="18" cy="12" r="2" /></symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="16" cy="8" r="3" /><circle cx="8" cy="16" r="3" /><circle cx="16" cy="16" r="3" /></symbol>
+      <symbol id="i-print" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" /><path d="M8.5 12a3.5 3.5 0 0 1 7 0M5.5 12a6.5 6.5 0 0 1 13 0M2.5 12a9.5 9.5 0 0 1 19 0" /></symbol>
+      <symbol id="i-blend" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6" /><circle cx="15" cy="12" r="6" /></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z" /></symbol>
+      <symbol id="i-shelf" viewBox="0 0 24 24"><rect x="3.5" y="5" width="7" height="11" rx="1" /><rect x="13.5" y="5" width="7" height="11" rx="1" /><path d="M2.5 19.5h19" /></symbol>
+      <symbol id="i-stack" viewBox="0 0 24 24"><path d="m12 4 8.5 4.5L12 13 3.5 8.5Z" /><path d="m3.5 12.5 8.5 4.5 8.5-4.5" /><path d="m3.5 16.5 8.5 4.5 8.5-4.5" /></symbol>
+      <symbol id="i-rules" viewBox="0 0 24 24"><path d="M4 6h10M4 12h16M4 18h7" /><circle cx="17" cy="6" r="2" /><circle cx="14" cy="18" r="2" /></symbol>
+      <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5" /></symbol>
+      <symbol id="i-grow" viewBox="0 0 24 24"><path d="M4 7h9M4 12h9M4 17h6" /><path d="M18 10v8M14 14h8" /></symbol>
+      <symbol id="i-offline" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5" /><path d="M4.5 19.5h15" /></symbol>
+      <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-3.5L6 7.5h12l2 5V16" /><path d="M3 16h18v2.5H3Z" /><circle cx="7.5" cy="13" r=".8" /><circle cx="16.5" cy="13" r=".8" /></symbol>
+      <symbol id="i-speaker" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2.5" /><circle cx="12" cy="14" r="3.2" /><circle cx="12" cy="7" r="1" /></symbol>
+      <symbol id="i-stealth" viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6c1.7 0 3.2.6 4.5 1.4M21 12s-3.5 6-9 6c-1.7 0-3.2-.6-4.5-1.4" /><path d="M4 20 20 4" /></symbol>
+      <symbol id="i-resume" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7" /><path d="M20 4.5v4h-4" /><path d="m10 9 5 3-5 3Z" /></symbol>
+      <symbol id="i-lyrics" viewBox="0 0 24 24"><path d="M4.5 6.5h15M4.5 11.5h10M4.5 16.5h7" /><circle cx="17.5" cy="16.5" r="2" /><path d="M19.5 16.5V9.5" /></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" /></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3" /><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v2.5" /></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5c.6 4.6 3.9 7.9 8.5 8.5-4.6.6-7.9 3.9-8.5 8.5-.6-4.6-3.9-7.9-8.5-8.5 4.6-.6 7.9-3.9 8.5-8.5Z" /></symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="./">
+          <img class="only-dark" src="assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="product-tabs" aria-label="Lumae products">
+          <a href="./" data-product="music" aria-current="page"><span class="tab-long">Lumae </span>Music</a>
+          <a href="radio/" data-product="radio"><span class="tab-long">Lumae </span>Radio</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="btn btn--primary btn--small" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">For people who listen</p>
+            <h1 id="hero-title" class="display">
+              Rediscover the music you <span class="flourish">already&nbsp;own</span><span class="dot">.</span>
+            </h1>
+            <p class="lead">
+              Lumae is a music player for your own music server. It knows how every song in your library sounds, so it can
+              build mixes that flow, queues that never jolt, and a way back to albums you forgot you loved.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
+              <a class="btn btn--ghost" href="#how">How it works</a>
+            </div>
+            <div class="hero-needs">
+              <span class="chip chip--status">Beta on Android and iPhone</span>
+              <p>
+                Needs your own <a href="https://www.navidrome.org">Navidrome</a> or <a href="https://jellyfin.org">Jellyfin</a> 12 server and
+                <a href="https://github.com/NeptuneHub/AudioMuse-AI">AudioMuse-AI</a> 3.2 or newer with the Lumae Analysis
+                plugin. <a class="text-link" href="#need">What you need</a>
+              </p>
+            </div>
+            <p class="hero-note">Screens show the next build, with made-up music.</p>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-rings" aria-hidden="true">
+              <svg viewBox="0 0 1000 1000" focusable="false"><path style="--i:0" d="M550.8 500.0C550.9 503.0 550.7 506.0 550.2 509.0C549.8 511.9 549.0 514.9 548.0 517.7C547.0 520.6 545.8 523.4 544.3 526.0C542.8 528.6 541.1 531.2 539.1 533.6C537.2 535.9 535.0 538.2 532.7 540.2C530.4 542.2 527.9 544.0 525.3 545.7C522.7 547.3 519.9 548.7 517.1 549.9C514.2 551.2 511.3 552.2 508.3 553.0C505.4 553.8 502.3 554.5 499.3 554.9C496.2 555.3 493.1 555.6 490.0 555.7C486.9 555.7 483.8 555.6 480.7 555.2C477.6 554.8 474.5 554.3 471.5 553.5C468.5 552.6 465.6 551.6 462.7 550.3C459.9 549.0 457.2 547.4 454.7 545.7C452.1 544.0 449.7 542.0 447.6 539.9C445.4 537.8 443.4 535.5 441.6 533.1C439.8 530.7 438.2 528.1 436.8 525.5C435.4 522.9 434.2 520.1 433.2 517.4C432.2 514.6 431.3 511.7 430.8 508.8C430.2 505.9 429.8 503.0 429.7 500.0C429.6 497.0 429.8 494.0 430.2 491.1C430.6 488.2 431.4 485.2 432.3 482.4C433.3 479.6 434.6 476.8 436.0 474.2C437.5 471.5 439.3 469.0 441.2 466.7C443.1 464.3 445.2 462.1 447.5 460.0C449.7 458.0 452.2 456.1 454.7 454.3C457.2 452.6 459.9 451.0 462.7 449.7C465.5 448.3 468.4 447.1 471.4 446.2C474.4 445.2 477.5 444.5 480.6 444.0C483.7 443.6 486.9 443.4 490.0 443.4C493.1 443.5 496.3 443.8 499.4 444.4C502.4 445.0 505.5 445.8 508.4 446.8C511.3 447.8 514.1 449.1 516.8 450.5C519.5 451.9 522.1 453.5 524.6 455.2C527.1 456.9 529.5 458.8 531.7 460.8C533.9 462.8 536.0 465.0 537.9 467.3C539.8 469.6 541.6 472.0 543.2 474.5C544.7 477.1 546.1 479.8 547.2 482.5C548.3 485.3 549.2 488.2 549.8 491.1C550.4 494.0 550.8 497.0 550.8 500.0Z" stroke-opacity="0.900" /><path style="--i:1" d="M576.2 500.0C576.2 504.1 575.7 508.4 575.0 512.4C574.2 516.5 572.9 520.5 571.4 524.4C569.9 528.3 568.1 532.1 566.0 535.6C563.8 539.2 561.4 542.7 558.8 545.9C556.1 549.1 553.2 552.2 550.0 555.0C546.9 557.8 543.5 560.4 539.9 562.6C536.4 564.8 532.5 566.8 528.7 568.5C524.8 570.1 520.7 571.5 516.6 572.5C512.5 573.6 508.3 574.3 504.1 574.8C500.0 575.3 495.7 575.5 491.5 575.5C487.3 575.5 483.1 575.3 478.9 574.9C474.7 574.4 470.5 573.7 466.4 572.7C462.3 571.7 458.1 570.5 454.2 568.9C450.2 567.3 446.3 565.4 442.7 563.2C439.1 561.0 435.6 558.4 432.5 555.5C429.3 552.7 426.5 549.5 423.9 546.2C421.4 542.9 419.2 539.3 417.2 535.6C415.3 531.9 413.7 528.1 412.4 524.2C411.1 520.3 410.1 516.2 409.4 512.2C408.8 508.2 408.3 504.1 408.3 500.0C408.2 495.9 408.5 491.8 409.2 487.7C409.8 483.7 410.8 479.6 412.2 475.8C413.6 471.9 415.4 468.1 417.5 464.5C419.6 461.0 422.1 457.6 424.8 454.4C427.5 451.3 430.5 448.3 433.6 445.6C436.8 442.8 440.1 440.3 443.6 438.0C447.1 435.6 450.7 433.5 454.5 431.6C458.2 429.7 462.1 428.0 466.2 426.6C470.2 425.2 474.4 424.0 478.6 423.3C482.8 422.5 487.2 422.1 491.5 422.0C495.9 422.0 500.3 422.4 504.5 423.2C508.7 423.9 512.9 425.2 516.9 426.6C520.9 428.1 524.8 429.9 528.4 431.9C532.1 433.9 535.6 436.2 539.0 438.6C542.4 441.0 545.6 443.6 548.6 446.3C551.7 449.1 554.6 452.0 557.4 455.0C560.1 458.1 562.7 461.4 565.0 464.8C567.3 468.3 569.4 471.9 571.0 475.7C572.6 479.5 574.0 483.6 574.9 487.6C575.7 491.6 576.2 495.9 576.2 500.0Z" stroke-opacity="0.842" /><path style="--i:2" d="M605.3 500.0C605.4 505.5 605.0 511.1 604.1 516.5C603.2 522.0 601.7 527.4 599.9 532.6C598.0 537.8 595.6 543.0 592.9 547.8C590.1 552.6 586.9 557.3 583.3 561.6C579.7 565.9 575.7 570.0 571.4 573.6C567.1 577.2 562.4 580.5 557.5 583.4C552.7 586.2 547.5 588.7 542.3 590.8C537.1 592.9 531.7 594.5 526.2 595.9C520.8 597.3 515.3 598.4 509.8 599.2C504.3 600.0 498.7 600.5 493.1 600.7C487.5 600.9 481.8 600.9 476.2 600.4C470.5 600.0 464.8 599.3 459.2 598.0C453.6 596.8 448.0 595.1 442.7 592.9C437.4 590.8 432.2 588.1 427.4 585.0C422.6 581.9 418.1 578.2 414.0 574.3C410.0 570.4 406.3 566.0 403.1 561.5C399.9 556.9 397.1 552.1 394.6 547.2C392.2 542.2 390.2 537.1 388.5 531.9C386.8 526.8 385.5 521.5 384.6 516.2C383.7 510.8 383.1 505.4 383.0 500.0C383.0 494.6 383.3 489.1 384.2 483.8C385.0 478.4 386.4 473.1 388.2 468.0C390.0 462.9 392.4 457.8 395.1 453.1C397.8 448.3 401.0 443.8 404.5 439.5C408.0 435.2 411.8 431.2 415.8 427.4C419.9 423.6 424.2 420.1 428.8 416.8C433.3 413.6 438.1 410.5 443.1 407.9C448.1 405.2 453.4 402.8 458.8 400.9C464.2 399.0 469.9 397.5 475.6 396.5C481.4 395.6 487.3 395.1 493.1 395.3C498.9 395.4 504.8 396.1 510.4 397.3C516.0 398.4 521.6 400.2 526.9 402.2C532.2 404.3 537.2 406.8 542.1 409.5C547.0 412.2 551.6 415.3 556.1 418.5C560.5 421.7 564.8 425.1 568.9 428.8C572.9 432.4 576.8 436.2 580.4 440.3C584.0 444.4 587.5 448.8 590.4 453.4C593.4 458.0 596.1 462.8 598.3 467.9C600.4 472.9 602.2 478.2 603.3 483.6C604.5 488.9 605.2 494.5 605.3 500.0Z" stroke-opacity="0.785" /><path style="--i:3" d="M639.9 500.0C640.1 507.1 639.4 514.4 638.0 521.4C636.6 528.3 634.4 535.3 631.7 541.9C629.0 548.5 625.5 554.9 621.7 560.9C617.9 566.9 613.4 572.6 608.7 577.9C604.0 583.2 598.8 588.2 593.3 592.7C587.8 597.2 581.8 601.3 575.7 604.9C569.6 608.6 563.2 611.7 556.6 614.4C550.1 617.1 543.3 619.3 536.5 621.1C529.7 622.9 522.7 624.3 515.7 625.3C508.8 626.4 501.7 627.1 494.6 627.4C487.5 627.7 480.3 627.8 473.2 627.3C466.0 626.8 458.7 626.0 451.6 624.6C444.4 623.1 437.2 621.1 430.4 618.4C423.7 615.7 417.0 612.3 410.9 608.3C404.8 604.3 399.1 599.6 394.1 594.5C389.0 589.4 384.6 583.7 380.7 577.8C376.8 572.0 373.5 565.7 370.6 559.4C367.7 553.1 365.4 546.6 363.4 540.1C361.3 533.6 359.6 527.0 358.3 520.3C357.0 513.6 356.0 506.8 355.5 500.0C355.0 493.2 354.9 486.2 355.5 479.3C356.1 472.4 357.3 465.4 359.3 458.7C361.3 452.0 364.1 445.3 367.5 439.1C370.8 432.9 375.1 426.9 379.7 421.5C384.3 416.1 389.6 411.0 395.1 406.4C400.6 401.8 406.5 397.7 412.6 393.9C418.7 390.1 425.0 386.7 431.5 383.6C438.0 380.6 444.7 377.8 451.6 375.6C458.5 373.4 465.6 371.5 472.8 370.3C479.9 369.1 487.3 368.4 494.6 368.4C501.9 368.5 509.3 369.2 516.4 370.6C523.5 372.0 530.6 374.2 537.2 376.8C543.9 379.4 550.3 382.6 556.4 386.1C562.5 389.6 568.2 393.5 573.8 397.6C579.4 401.6 584.7 406.0 589.8 410.5C595.0 415.0 600.1 419.7 604.8 424.7C609.6 429.8 614.2 435.1 618.4 440.7C622.5 446.4 626.4 452.5 629.5 458.8C632.6 465.1 635.3 471.9 637.0 478.8C638.8 485.7 639.8 492.9 639.9 500.0Z" stroke-opacity="0.727" /><path style="--i:4" d="M671.7 500.0C672.2 508.6 671.7 517.4 670.4 525.9C669.1 534.5 666.9 543.1 664.1 551.3C661.3 559.5 657.6 567.6 653.3 575.3C649.1 582.9 644.0 590.4 638.4 597.2C632.8 604.0 626.5 610.4 619.6 616.1C612.8 621.8 605.3 626.9 597.6 631.2C589.8 635.6 581.5 639.1 573.2 642.1C564.9 645.1 556.3 647.4 547.7 649.2C539.2 651.1 530.6 652.3 522.0 653.2C513.4 654.2 504.8 654.7 496.2 654.9C487.5 655.1 478.8 655.1 470.1 654.4C461.4 653.8 452.6 652.8 444.0 651.0C435.4 649.1 426.6 646.7 418.4 643.4C410.2 640.1 402.2 635.9 394.8 631.1C387.5 626.2 380.7 620.5 374.5 614.3C368.4 608.2 363.0 601.3 358.1 594.3C353.2 587.3 349.0 579.8 345.1 572.3C341.3 564.8 338.0 557.1 335.1 549.2C332.1 541.3 329.5 533.3 327.6 525.1C325.6 516.9 324.0 508.5 323.4 500.0C322.7 491.5 322.7 482.8 323.7 474.3C324.8 465.9 326.8 457.2 329.7 449.2C332.7 441.1 336.7 433.2 341.4 425.9C346.0 418.6 351.7 411.7 357.5 405.3C363.4 399.0 369.9 393.1 376.6 387.6C383.2 382.0 390.1 376.9 397.2 372.0C404.3 367.0 411.6 362.3 419.2 358.0C426.8 353.7 434.7 349.6 443.0 346.2C451.3 342.9 460.0 339.9 468.9 338.0C477.7 336.2 487.1 335.1 496.2 335.1C505.2 335.2 514.6 336.3 523.4 338.4C532.2 340.4 540.8 343.7 548.9 347.4C557.0 351.0 564.6 355.7 571.8 360.4C579.1 365.1 585.8 370.3 592.3 375.6C598.8 380.9 605.0 386.3 611.1 392.0C617.2 397.6 623.1 403.3 628.8 409.4C634.4 415.5 640.0 421.9 645.0 428.7C649.9 435.6 654.7 442.8 658.4 450.4C662.2 458.1 665.5 466.2 667.7 474.5C669.9 482.7 671.3 491.4 671.7 500.0Z" stroke-opacity="0.669" /><path style="--i:5" d="M711.4 500.0C712.1 510.4 711.4 521.2 709.5 531.5C707.6 541.8 704.2 552.2 700.1 561.8C695.9 571.5 690.4 580.8 684.4 589.4C678.4 598.1 671.4 606.2 664.1 613.6C656.8 621.1 648.7 628.0 640.5 634.2C632.2 640.4 623.4 646.1 614.5 651.1C605.5 656.1 596.2 660.5 586.8 664.4C577.4 668.2 567.7 671.4 557.9 674.2C548.1 676.9 538.2 679.1 528.1 680.8C518.1 682.5 508.0 683.7 497.7 684.4C487.4 685.1 477.0 685.3 466.6 684.8C456.1 684.3 445.4 683.3 435.0 681.3C424.6 679.3 414.0 676.5 404.1 672.7C394.1 668.9 384.2 664.1 375.3 658.4C366.3 652.7 357.8 645.8 350.4 638.5C342.9 631.1 336.3 622.7 330.6 614.1C324.8 605.6 320.1 596.3 315.9 587.1C311.7 577.9 308.3 568.3 305.4 558.7C302.5 549.2 300.1 539.5 298.3 529.7C296.4 519.9 294.9 510.0 294.3 500.0C293.7 490.0 293.5 479.8 294.5 469.8C295.5 459.7 297.3 449.4 300.3 439.7C303.3 430.0 307.4 420.3 312.5 411.3C317.6 402.4 324.0 393.8 330.9 386.1C337.8 378.3 345.7 371.3 353.9 364.8C362.0 358.3 370.8 352.6 379.7 347.3C388.5 341.9 397.7 337.2 407.0 332.7C416.4 328.3 425.9 324.2 435.7 320.8C445.6 317.3 455.7 314.2 466.0 312.0C476.3 309.9 487.1 308.2 497.7 307.9C508.3 307.5 519.3 308.1 529.7 309.9C540.2 311.6 550.7 314.6 560.5 318.4C570.2 322.2 579.7 327.2 588.5 332.5C597.3 337.9 605.5 344.1 613.3 350.4C621.2 356.7 628.5 363.4 635.7 370.3C642.9 377.1 649.8 384.1 656.5 391.5C663.3 398.9 669.9 406.5 676.0 414.6C682.1 422.7 688.1 431.3 693.1 440.3C698.0 449.4 702.5 459.1 705.5 469.1C708.6 479.0 710.7 489.6 711.4 500.0Z" stroke-opacity="0.612" /><path style="--i:6" d="M751.1 500.0C751.3 512.2 749.5 524.9 746.6 536.8C743.6 548.7 738.8 560.5 733.4 571.5C728.0 582.5 721.2 593.0 714.0 602.9C706.9 612.8 698.9 622.0 690.6 630.7C682.3 639.4 673.5 647.6 664.2 655.1C655.0 662.6 645.2 669.6 635.1 675.8C625.0 682.0 614.3 687.5 603.4 692.2C592.5 697.0 581.2 700.9 569.8 704.0C558.3 707.2 546.6 709.6 534.8 711.3C523.1 713.1 511.2 714.1 499.2 714.5C487.3 715.0 475.2 714.8 463.2 713.9C451.1 713.0 438.9 711.6 427.0 709.1C415.0 706.6 402.9 703.4 391.4 699.0C379.9 694.6 368.4 689.2 358.0 682.8C347.5 676.3 337.5 668.7 328.6 660.4C319.6 652.2 311.5 642.8 304.3 633.1C297.2 623.4 291.0 613.0 285.5 602.4C280.0 591.8 275.3 580.8 271.4 569.6C267.4 558.4 264.1 547.0 261.7 535.4C259.3 523.8 257.5 511.9 257.0 500.0C256.6 488.1 257.0 476.0 258.9 464.2C260.9 452.5 264.1 440.6 268.6 429.6C273.2 418.5 279.3 407.8 286.1 397.9C293.0 388.1 301.3 379.0 309.7 370.6C318.1 362.1 327.5 354.5 336.7 347.2C346.0 339.9 355.6 333.3 365.3 326.7C375.0 320.1 384.7 313.7 395.0 307.7C405.3 301.7 415.7 295.6 426.9 290.6C438.0 285.6 449.7 280.7 461.8 277.6C473.8 274.4 486.7 272.1 499.2 271.7C511.8 271.3 524.9 272.5 537.1 275.2C549.4 277.8 561.5 282.4 572.6 287.6C583.8 292.8 594.3 299.7 604.1 306.5C614.0 313.3 623.0 320.9 631.9 328.4C640.8 335.8 649.2 343.3 657.8 351.0C666.3 358.6 674.9 366.1 683.3 374.3C691.7 382.4 700.5 390.7 708.3 399.9C716.1 409.1 724.0 418.9 730.2 429.5C736.4 440.0 741.9 451.6 745.4 463.4C748.9 475.1 750.9 487.8 751.1 500.0Z" stroke-opacity="0.554" /><path style="--i:7" d="M784.4 500.0C785.9 513.8 785.9 528.3 784.2 542.2C782.4 556.1 778.9 570.2 774.0 583.5C769.2 596.7 762.5 609.7 754.8 621.7C747.2 633.6 737.9 645.0 728.0 655.2C718.1 665.4 706.9 674.7 695.4 683.0C683.9 691.2 671.5 698.4 659.0 704.7C646.5 711.0 633.4 716.2 620.4 720.7C607.4 725.3 594.2 729.0 581.0 732.2C567.8 735.3 554.6 737.9 541.2 739.9C527.8 741.9 514.4 743.5 500.8 744.3C487.2 745.0 473.3 745.4 459.6 744.6C445.8 743.7 431.7 742.2 418.1 739.3C404.4 736.4 390.6 732.4 377.7 727.0C364.8 721.7 352.1 715.0 340.5 707.4C328.8 699.8 317.9 690.8 308.0 681.2C298.1 671.7 289.1 661.1 280.9 650.2C272.7 639.3 265.5 627.7 259.0 615.8C252.4 604.0 246.6 591.7 241.7 579.1C236.8 566.6 232.5 553.6 229.5 540.4C226.5 527.2 224.2 513.5 223.7 500.0C223.1 486.5 223.7 472.5 226.0 459.1C228.3 445.7 232.2 432.2 237.4 419.6C242.6 406.9 249.6 394.7 257.2 383.3C264.8 372.0 273.9 361.4 283.1 351.4C292.4 341.3 302.5 332.1 312.7 323.2C323.0 314.3 333.6 306.0 344.6 297.9C355.6 289.9 366.9 282.1 378.8 275.0C390.7 267.9 403.2 261.0 416.2 255.5C429.3 249.9 443.2 245.0 457.3 241.9C471.4 238.9 486.3 237.1 500.8 237.3C515.2 237.4 530.1 239.4 544.1 242.8C558.0 246.3 571.8 251.7 584.5 257.9C597.2 264.0 609.1 271.7 620.3 279.5C631.5 287.3 641.7 296.0 651.8 304.6C661.8 313.2 671.1 322.1 680.5 331.1C689.8 340.1 698.9 349.0 707.9 358.6C716.8 368.1 725.7 377.8 734.0 388.3C742.2 398.8 750.4 409.9 757.2 421.7C764.0 433.5 770.3 446.1 774.8 459.2C779.4 472.2 782.8 486.2 784.4 500.0Z" stroke-opacity="0.496" /><path style="--i:8" d="M827.3 500.0C828.1 515.8 826.8 532.2 824.1 547.9C821.3 563.6 816.7 579.3 810.9 594.3C805.2 609.2 797.9 623.9 789.5 637.6C781.1 651.3 771.4 664.5 760.6 676.4C749.8 688.3 737.6 699.4 724.7 709.0C711.7 718.6 697.4 726.9 683.0 733.7C668.5 740.6 653.1 745.8 638.0 750.3C622.8 754.7 607.4 757.5 592.3 760.2C577.1 762.9 562.2 764.7 547.2 766.5C532.2 768.4 517.5 770.1 502.3 771.4C487.1 772.7 471.8 774.2 456.1 774.3C440.4 774.5 424.1 774.4 408.2 772.2C392.3 770.0 375.8 766.7 360.8 761.1C345.7 755.6 330.7 747.9 317.7 738.8C304.7 729.7 292.9 718.2 282.8 706.3C272.7 694.5 264.4 680.9 256.9 667.6C249.5 654.3 243.7 640.3 237.9 626.6C232.1 613.0 227.2 599.4 222.2 585.6C217.2 571.8 212.1 558.1 207.8 543.8C203.5 529.6 198.9 515.0 196.2 500.0C193.5 485.0 191.2 469.2 191.5 453.7C191.8 438.2 193.8 422.1 198.1 407.1C202.3 392.0 209.1 377.0 217.2 363.4C225.3 349.8 235.8 337.1 246.7 325.5C257.7 313.8 270.2 303.4 282.6 293.5C295.1 283.6 308.2 274.7 321.5 266.0C334.7 257.4 348.2 249.2 362.3 241.7C376.4 234.3 390.9 227.0 406.0 221.4C421.2 215.8 437.1 210.9 453.2 208.3C469.2 205.7 486.1 204.7 502.3 205.9C518.5 207.2 535.0 210.8 550.2 215.8C565.4 220.7 580.1 228.2 593.7 235.7C607.2 243.3 619.6 252.5 631.8 261.2C643.9 269.9 654.9 279.0 666.3 287.8C677.8 296.6 688.8 305.0 700.3 313.9C711.8 322.7 723.7 331.2 735.2 340.9C746.7 350.6 758.8 360.6 769.4 372.1C780.0 383.5 790.5 396.0 798.8 409.4C807.0 422.9 814.1 437.8 818.9 452.9C823.6 468.0 826.4 484.2 827.3 500.0Z" stroke-opacity="0.438" /><path style="--i:9" d="M866.4 500.0C868.1 517.7 867.4 536.1 864.4 553.7C861.5 571.3 856.0 588.9 848.9 605.4C841.8 621.8 832.3 637.7 821.8 652.3C811.4 666.9 799.0 680.5 786.2 692.8C773.4 705.2 759.2 716.4 744.8 726.5C730.5 736.7 715.3 745.6 700.0 753.8C684.7 761.9 669.0 769.0 653.1 775.4C637.2 781.8 621.2 787.3 604.8 792.2C588.5 797.0 572.0 801.3 555.2 804.7C538.3 808.1 521.2 810.9 503.8 812.5C486.5 814.1 468.6 815.0 450.9 814.2C433.2 813.4 415.0 811.5 397.5 807.6C380.1 803.7 362.4 798.2 346.1 790.9C329.9 783.6 314.1 774.3 299.9 763.9C285.8 753.4 272.8 741.0 261.2 728.1C249.7 715.2 239.7 700.9 230.7 686.6C221.6 672.3 214.0 657.2 206.9 642.2C199.7 627.2 193.5 612.0 187.7 596.6C181.9 581.1 176.4 565.5 172.0 549.4C167.6 533.3 163.4 516.8 161.1 500.0C158.7 483.2 157.1 465.7 157.9 448.5C158.7 431.3 161.1 413.5 165.9 396.8C170.7 380.0 177.8 363.3 186.5 348.0C195.3 332.7 206.5 318.2 218.4 305.1C230.4 292.0 244.3 280.1 258.4 269.2C272.4 258.4 287.6 248.8 302.8 239.9C318.0 230.9 333.7 222.9 349.7 215.6C365.7 208.3 382.0 201.5 398.7 196.0C415.5 190.4 432.8 185.4 450.3 182.3C467.8 179.2 486.0 177.2 503.8 177.3C521.7 177.4 539.9 179.3 557.3 183.0C574.6 186.7 591.7 192.5 607.8 199.4C623.8 206.2 639.0 215.1 653.3 224.2C667.7 233.3 681.0 243.7 693.9 254.1C706.9 264.4 719.0 275.3 731.2 286.3C743.3 297.4 755.2 308.5 766.8 320.4C778.4 332.3 790.2 344.4 801.0 357.7C811.9 370.9 822.7 384.9 831.7 399.9C840.6 414.9 849.0 431.1 854.8 447.8C860.6 464.4 864.8 482.3 866.4 500.0Z" stroke-opacity="0.381" /><path style="--i:10" d="M905.8 500.0C907.2 519.5 905.9 539.8 902.3 559.1C898.7 578.4 892.2 597.7 884.2 615.7C876.3 633.7 865.9 651.1 854.7 667.3C843.4 683.5 830.4 698.6 816.8 712.7C803.2 726.7 788.4 739.8 773.1 751.6C757.7 763.5 741.5 774.3 724.8 783.8C708.1 793.4 690.6 801.8 672.9 809.1C655.2 816.3 636.9 822.3 618.5 827.2C600.1 832.2 581.3 835.9 562.5 838.8C543.6 841.6 524.5 843.4 505.4 844.2C486.2 845.0 466.8 845.0 447.5 843.6C428.1 842.2 408.5 839.9 389.3 835.8C370.1 831.7 350.7 826.3 332.5 819.0C314.2 811.7 296.1 802.6 279.8 791.8C263.5 781.1 248.1 768.3 234.5 754.6C221.0 740.9 209.1 725.3 198.6 709.5C188.2 693.7 179.6 676.7 172.0 659.7C164.3 642.7 158.2 625.2 152.7 607.7C147.2 590.2 142.6 572.5 138.9 554.6C135.1 536.6 132.0 518.4 130.3 500.0C128.6 481.6 127.7 462.7 128.9 444.0C130.2 425.2 132.8 406.0 137.7 387.7C142.7 369.4 149.8 351.0 158.7 334.0C167.7 317.0 179.1 300.6 191.5 285.7C204.0 270.7 218.5 257.0 233.5 244.4C248.5 231.9 264.8 220.6 281.4 210.2C298.0 199.8 315.3 190.4 333.0 182.0C350.7 173.6 369.0 165.9 387.7 159.7C406.5 153.4 425.9 148.0 445.5 144.7C465.1 141.4 485.5 139.4 505.4 139.9C525.3 140.4 545.6 142.9 564.8 147.5C584.0 152.0 602.9 159.0 620.5 167.1C638.0 175.2 654.6 185.4 670.2 195.9C685.9 206.3 700.2 218.0 714.4 229.6C728.5 241.1 741.8 253.1 755.2 265.2C768.6 277.3 781.8 289.4 794.8 302.3C807.9 315.3 821.2 328.4 833.4 342.9C845.7 357.4 858.0 372.7 868.1 389.2C878.1 405.8 887.4 423.7 893.7 442.2C900.0 460.7 904.3 480.5 905.8 500.0Z" stroke-opacity="0.323" /><path style="--i:11" d="M952.9 500.0C954.0 521.7 952.0 544.2 947.6 565.6C943.3 587.0 935.9 608.4 926.7 628.2C917.5 648.0 905.6 667.2 892.4 684.6C879.2 702.0 863.7 718.2 847.5 732.6C831.3 747.0 813.2 759.6 795.1 770.8C776.9 782.1 757.6 791.3 738.7 799.8C719.7 808.4 700.4 815.1 681.4 822.0C662.4 828.8 643.7 834.6 624.7 840.7C605.7 846.8 587.0 852.9 567.4 858.7C547.7 864.5 527.8 870.8 506.9 875.4C486.0 880.0 464.0 884.7 441.8 886.4C419.6 888.0 396.1 888.5 373.8 885.2C351.5 882.0 328.5 876.0 308.0 867.0C287.5 858.1 267.8 845.4 250.8 831.3C233.9 817.2 219.2 799.8 206.3 782.6C193.5 765.3 183.4 746.0 173.7 727.6C164.1 709.1 156.4 690.2 148.4 671.7C140.4 653.2 133.0 635.1 125.6 616.5C118.3 597.8 110.5 579.4 104.3 559.9C98.0 540.5 91.6 520.5 88.2 500.0C84.8 479.5 82.5 457.9 83.9 437.0C85.3 416.1 89.4 394.5 96.4 374.6C103.5 354.7 114.1 335.2 126.1 317.6C138.1 300.0 153.2 283.8 168.4 268.8C183.5 253.8 200.4 240.5 217.1 227.5C233.7 214.6 250.8 202.8 268.2 191.1C285.5 179.4 302.9 167.9 321.3 157.5C339.6 147.0 358.5 136.5 378.4 128.2C398.4 120.0 419.5 112.4 440.9 108.1C462.3 103.8 485.0 101.4 506.9 102.2C528.8 103.0 551.3 106.9 572.2 112.7C593.1 118.5 613.4 127.6 632.4 137.1C651.3 146.6 668.9 158.4 685.9 169.7C703.0 181.1 718.7 193.3 734.7 205.3C750.7 217.2 766.2 229.0 782.0 241.5C797.7 253.9 813.8 266.1 829.3 279.8C844.9 293.5 860.9 307.7 875.0 323.7C889.2 339.7 903.2 357.0 914.2 375.6C925.3 394.2 935.0 414.6 941.5 435.3C947.9 456.0 951.9 478.3 952.9 500.0Z" stroke-opacity="0.265" /><path style="--i:12" d="M1013.4 500.0C1014.7 524.5 1011.4 550.2 1005.1 573.9C998.7 597.7 987.7 621.2 975.3 642.6C962.9 664.0 946.9 683.9 930.7 702.2C914.4 720.5 896.1 737.0 877.9 752.3C859.8 767.7 840.7 781.4 821.6 794.3C802.4 807.2 782.9 818.8 763.1 829.5C743.3 840.2 723.2 849.8 702.7 858.4C682.2 866.9 661.3 874.4 640.1 880.7C618.8 887.0 597.2 892.3 575.2 896.3C553.3 900.4 531.0 903.4 508.5 905.1C485.9 906.7 463.0 907.4 440.0 906.4C417.0 905.3 393.5 903.1 370.6 898.7C347.8 894.3 324.5 888.2 302.6 879.7C280.8 871.3 259.1 860.6 239.5 848.0C220.0 835.3 201.5 820.1 185.2 803.8C169.0 787.6 154.7 769.0 142.0 750.3C129.4 731.5 118.9 711.3 109.3 691.2C99.8 671.0 91.9 650.3 84.6 629.5C77.2 608.6 70.8 587.6 65.3 566.0C59.8 544.4 54.7 522.4 51.7 500.0C48.6 477.6 46.3 454.3 47.1 431.3C47.8 408.3 50.4 384.5 56.2 361.9C62.1 339.3 70.9 316.5 82.2 295.8C93.5 275.1 108.3 255.3 124.3 237.6C140.3 220.0 159.2 204.0 178.4 189.7C197.6 175.4 218.5 163.1 239.3 151.8C260.1 140.4 281.7 130.6 303.5 121.8C325.2 113.0 347.3 105.1 369.8 98.9C392.3 92.6 415.3 87.3 438.4 84.4C461.5 81.5 485.4 80.2 508.5 81.6C531.6 83.0 555.0 86.9 577.1 92.9C599.1 98.9 620.6 107.8 640.7 117.5C660.8 127.2 679.4 139.4 697.6 151.1C715.7 162.9 732.3 175.8 749.4 188.2C766.6 200.6 783.1 212.9 800.5 225.5C817.9 238.1 835.9 250.2 854.1 264.0C872.2 277.7 891.7 291.6 909.4 308.0C927.1 324.3 945.5 342.2 960.2 362.0C974.9 381.9 988.7 404.2 997.5 427.2C1006.4 450.2 1012.2 475.5 1013.4 500.0Z" stroke-opacity="0.208" /><path style="--i:13" d="M1035.1 500.0C1039.4 525.5 1040.4 552.7 1037.7 578.6C1035.0 604.5 1028.3 630.9 1018.9 655.4C1009.5 679.9 996.2 704.0 981.1 725.6C965.9 747.3 947.5 767.6 927.9 785.4C908.4 803.2 886.2 819.0 863.7 832.5C841.3 846.0 817.0 857.0 793.2 866.4C769.4 875.8 744.7 882.6 720.8 889.0C696.9 895.3 673.2 899.7 649.7 904.3C626.3 908.9 603.5 912.6 580.2 916.6C556.9 920.5 534.0 924.7 510.0 928.0C486.0 931.2 461.6 935.0 436.5 936.3C411.4 937.7 385.0 938.6 359.3 936.0C333.5 933.5 306.7 928.9 281.9 920.8C257.1 912.7 232.4 901.3 210.5 887.4C188.7 873.6 168.5 856.0 150.9 837.5C133.4 819.0 118.4 797.7 105.1 776.5C91.8 755.3 81.1 732.7 71.0 710.2C61.0 687.8 52.6 665.0 44.9 642.0C37.3 619.0 30.3 595.9 25.1 572.2C19.9 548.5 15.4 524.3 13.9 500.0C12.4 475.7 12.5 450.6 16.2 426.5C19.8 402.3 26.5 377.9 35.9 355.2C45.3 332.5 58.4 310.6 72.6 290.5C86.8 270.4 104.1 252.0 121.2 234.5C138.4 217.0 157.0 201.3 175.4 185.4C193.7 169.6 212.2 154.6 231.3 139.4C250.3 124.1 269.3 108.5 289.9 93.9C310.5 79.3 331.9 64.0 355.1 51.8C378.3 39.6 403.4 27.7 429.2 20.5C455.0 13.4 483.1 8.8 510.0 9.0C536.9 9.2 565.0 14.0 590.5 22.0C616.1 30.0 640.9 43.1 663.1 57.1C685.3 71.0 705.2 88.9 723.7 105.7C742.2 122.6 758.1 141.0 774.3 158.0C790.6 175.0 805.2 191.5 821.1 207.6C837.0 223.7 852.9 238.5 869.6 254.4C886.3 270.3 904.2 285.7 921.1 303.1C938.0 320.6 955.9 338.8 971.0 359.2C986.0 379.6 1000.7 401.9 1011.4 425.3C1022.1 448.8 1030.7 474.5 1035.1 500.0Z" stroke-opacity="0.150" /></svg>
+            </div>
+            <div class="phone-stack">
+              <figure class="phone phone--back">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/home.webp"
+                  width="780"
+                  height="1688"
+                  alt="Lumae's Home screen: a Good morning greeting, The Pulse with a five-track mix and a Play button, search, Quick Vibe and Instant Play."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/home-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  alt="Lumae's Home screen: a Good morning greeting, The Pulse with a five-track mix and a Play button, search, Quick Vibe and Instant Play."
+                />
+              </figure>
+              <figure class="phone phone--front">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/now-playing.webp"
+                  width="780"
+                  height="1688"
+                  fetchpriority="high"
+                  alt="Now Playing in Lumae: large album art, the song Saltwater Hymn by Mara Vellen, star rating and controls, with the queue's sonic path below."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/now-playing-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  alt="Now Playing in Lumae: large album art, the song Saltwater Hymn by Mara Vellen, star rating and controls, with the queue's sonic path below."
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Philosophy -->
+      <section class="section" id="why" aria-labelledby="why-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Why Lumae</p>
+            <h2 id="why-title" class="manifesto">
+              Your library is a landscape to <em>explore</em>, not a catalog to shuffle.
+            </h2>
+          </div>
+          <div class="pillars">
+            <article class="pillar reveal" style="--p: var(--accent)">
+              <span class="num">01</span>
+              <h3>Your library is enough.</h3>
+              <p>
+                You already own more great music than you remember. Every mix, queue and suggestion in Lumae starts from
+                what is on your server.
+              </p>
+            </article>
+            <article class="pillar reveal" style="--p: var(--teal)">
+              <span class="num">02</span>
+              <h3>Sequence matters.</h3>
+              <p>
+                Lumae never truly shuffles. Every mix, and every press of Shuffle, is put in an order where each song leads into the next, like a set someone cared about.
+              </p>
+            </article>
+            <article class="pillar reveal" style="--p: var(--lavender)">
+              <span class="num">03</span>
+              <h3>Albums are art.</h3>
+              <p>
+                Play one from start to finish, in order, then take a moment to rate it. Lumae is made for listening, not for
+                scrolling.
+              </p>
+            </article>
+            <article class="pillar reveal" style="--p: var(--sky)">
+              <span class="num">04</span>
+              <h3>Yours alone.</h3>
+              <p>
+                There is no account and no Lumae server. Your music stays on your server, and your taste is worked out on your phone.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section section--alt" id="how" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--teal">How it works</p>
+            <h2 id="how-title" class="h2">Three pieces. All of them yours.</h2>
+            <p class="lead">
+              Lumae doesn't stream from a catalog or upload your library anywhere. It works with two servers you run yourself, and does its thinking on your phone.
+            </p>
+          </div>
+          <div class="flow reveal">
+            <article class="flow-node">
+              <span class="tag">Your server</span>
+              <h3>Your music server</h3>
+              <p>
+                Navidrome or Jellyfin keeps your music, just as it does today. Lumae streams and downloads from it, and keeps
+                ratings, plays and playlists in sync.
+              </p>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">
+              <svg><use href="#i-arrow" /></svg>
+              <span>your music</span>
+            </div>
+            <article class="flow-node">
+              <span class="tag">Your server</span>
+              <h3>AudioMuse-AI</h3>
+              <p>
+                Listens to every track once and describes how it sounds: energy, mood, tempo, key and a 200-number summary of its sound. Lumae Analysis, Lumae's own plugin for AudioMuse-AI, gets that ready for your phone.
+              </p>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">
+              <svg><use href="#i-arrow" /></svg>
+              <span>how it sounds</span>
+            </div>
+            <article class="flow-node flow-node--you">
+              <span class="tag">Your phone</span>
+              <h3>Lumae</h3>
+              <p>
+                Syncs that description, then works out your mixes, queues and suggestions on the phone. The music itself
+                streams straight from your server.
+              </p>
+            </article>
+          </div>
+          <p class="flow-note">There is no Lumae server in the middle, so nothing about your listening passes through one.</p>
+          <div class="need" id="need">
+            <div class="need-head">
+              <h3 class="h3">What you need</h3>
+              <p class="muted">
+                Lumae is for people who already run their own music server. Once AudioMuse-AI has analyzed your library and
+                Lumae Analysis is installed, connecting Lumae takes a few minutes; the first import can take longer.
+              </p>
+            </div>
+            <dl class="reqs reveal">
+              <div class="req">
+                <dt>Music server</dt>
+                <dd>
+                  <strong>Navidrome</strong>, or <strong>Jellyfin 12.0</strong> or newer. Other Subsonic servers, Plex, Emby and
+                  Lyrion aren't supported.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Sound analysis</dt>
+                <dd>
+                  <strong>AudioMuse-AI 3.2 or newer</strong> with the latest <strong>Lumae Analysis</strong> plugin from its plugin catalog. Older
+                  plugin versions work with fewer features; Jellyfin needs 1.6.0 or newer.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Phone</dt>
+                <dd>
+                  <strong>Android 7.0</strong> or newer, or an <strong>iPhone on iOS 16.4</strong> or newer. Phones only, in portrait, in English for now. On iPhone, servers outside your home network need HTTPS.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Optional</dt>
+                <dd>
+                  An AI service (OpenAI, Anthropic, OpenRouter, or self-hosted like Ollama, Open WebUI or LM Studio); a
+                  Last.fm API key for album suggestions; Koito for your listening history.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anti-shuffle -->
+      <section class="section" id="anti-shuffle" aria-labelledby="shuffle-title">
+        <div class="wrap split">
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker kicker--gold">Anti-shuffle</p>
+              <h2 id="shuffle-title" class="h2">Shuffle, without the whiplash.</h2>
+            </div>
+            <p class="lead">
+              Random shuffle can follow a whisper with a scream. Lumae places every song by how it sounds and walks between
+              close neighbors, so the music moves without lurching.
+            </p>
+            <ul class="list-check" role="list">
+              <li>
+                <strong>Everywhere.</strong> Mixes, Vibes and the Shuffle button on albums, artists, playlists and collections all play in anti-shuffle order.
+              </li>
+              <li><strong>More than genre.</strong> Neighbors are matched on sound, energy, tempo and key.</li>
+              <li><strong>Albums stay albums.</strong> Press Play on an album and it plays in order, gapless.</li>
+            </ul>
+          </div>
+          <div class="panel reveal" data-demo="shuffle" style="--panel-glow: var(--gold)">
+            <div class="panel-head">
+              <span class="panel-label">Twenty songs, placed by sound</span>
+              <div class="segmented" role="group" aria-label="Order the queue by">
+                <button type="button" data-mode="shuffle" aria-pressed="false">Random shuffle</button>
+                <button type="button" data-mode="lumae" aria-pressed="true">Lumae</button>
+              </div>
+            </div>
+            <svg
+              class="map-svg"
+              viewBox="0 0 600 380"
+              role="img"
+              aria-label="Twenty songs drawn as dots on a map, where close dots sound alike. A line joins them in the order they would play."
+            >
+              <g class="grid">
+                <line x1="120" y1="0" x2="120" y2="380" />
+                <line x1="240" y1="0" x2="240" y2="380" />
+                <line x1="360" y1="0" x2="360" y2="380" />
+                <line x1="480" y1="0" x2="480" y2="380" />
+                <line x1="0" y1="95" x2="600" y2="95" />
+                <line x1="0" y1="190" x2="600" y2="190" />
+                <line x1="0" y1="285" x2="600" y2="285" />
+              </g>
+              <g class="paths"></g>
+              <g class="dots"></g>
+            </svg>
+            <p class="demo-caption" data-out="caption" aria-live="polite">
+              Each dot is a song. Close dots sound alike.
+            </p>
+            <div class="panel-foot">
+              <div class="meter">
+                <div class="meter-row">
+                  <span>Average step</span>
+                  <span class="meter-bar"><span data-bar="avg"></span></span>
+                  <span class="val" data-out="avg"></span>
+                </div>
+                <div class="meter-row">
+                  <span>Biggest jump</span>
+                  <span class="meter-bar"><span data-bar="max"></span></span>
+                  <span class="val" data-out="max"></span>
+                </div>
+              </div>
+              <button class="btn btn--ghost btn--small" type="button" data-action="new-songs">New songs</button>
+            </div>
+            <p class="demo-note">Illustration. Color shows energy, from calm (blue) to lively (bronze).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home -->
+      <section class="section section--alt" id="home" aria-labelledby="home-title">
+        <div class="wrap split split--reverse">
+          <div class="phone-row phone-row--captions">
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="assets/img/screens/home-mixes.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/home-mixes-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
+              />
+              <figcaption>Comfort mixes and Suggested vibes</figcaption>
+            </figure>
+            <figure class="phone phone--offset">
+              <img
+                class="only-dark"
+                src="assets/img/screens/shift-pulse.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Shift the vibe sheet over Home, offering Calm, Mellow, Active and High for the next stretch of music."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/shift-pulse-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Shift the vibe sheet over Home, offering Calm, Mellow, Active and High for the next stretch of music."
+              />
+              <figcaption>Shift the vibe</figcaption>
+            </figure>
+          </div>
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker">Home</p>
+              <h2 id="home-title" class="h2">Start with a mix for right now.</h2>
+            </div>
+            <p class="lead">
+              Open Lumae and The Pulse is waiting: one mix for this time of day and what you've been into lately. Play it,
+              or skip to another.
+            </p>
+            <ul class="list-check" role="list">
+              <li>
+                <strong>Shift the vibe.</strong> Move the next stretch toward Calm, Mellow, Active or High. The song playing
+                keeps going.
+              </li>
+              <li><strong>Comfort mixes.</strong> Four to eight a day, made from the music you keep coming back to.</li>
+              <li><strong>Suggested vibes.</strong> Up to eight ideas drawn from the sound of your own library.</li>
+              <li>
+                <strong>Instant Play.</strong> Up to twelve favorites one tap away, on Home and in the car, each with its own play options. In the current beta it's called Quick Launch.
+              </li>
+              <li><strong>Quick Vibe.</strong> Pick up to three songs and get an endless mix around them.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Now Playing and the queue -->
+      <section class="section" id="queue" aria-labelledby="queue-title">
+        <div class="wrap split">
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker kicker--sky">Now Playing</p>
+              <h2 id="queue-title" class="h2">Every queue is a journey. You can steer it.</h2>
+            </div>
+            <p class="lead">
+              Album art comes first, always large. Open the queue to see the sonic path ahead, and change where it goes
+              while it plays.
+            </p>
+            <div class="intents">
+              <div class="intent"><strong>Similar songs</strong><span>Keep a similar sound.</span></div>
+              <div class="intent"><strong>Go further</strong><span>A similar sound you rarely play.</span></div>
+              <div class="intent"><strong>Rediscover</strong><span>Your 4–5★ songs, unheard for a month.</span></div>
+              <div class="intent"><strong>Related album</strong><span>A whole album from your library.</span></div>
+            </div>
+            <p class="muted">
+              Or steer the path brighter, darker, calmer or more intense. Every change can be undone.
+            </p>
+          </div>
+          <div class="phone-row phone-row--captions">
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="assets/img/screens/now-playing.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Now Playing: large album art, the song title and artist, a star rating row and the playback controls."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/now-playing-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Now Playing in the light theme: large album art, the song title and artist, a star rating row and the playback controls."
+              />
+              <figcaption>Now Playing</figcaption>
+            </figure>
+            <figure class="phone phone--offset">
+              <img
+                class="only-dark"
+                src="assets/img/screens/queue-journey.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/queue-journey-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
+              />
+              <figcaption>The queue</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Discover -->
+      <section class="section section--alt" id="discover" aria-labelledby="discover-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--teal">Discover</p>
+            <h2 id="discover-title" class="h2">Find the next thing in what you already have.</h2>
+            <p class="lead">
+              Discover is a set of invitations, not a to-do list. Each tool walks your library a different way; only Albums to discover looks past it, at albums you don't own yet.
+            </p>
+          </div>
+          <div class="split split--top split--cards">
+            <div class="phone-row phone-row--captions">
+              <figure class="phone">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/discover.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The Discover tab: a Discuss with AI card, the Explore tools Drift, Sonic Bridge, Memory Lane and Rabbit Hole, and Albums to discover."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/discover-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The Discover tab in the light theme, with Discuss with AI, the four Explore tools and Albums to discover."
+                />
+                <figcaption>Discover</figcaption>
+              </figure>
+              <figure class="phone phone--offset">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/discuss-with-ai.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A conversation in Discuss with AI. The listener asks for something warm and acoustic, but not sleepy; the reply suggests a song from their library and says why."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/discuss-with-ai-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A conversation in Discuss with AI. The listener asks for something warm and acoustic, but not sleepy; the reply suggests a song from their library and says why."
+                />
+                <figcaption>Discuss with AI</figcaption>
+              </figure>
+            </div>
+            <div class="cards cards--2">
+              <article class="card reveal">
+                <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-drift" /></svg></div>
+                <h3 class="card-title">Drift</h3>
+                <p>Start from any song and drift twenty steps away from it, wandering further from where you began.</p>
+                <p class="eg"><strong>Try</strong> a quiet acoustic song, and see where you end up.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-bridge" /></svg></div>
+                <h3 class="card-title">Sonic Bridge</h3>
+                <p>Pick two songs. Lumae finds a path of two to seven stops between them.</p>
+                <p class="eg"><strong>Try</strong> a jazz ballad to a techno track.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-memory" /></svg></div>
+                <h3 class="card-title">Memory Lane</h3>
+                <p>
+                  Songs you loved, then stopped playing for three months or more. And your taste through time: play an era.
+                </p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-hole" /></svg></div>
+                <h3 class="card-title">Rabbit Hole</h3>
+                <p>Start with a song and choose what comes next, pick by pick. Save the trail as a playlist on your server.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-chat" /></svg></div>
+                <h3 class="card-title">Discuss with AI</h3>
+                <p>Describe what you want. The answer is up to three songs from your library, each with a reason.</p>
+                <p class="eg"><strong>Needs</strong> your own AI service: OpenAI, Anthropic, OpenRouter or self-hosted.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-disc" /></svg></div>
+                <h3 class="card-title">Albums to discover</h3>
+                <p>
+                  Once a day, albums you don't own yet, picked from your listening by Last.fm or your AI. Save the ones you
+                  want to your Want List.
+                </p>
+                <p class="eg"><strong>Off</strong> until you turn it on.</p>
+              </article>
+              <article class="card card--wide reveal">
+                <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-mic" /></svg></div>
+                <h3 class="card-title">Search by Recording</h3>
+                <p>
+                  Hear something you think you own? Tap the microphone on Discover and record about twenty seconds. Your
+                  AudioMuse-AI server finds the song in your library, and you play on from there.
+                </p>
+                <p class="eg">
+                  Needs AudioMuse-AI 3.6.2 or newer with Neural Fingerprint turned on.
+                  The clip goes only to your server and is deleted after the search.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vibe -->
+      <section class="section" id="vibe" aria-labelledby="vibe-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--lavender">Vibe</p>
+            <h2 id="vibe-title" class="h2">Build a mix around a feeling.</h2>
+            <p class="lead">
+              Describe it in a few words, shape it with sliders, or blend it from songs you love. Save it as a Vibe and it
+              plays endlessly, in anti-shuffle order, from your own library.
+            </p>
+          </div>
+          <div class="split split--top split--cards">
+            <div class="panel reveal" data-demo="compass" style="--panel-glow: var(--lavender)">
+              <div class="panel-head">
+                <span class="panel-label">Mood Compass</span>
+                <span class="panel-label">Illustration</span>
+              </div>
+              <div class="compass">
+                <div class="compass-input">
+                  <span class="visually-hidden">Words typed into Mood Compass:</span>
+                  <span class="typed">rock workout</span><span class="caret" aria-hidden="true"></span>
+                  <span class="count" aria-hidden="true">12 / 240</span>
+                </div>
+                <div class="compass-chips"></div>
+                <p class="visually-hidden compass-status" aria-live="polite"></p>
+                <div class="try-row">
+                  <span class="panel-label">Try</span>
+                  <button type="button" class="chip-btn" data-phrase="rock workout" aria-pressed="false">rock workout</button>
+                  <button type="button" class="chip-btn" data-phrase="melancholy jazz" aria-pressed="false">
+                    melancholy jazz
+                  </button>
+                  <button type="button" class="chip-btn" data-phrase="deep focus" aria-pressed="false">deep focus</button>
+                  <button type="button" class="chip-btn" data-phrase="long drive" aria-pressed="false">long drive</button>
+                </div>
+                <p class="demo-note">
+                  Your words become genres, an energy level and mood leanings. Lumae then finds the songs in your library
+                  that fit, and puts them in an order that flows.
+                </p>
+              </div>
+            </div>
+            <div class="cards cards--2">
+              <article class="card reveal">
+                <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-compass" /></svg></div>
+                <h3 class="card-title">Mood Compass</h3>
+                <p>Type a few words, like “rock workout” or “deep focus”. Keep it strict or let it wander.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-sliders" /></svg></div>
+                <h3 class="card-title">DNA Vibe</h3>
+                <p>Ten sliders, from energy and mood to vocals and atmosphere. Matching songs appear as you move them.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-palette" /></svg></div>
+                <h3 class="card-title">Palette Builder</h3>
+                <p>Mix up to ten tracks, albums and playlists, then set how much each one counts.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-print" /></svg></div>
+                <h3 class="card-title">Sonic Fingerprint</h3>
+                <p>The shape of your last 90 days of listening. Play one side of your taste, or explore it.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-blend" /></svg></div>
+                <h3 class="card-title">Vibe Alchemy</h3>
+                <p>Blend two Palettes and find the space between them.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-star" /></svg></div>
+                <h3 class="card-title">Saved Vibes</h3>
+                <p>Push a Vibe while it plays: warmer or cooler, sparser or denser, familiar or new.</p>
+              </article>
+            </div>
+          </div>
+          <p class="aside-note">
+            Saved Vibes follow you to your other phones. Share a Palette as a code, and it is rebuilt from the other
+            person's library by sound.
+          </p>
+          <div class="phone-row phone-row--captions phone-row--spaced">
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="assets/img/screens/vibe.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Vibe tab, titled Build &amp; feel: Instant Play circles, then the tools Mood Compass, Sonic Fingerprint, DNA Vibe, Palette Builder, Vibe Alchemy and Saved Vibes."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/vibe-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Vibe tab in the light theme, with Instant Play and the six Vibe tools."
+              />
+              <figcaption>The Vibe tab</figcaption>
+            </figure>
+            <figure class="phone phone--offset">
+              <img
+                class="only-dark"
+                src="assets/img/screens/mood-compass.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Mood Compass, titled Describe the vibe: a text box with example phrases such as rock workout, melancholy jazz, deep focus and long drive."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/mood-compass-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Mood Compass, titled Describe the vibe: a text box with example phrases such as rock workout, melancholy jazz, deep focus and long drive."
+              />
+              <figcaption>Mood Compass</figcaption>
+            </figure>
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="assets/img/screens/saved-vibes.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Saved Vibes: a list of vibes such as Sunday slow, Deep work and Rainy window, each marked as a Compass, DNA or Palette vibe."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/saved-vibes-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Saved Vibes: a list of vibes such as Sunday slow, Deep work and Rainy window, each marked as a Compass, DNA or Palette vibe."
+              />
+              <figcaption>Saved Vibes</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sonic DNA -->
+      <section class="section section--alt" id="dna" aria-labelledby="dna-title">
+        <div class="wrap split split--reverse">
+          <div class="panel reveal" data-demo="radar" style="--panel-glow: var(--rose)">
+            <div class="panel-head">
+              <span class="panel-label">Sonic DNA · illustration</span>
+              <div class="segmented" role="group" aria-label="Song">
+                <button type="button" data-track="saltwater" aria-pressed="true">Saltwater<span class="hide-sm"> Hymn</span></button>
+                <button type="button" data-track="strobe" aria-pressed="false">Strobe<span class="hide-sm"> Psalm</span></button>
+                <button type="button" data-track="amber" aria-pressed="false">Amber<span class="hide-sm"> Hours</span></button>
+              </div>
+            </div>
+            <svg
+              class="radar"
+              viewBox="-40 0 600 440"
+              role="img"
+              aria-label="A radar chart of a song's ten traits: energy, mood, danceability, aggression, acoustic sound, vocals, complexity, tempo, rhythm and atmosphere."
+            ></svg>
+          </div>
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker kicker--rose">Sonic DNA</p>
+              <h2 id="dna-title" class="h2">Fall for a song? Find more of what you love about it.</h2>
+            </div>
+            <p class="lead">
+              On Now Playing, tap Sonic DNA to see the song's ten traits. Pick the ones that got you, say its atmosphere and its tempo,
+              and Lumae finds songs that share them.
+            </p>
+            <ul class="list-check" role="list">
+              <li><strong>Approve or reject</strong> each wave of matches until it feels right.</li>
+              <li><strong>Play it now</strong>, or save it as a Palette for later.</li>
+              <li>
+                <strong>Every trait comes from the audio,</strong> through AudioMuse-AI's analysis, not from tags someone
+                typed.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deep Listen (always dark, like in the app) -->
+      <section class="section force-dark deep" id="deep-listen" aria-labelledby="deep-title">
+        <div class="wrap split">
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker">Deep Listen</p>
+              <h2 id="deep-title" class="h2">Some albums deserve your full attention.</h2>
+            </div>
+            <p class="lead">
+              Press Play album and Lumae gets out of the way. The album plays in order, without crossfades or loudness
+              changes, and ends in a moment of silence.
+            </p>
+            <p class="muted">
+              Then it asks how it was: stars, whether you'd return to it, and which vibe it fits. Give it five stars and
+              Lumae offers to follow its sonic neighbors down a Rabbit Hole.
+            </p>
+            <p class="muted">Ratings sync both ways with your music server, so the stars you give elsewhere count too.</p>
+          </div>
+          <div class="phone-row">
+            <figure class="phone phone--lg">
+              <img
+                src="assets/img/screens/deep-listen.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Deep Listen: track 1 of 8, large album art, the song Saltwater Hymn and simple controls, with silence after the album."
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Library -->
+      <section class="section" id="library" aria-labelledby="library-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--sky">Library</p>
+            <h2 id="library-title" class="h2">Browse normally. Listen intentionally.</h2>
+            <p class="lead">Your library, arranged the way you think about it.</p>
+          </div>
+          <div class="split split--reverse split--top split--cards">
+            <div class="phone-row phone-row--captions">
+              <figure class="phone">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/album-shelf.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The Album Shelf: one album cover large in the center, Low Tide Lanterns by Mara Vellen, with a Play album button."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/album-shelf-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="The Album Shelf in the light theme, with one large album cover and a Play album button."
+                />
+                <figcaption>Album Shelf</figcaption>
+              </figure>
+              <figure class="phone phone--offset">
+                <img
+                  class="only-dark"
+                  src="assets/img/screens/collection.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A collection called After Dark Electronics, with four albums and three tracks, and buttons for Play and continue, Sonic Extend and Extend with AI."
+                />
+                <img
+                  class="only-light"
+                  src="assets/img/screens/collection-light.webp"
+                  width="780"
+                  height="1688"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A collection called After Dark Electronics, with four albums and three tracks, and buttons for Play and continue, Sonic Extend and Extend with AI."
+                />
+                <figcaption>A collection</figcaption>
+              </figure>
+            </div>
+            <div class="cards cards--2">
+              <article class="card reveal">
+                <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-shelf" /></svg></div>
+                <h3 class="card-title">Album Shelf</h3>
+                <p>
+                  A shelf you curate, shown large and one album at a time. When you want more, Beyond your shelf deals
+                  albums you already own, with reasons.
+                </p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-stack" /></svg></div>
+                <h3 class="card-title">Collections</h3>
+                <p>Mix whole albums and single tracks in your own order. Play one as a Vibe, keep it offline, give it a cover.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-rules" /></svg></div>
+                <h3 class="card-title">Smart playlists</h3>
+                <p>Rules like genre, mood, tempo, energy, key, year or rating, saved as real playlists on your server.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-person" /></svg></div>
+                <h3 class="card-title">Artists and credits</h3>
+                <p>
+                  Discographies by era, your top tracks, and artists who sound alike. Credits connect albums through the
+                  people who made them.
+                </p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-grow" /></svg></div>
+                <h3 class="card-title">Sonic Extend</h3>
+                <p>Grow a playlist or collection with songs from your library that fit its sound, or let your AI choose.</p>
+              </article>
+              <article class="card reveal">
+                <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-spark" /></svg></div>
+                <h3 class="card-title">Covers</h3>
+                <p>Give a Vibe, collection or playlist one of its album covers or your own photo, or give a Vibe a color. Covers follow you to your other phones.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sound -->
+      <section class="section section--alt" id="sound" aria-labelledby="sound-title">
+        <div class="wrap split">
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker kicker--gold">Sound</p>
+              <h2 id="sound-title" class="h2">Crossfades that know how each song ends.</h2>
+            </div>
+            <p class="lead">
+              SmoothFade times each crossfade to where one song really ends and the next really begins, using Lumae Analysis's measurements of both. Songs that follow each other on an album are never crossfaded; they play gapless.
+            </p>
+            <ul class="list-check" role="list">
+              <li>
+                <strong>Loudness, leveled.</strong> Loud songs are turned down to a steady level. Quiet ones are never
+                pushed up.
+              </li>
+              <li>
+                <strong>Buffer ahead.</strong> The next songs are kept whole on your phone, so the music rides out dead
+                spots.
+              </li>
+              <li>
+                <strong>Quality you choose.</strong> Your original files on Wi-Fi, lossless if they are, and a lighter 192 kbps stream on cellular. Or originals everywhere.
+              </li>
+              <li><strong>Parametric EQ</strong> on Android, with AutoEq import and extra gain for quiet Bluetooth adapters.</li>
+            </ul>
+          </div>
+          <figure class="panel reveal xfade-panel" style="--panel-glow: var(--sky)">
+            <div class="panel-head">
+              <span class="panel-label">SmoothFade · illustration</span>
+            </div>
+            <svg class="xfade" viewBox="0 0 600 300" role="img" aria-label="Two waveforms overlap: the first song's ending fades out while the next song's opening fades in, timed to the quiet outro and the soft intro.">
+              <defs>
+                <clipPath id="clip-a"><rect x="20" y="20" width="390" height="220" /></clipPath>
+                <clipPath id="clip-b"><rect x="250" y="20" width="330" height="220" /></clipPath>
+              </defs>
+              <rect class="overlap" x="250" y="20" width="160" height="220" rx="10" />
+              <g clip-path="url(#clip-a)">
+                <path class="wave-a" d="M20 130 L20 110 L35 70 L50 120 L65 60 L80 115 L95 66 L110 118 L125 58 L140 120 L155 64 L170 116 L185 70 L200 114 L215 76 L230 112 L245 84 L260 110 L275 92 L290 108 L305 98 L320 106 L335 101 L350 104 L365 102 L380 103 L395 102.5 L410 103 L410 157 L395 157.5 L380 157 L365 158 L350 156 L335 159 L320 154 L305 162 L290 152 L275 168 L260 150 L245 176 L230 148 L215 184 L200 146 L185 190 L170 144 L155 196 L140 140 L125 202 L110 142 L95 194 L80 145 L65 200 L50 140 L35 190 L20 150 Z" />
+              </g>
+              <g clip-path="url(#clip-b)">
+                <path class="wave-b" d="M250 129 L265 128 L280 126 L295 124 L310 120 L325 116 L340 108 L355 98 L370 86 L385 76 L400 66 L415 112 L430 58 L445 118 L460 62 L475 114 L490 56 L505 120 L520 60 L535 116 L550 58 L565 118 L580 62 L580 198 L565 142 L550 202 L535 144 L520 200 L505 140 L490 204 L475 146 L460 198 L445 142 L430 202 L415 148 L400 194 L385 184 L370 174 L355 162 L340 152 L325 144 L310 140 L295 136 L280 134 L265 132 L250 131 Z" />
+              </g>
+              <path class="fade fade-a" d="M250 40 C 320 40, 360 120, 410 238" />
+              <path class="fade fade-b" d="M250 238 C 300 120, 340 40, 410 40" />
+              <text x="20" y="272">Song A · outro</text>
+              <text x="580" y="272" text-anchor="end">Song B · intro</text>
+              <text x="330" y="228" text-anchor="middle">overlap</text>
+            </svg>
+            <figcaption class="demo-note">
+              The overlap lines up with the first song's quiet ending and the next song's soft start, instead of a fixed
+              number of seconds.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Everywhere -->
+      <section class="section" id="everywhere" aria-labelledby="everywhere-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--teal">Everywhere</p>
+            <h2 id="everywhere-title" class="h2">In the car, on your speakers, off the grid.</h2>
+          </div>
+          <div class="cards cards--3">
+            <article class="card reveal">
+              <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-offline" /></svg></div>
+              <h3 class="card-title">Offline</h3>
+              <p>
+                Keep any album, playlist, collection, artist or Palette offline. Smart downloads keeps a rotating set of
+                music you'll want, and a full mirror keeps whole libraries on your phone.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-car" /></svg></div>
+              <h3 class="card-title">In the car</h3>
+              <p>Android Auto and CarPlay, with Home, Vibes, Library and Downloads. Android Auto takes voice search too.</p>
+            </article>
+            <article class="card reveal">
+              <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-speaker" /></svg></div>
+              <h3 class="card-title">Speakers</h3>
+              <p>Chromecast on both phones and AirPlay on iPhone. On Android, Sonos and Marantz (HEOS) speakers too.</p>
+            </article>
+            <article class="card reveal">
+              <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-stealth" /></svg></div>
+              <h3 class="card-title">Stealth mode</h3>
+              <p>
+                Some listens are just for you. Stealth keeps them out of your history, your taste and your scrobbles for
+                three hours, until midnight, or until you turn it off.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-resume" /></svg></div>
+              <h3 class="card-title">Pick up where you left off</h3>
+              <p>
+                Reopen Lumae and pick up your last queue, within two hours or as long as you choose. On Android, pressing play in the car or on your headphones does it too.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-lyrics" /></svg></div>
+              <h3 class="card-title">Lyrics</h3>
+              <p>Synced or plain lyrics from your music server, right over the album art.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy -->
+      <section class="section section--alt" id="privacy" aria-labelledby="privacy-title">
+        <div class="wrap">
+          <div class="callout reveal">
+            <p class="kicker kicker--sky">Privacy</p>
+            <h2 id="privacy-title" class="h2">No account. No ads. No tracking.</h2>
+            <p class="lead">
+              Lumae has no server of its own. Your music, your listening history and your taste stay on your phone and on
+              servers you run.
+            </p>
+            <div class="privacy-points">
+              <article class="card">
+                <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-lock" /></svg></div>
+                <h3 class="card-title">Sign-ins stay locked</h3>
+                <p>
+                  Passwords, tokens and keys you enter go in your phone's secure storage. For Jellyfin, Lumae keeps a token, never
+                  your password.
+                </p>
+              </article>
+              <article class="card">
+                <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-chat" /></svg></div>
+                <h3 class="card-title">AI only if you add it</h3>
+                <p>
+                  AI is off until you connect your own service. It gets titles, artists, genres, moods and some ratings, never your audio or exact listening times. Once on, it also names your mixes; you can turn that off.
+                </p>
+              </article>
+              <article class="card">
+                <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-stealth" /></svg></div>
+                <h3 class="card-title">Stealth when you want it</h3>
+                <p>Keep a session out of your history, taste and scrobbles. Lumae Radio is always in Stealth.</p>
+              </article>
+            </div>
+            <a class="btn btn--ghost" href="privacy/">Read the privacy policy</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get started -->
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Get started</p>
+            <h2 id="setup-title" class="h2">Four steps to your first mix.</h2>
+          </div>
+          <ol class="steps" role="list">
+            <li class="reveal">
+              <h3>Install Lumae Analysis</h3>
+              <p>
+                In AudioMuse-AI, open Plugins and install Lumae Analysis from the catalog. Turn on its collection manager to sync
+                Collections, shelves, Vibes and covers between phones.
+              </p>
+            </li>
+            <li class="reveal">
+              <h3>Join the beta</h3>
+              <p>Sign up with the form and I'll send you an invite: Google Play on Android now, TestFlight on iPhone once Apple approves the public beta.</p>
+            </li>
+            <li class="reveal">
+              <h3>Connect</h3>
+              <p>Lumae asks for your AudioMuse-AI and music server, and checks both before it changes anything.</p>
+            </li>
+            <li class="reveal">
+              <h3>Listen</h3>
+              <p>Your library is ready to browse as it arrives. A short guide shows you around while the analysis syncs.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--gold">Questions</p>
+            <h2 id="faq-title" class="h2">Good to know.</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Does Lumae work without AudioMuse-AI?</summary>
+              <div>
+                <p>
+                  No. Lumae is built on AudioMuse-AI's analysis of your music: without it, there is nothing to tell one
+                  song's sound from another. AudioMuse-AI is a self-hosted project that runs next to your music server.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Which music servers work?</summary>
+              <div>
+                <p>
+                  Navidrome, and Jellyfin 12.0 or newer with Lumae Analysis 1.6.0 or newer. Other Subsonic servers, Plex, Emby
+                  and Lyrion aren't supported. A phone stays with the server type it was set up
+                  with: moving between Navidrome and Jellyfin means a fresh install of Lumae.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Does my music or my listening leave my servers?</summary>
+              <div>
+                <p>
+                  Music streams from your server to your phone, and your history and taste stay on your phone and your own
+                  servers. If you turn on AI or album suggestions, those services get only what their feature needs, never
+                  your audio. The <a class="text-link" href="privacy/">privacy policy</a> has every detail.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Does it work offline?</summary>
+              <div>
+                <p>
+                  Yes. Keep what you like offline, let Smart downloads fill a budget with music you'll want, or mirror a
+                  whole library. Offline mode plays downloads only.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Is there an iPad, desktop or web version?</summary>
+              <div>
+                <p>
+                  No, Lumae is made for phones. For the living room there is
+                  <a class="text-link" href="radio/">Lumae Radio</a>, now in beta.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>What isn't there yet?</summary>
+              <div>
+                <p>
+                  No sleep timer, playback speed control or queue reordering yet, and no EQ on iPhone. CarPlay has no search
+                  or Siri. While you cast, SmoothFade, loudness leveling and the EQ pause.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Is Lumae an official AudioMuse-AI app?</summary>
+              <div>
+                <p>
+                  No. Lumae is an independent project. Problems with the app belong in
+                  <a class="text-link" href="https://github.com/rendyhd/lumae/issues">Lumae's GitHub issues</a>; confirmed
+                  AudioMuse-AI server or plugin-system problems belong with the AudioMuse-AI project.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>How do I report a problem or share an idea?</summary>
+              <div>
+                <p>
+                  Open an issue on GitHub, or in the app go to Library ≡ → Settings → About &amp; help → Report an issue or get in
+                  touch. Mention your phone, your music server, AudioMuse-AI and Lumae Analysis versions, your library's rough
+                  size, and what you were doing. Issues are public, so email logs to
+                  <a class="text-link" href="mailto:apps@rendyjansen.com">apps@rendyjansen.com</a> instead.
+                </p>
+                <p>
+                  And tell me what Lumae recommended that felt surprisingly right, and what felt repetitive, slow or
+                  confusing.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing call -->
+      <section class="section section--cta" aria-labelledby="cta-title">
+        <div class="wrap">
+          <div class="callout callout--cta reveal">
+            <div class="callout-rings" aria-hidden="true">
+              <img class="only-dark" src="assets/img/brand/mark.svg" alt="" width="64" height="64" loading="lazy" />
+              <img class="only-light" src="assets/img/brand/mark-light.svg" alt="" width="64" height="64" loading="lazy" />
+            </div>
+            <h2 id="cta-title" class="h2">Hear your library again.</h2>
+            <p class="lead">Lumae is in beta on Android and iPhone. Join, listen, and tell me what you find.</p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
+              <a class="btn btn--ghost" href="https://github.com/rendyhd/lumae/issues">Give feedback</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="./">
+              <img class="only-dark" src="assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="./#how">How it works</a></li>
+              <li><a href="./#discover">Features</a></li>
+              <li><a href="./#need">What you need</a></li>
+              <li><a href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="radio/">Overview</a></li>
+              <li><a href="radio/#stations">Stations</a></li>
+              <li><a href="radio/#status">Status</a></li>
+              <li><a href="radio/#install">Install</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>

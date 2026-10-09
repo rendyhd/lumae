@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Privacy · Lumae</title>
+    <meta name="description" content="How Lumae and Lumae Radio handle your data: no account, no ads, no tracking. Your library, history and taste stay on your phone and your own servers." />
+    <link rel="canonical" href="https://lumaemusic.app/privacy/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Privacy · Lumae" />
+    <meta property="og:description" content="How Lumae and Lumae Radio handle your data: no account, no ads, no tracking. Your library, history and taste stay on your phone and your own servers." />
+    <meta property="og:url" content="https://lumaemusic.app/privacy/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae on two phones: Home with The Pulse, and Now Playing with large album art." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="../">
+          <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="product-tabs" aria-label="Lumae products">
+          <a href="../" data-product="music"><span class="tab-long">Lumae </span>Music</a>
+          <a href="../radio/" data-product="radio"><span class="tab-long">Lumae </span>Radio</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="btn btn--primary btn--small" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <h1>Lumae Privacy Policy</h1>
+          <p class="doc-meta">Last updated: October 9, 2026</p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li><a href="#the-short-version">The short version</a></li>
+                <li><a href="#what-lumae-keeps-on-your-phone">What Lumae keeps on your phone</a></li>
+                <li><a href="#how-your-sign-ins-are-stored">How your sign-ins are stored</a></li>
+                <li><a href="#your-own-servers">Your own servers</a></li>
+                <li><a href="#koito">Koito</a></li>
+                <li><a href="#albums-to-discover-with-lastfm">Albums to discover with Last.fm</a></li>
+                <li><a href="#ai">AI</a></li>
+                <li><a href="#speakers-casting-and-the-car">Speakers, casting and the car</a></li>
+                <li><a href="#lumae-radio">Lumae Radio</a></li>
+                <li><a href="#app-updates">App updates</a></li>
+                <li><a href="#permissions">Permissions</a></li>
+                <li><a href="#search-by-recording">Search by Recording</a></li>
+                <li><a href="#photos-and-covers">Photos and covers</a></li>
+                <li><a href="#device-backups">Device backups</a></li>
+                <li><a href="#sharing-a-vibe">Sharing a Vibe</a></li>
+                <li><a href="#diagnostics-and-support">Diagnostics and support</a></li>
+                <li><a href="#stealth">Stealth</a></li>
+                <li><a href="#keeping-and-deleting">Keeping and deleting</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#ads-analytics-and-selling-data">Ads, analytics and selling data</a></li>
+                <li><a href="#your-choices">Your choices</a></li>
+                <li><a href="#this-website">This website</a></li>
+                <li><a href="#changes">Changes</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose">
+            <p>This policy covers Lumae, the music player for Android phones and iPhone; Lumae Radio, the radio you run on your own Raspberry Pi; and this website, lumaemusic.app. Lumae and Lumae Radio work with servers you run yourself. There is no Lumae account and no developer-operated music, analytics or advertising backend.</p>
+            <p>Lumae’s developer does not receive your music library, listening history, sign-ins or taste profile. The exceptions are app-update checks handled by Expo, the data Google’s Cast SDK collects (see <a href="#google-cast">Google Cast</a>), and anything you choose to send for support.</p>
+            <h2 id="the-short-version">The short version</h2>
+            <ul>
+            <li>Your library, your listening history and your taste stay on your phone and on servers you run.</li>
+            <li>Passwords, tokens and keys are kept in your phone’s secure storage.</li>
+            <li>AI, Koito and Last.fm album suggestions are off until you turn them on, and each receives only what its feature needs.</li>
+            <li>Stealth keeps what you play out of your history, your taste and your server. Lumae Radio is always in Stealth.</li>
+            <li>No ads, no tracking, no selling of data.</li>
+            </ul>
+            <h2 id="what-lumae-keeps-on-your-phone">What Lumae keeps on your phone</h2>
+            <p>Depending on the features you use, Lumae stores:</p>
+            <ul>
+            <li>Your library’s details, artwork, lyrics, playlists, ratings, favorites and library membership.</li>
+            <li>Sound analysis from AudioMuse-AI: embeddings, mood and audio features, and map coordinates.</li>
+            <li>Your play history, skips and other taste signals; Vibes, Collections, shelves, Obsessions, your Want List, album memories and feedback; your preferences and EQ presets.</li>
+            <li>AI-written titles and the details used for AI album suggestions, if you use AI.</li>
+            <li>Music and artwork you keep offline, and photos you choose as covers.</li>
+            <li>A clip you record with Search by Recording, only until that search is done.</li>
+            <li>Server addresses, usernames and settings; for each Lumae Radio you add, its address, name, security fingerprint and password.</li>
+            <li>Short-lived diagnostic and performance logs.</li>
+            </ul>
+            <p>This information makes playback, offline listening, sync, recommendations and the rest of the app work. Chats with AI are not saved: they are kept in memory and cleared after four hours without use, or when you start a new chat.</p>
+            <h2 id="how-your-sign-ins-are-stored">How your sign-ins are stored</h2>
+            <p>Passwords, tokens and API keys you enter, for your music server, AudioMuse-AI, Koito, Last.fm, AI services and Lumae Radio, are kept in your phone’s secure storage: the iOS Keychain, or on Android, storage encrypted with a key held in the Android Keystore. On iPhone they stay on that phone and are not restored to a new one. For Jellyfin, Lumae keeps an access token, never your password.</p>
+            <p>Server addresses, usernames and other settings are kept in the app’s private storage, which the operating system protects but does not separately encrypt. When you sign in to AudioMuse-AI with a username and password, its session cookie is kept in the system’s cookie store.</p>
+            <h2 id="your-own-servers">Your own servers</h2>
+            <h3 id="audiomuse-ai-and-lumae-analysis">AudioMuse-AI and Lumae Analysis</h3>
+            <p>Lumae needs AudioMuse-AI with the Lumae Analysis plugin, and one music server: Navidrome, or Jellyfin 12.0 or later. Lumae sends these servers the sign-ins and requests it needs to browse and stream your library, fetch artwork and lyrics, sync sound analysis, download music, and check that AudioMuse-AI and your music server describe the same library.</p>
+            <p>Lumae Analysis also keeps your personal Lumae data in step across your phones. Lumae sends it:</p>
+            <ul>
+            <li>What you listen to: each finished listen (track, album and artist, and the time), the item you pick from search results (not what you typed), and the suggestions you view or rate. Plays in Stealth are not sent.</li>
+            <li>Your Vibes (name, kind and recipe), Collections (name, description, albums and tracks), shelves, and the covers and photos you choose for them.</li>
+            <li>Your Want List, album memories including the text you write, and your feedback on suggestions.</li>
+            <li>Lookups, such as sound searches, similar-album requests and album-detail checks that include artist and album names.</li>
+            <li>A clip you record with Search by Recording (see below).</li>
+            </ul>
+            <p>If you sign in to AudioMuse-AI with a shared API token, everything synced this way is shared with everyone who uses that token.</p>
+            <h3 id="your-music-server">Your music server</h3>
+            <p>By default, Lumae sends each play (track and time), and your ratings and favorites, to your music server, and saves playlist changes there. You can turn off plays and ratings in Settings → Servers &amp; accounts → Scrobbling. Lumae does not tell your music server what is playing right now.</p>
+            <p>On Jellyfin, your server’s dashboard lists Lumae as a device, with a random device ID and the app version. Reset configuration (in Settings → Servers &amp; accounts) signs this phone out of Jellyfin.</p>
+            <h3 id="what-your-servers-do-on-their-own">What your servers do on their own</h3>
+            <p>Your servers may contact other services themselves: Navidrome’s and Jellyfin’s metadata agents (for artist pictures, biographies and popular tracks), and Lumae Analysis’s MusicBrainz lookups for album details and credits. Those requests come from your server and follow its settings, not from the Lumae app.</p>
+            <h2 id="koito">Koito</h2>
+            <p>Koito is optional and off by default. If you connect a Koito server, Lumae sends it each play (artist, title, album, length and time) and what is playing now. It can import your Koito history, including a daily check for plays you made in other apps.</p>
+            <p>Lumae does not currently scrobble to Last.fm, ListenBrainz or Maloja.</p>
+            <h2 id="albums-to-discover-with-lastfm">Albums to discover with Last.fm</h2>
+            <p>Albums to discover can use Last.fm to suggest albums you don’t own yet. It is off by default and needs three things from you: the Last.fm switch, your own Last.fm API key, and Share music details. When it runs (at most once a day), Lumae sends Last.fm the artist and album names it is looking up, with your key. Covers for those suggestions load from Last.fm’s image servers and the Cover Art Archive. Covers already saved on your Want List can keep showing after you turn sharing off.</p>
+            <p>See the <a href="https://www.last.fm/legal/privacy" rel="noopener">Last.fm Privacy Policy</a>. The Cover Art Archive is run by MetaBrainz: see the <a href="https://metabrainz.org/privacy" rel="noopener">MetaBrainz Privacy Policy</a>.</p>
+            <h2 id="ai">AI</h2>
+            <p>AI is off by default. You can connect Anthropic, OpenAI, OpenRouter, or a self-hosted server such as Ollama, Open WebUI, LM Studio or another OpenAI-compatible server. Lumae sends requests straight to that service, with your key.</p>
+            <p>Discuss with AI and Extend with AI run when you use them. Once a service is connected, AI-written titles (The Pulse’s headline, Home mix descriptions and Comfort mix names) run on their own, also in the background, until you turn off AI-written titles. Daily AI album suggestions run only if you also turn on AI album suggestions and Share music details.</p>
+            <p>Depending on the feature, a request can contain:</p>
+            <ul>
+            <li>Your messages.</li>
+            <li>The current local time, weekday and season, and the track you last played.</li>
+            <li>Track and album IDs and details: titles, artists, albums, years, genres and your ratings.</li>
+            <li>Playlist and Collection names.</li>
+            <li>Labels from sound analysis: mood, energy, tempo and similarity.</li>
+            <li>Artists you’ve played recently or often, and favorite songs with rough periods, such as "your 2024 song".</li>
+            <li>Albums you rated or saved, and memories you chose to share.</li>
+            </ul>
+            <p>Lumae never sends audio, raw sound analysis (embeddings), map coordinates, exact play counts or exact listening times. Don’t put sensitive personal information in chat messages.</p>
+            <p>OpenRouter forwards requests to the model provider you choose. OpenAI requests are sent with storage turned off. A self-hosted server’s own setup decides whether data goes anywhere else, and an <code>http://</code> address is not encrypted. Retention, model training and international transfers are up to each provider: read <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic’s policy</a>, <a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint" rel="noopener">OpenAI’s API data controls</a> or <a href="https://openrouter.ai/privacy" rel="noopener">OpenRouter’s policy</a> before you connect one.</p>
+            <h2 id="speakers-casting-and-the-car">Speakers, casting and the car</h2>
+            <p>When you play on Chromecast, AirPlay, Sonos, HEOS, Android Auto, CarPlay or Lumae Radio, Lumae shares track details, artwork and the queue with that device or system. Chromecast and HEOS speakers also receive stream links that include a sign-in value for your music server, so they can fetch the audio themselves.</p>
+            <p>Lumae searches your network for speakers when you open the output picker. It uses Wi-Fi and local-network access for this, never your location.</p>
+            <p>For Sonos, Lumae can run a small relay on your phone so the speaker can fetch the audio. It serves only the tracks queued for that speaker, only on your local network, and stops when the speaker disconnects. If you run the optional Sonos companion yourself, it uses its own Navidrome sign-in and logs which tracks it streams.</p>
+            <p>On Android, only Android Auto, the Google app and your car’s assistant (checked by their signing certificates), and trusted system controls, can browse your library through Lumae’s media session.</p>
+            <h3 id="google-cast">Google Cast</h3>
+            <p>To support Chromecast, Lumae includes Google’s Cast SDK. It starts with the app, even if you never cast. Google declares that on iPhone the SDK collects a device identifier, diagnostics and casting-usage data, for analytics and to provide casting, not linked to your identity and not used for tracking. On iPhone it may also use Bluetooth to find nearby Chromecast devices. Cast devices may separately send Google usage information or crash reports, depending on their own settings. See <a href="https://policies.google.com/privacy" rel="noopener">Google’s Privacy Policy</a> and <a href="https://support.google.com/chromecast/answer/6279421" rel="noopener">Google’s Cast privacy information</a>.</p>
+            <h2 id="lumae-radio">Lumae Radio</h2>
+            <p>Lumae Radio is in beta. You download it from GitHub’s release pages, which fall under <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>; the radio itself never contacts GitHub or the developer.</p>
+            <h3 id="on-your-phone">On your phone</h3>
+            <p>Lumae looks for radios on your Wi-Fi (Bonjour, <code>_lumae-radio._tcp</code>) only while Settings → Servers &amp; accounts → Lumae Radio is open. It talks to a radio over HTTPS, tied to that radio’s own security certificate the first time you add it. If the certificate changes, Lumae won’t connect.</p>
+            <p>When you adopt a radio, Lumae makes its password and keeps it, with the radio’s address, name and security fingerprint, in your phone’s secure storage. It is never included in a backup. Lumae then sends the radio your server details so you don’t have to type them:</p>
+            <ul>
+            <li>Navidrome: the address, username and password.</li>
+            <li>AudioMuse-AI: the address and your API token, or your username and password.</li>
+            <li>Jellyfin: the address, user and server ID only. The radio signs in to Jellyfin with its own sign-in, which you approve from your phone with Quick Connect. Your phone’s Jellyfin token stays on your phone; Lumae never keeps your Jellyfin password.</li>
+            </ul>
+            <p>The remote reads the radio only while it is open on your screen. Pictures from the radio are cached on your phone (up to 400). Nothing the remote shows enters your history, scrobbles or The Pulse. Forget removes a radio from your phone only.</p>
+            <h3 id="on-the-radio">On the radio</h3>
+            <p>Lumae Radio runs on your own Raspberry Pi and talks only to the music server and AudioMuse-AI you set it up with. It has no cloud service, no analytics, no crash reporting and no automatic update check.</p>
+            <p>It is always in Stealth: it never reports plays, what is playing now, ratings, play counts or favorites to your servers. It reads your favorites and playlists to shape stations. The only thing it writes is a Vibe, when you save a station as a Vibe or edit a Vibe that a station follows.</p>
+            <p>The radio stores your sign-ins (for Navidrome a token instead of the password, for Jellyfin a token, for AudioMuse-AI your API token or username and password), its stations and schedules, a copy of your library with its sound analysis, a cache of music, and a radio-only play history of about 57 days. These are protected by the Pi’s file permissions, not encrypted.</p>
+            <p>Its web page and API answer only on your local network, over HTTPS, and need the radio’s password or an API key you made. Until a radio has an owner, anyone on your network can adopt it, so adopt it soon after installing, on a network you trust.</p>
+            <h2 id="app-updates">App updates</h2>
+            <p>Lumae uses Expo Application Services to check for and download app updates, at launch and when the app comes back to the foreground. Expo may receive your IP address, a random installation identifier, your phone’s operating system, the app and update versions, and occasionally technical details of an app launch that failed, as described in the <a href="https://expo.dev/privacy" rel="noopener">Expo Privacy Policy</a>.</p>
+            <h2 id="permissions">Permissions</h2>
+            <div class="table-wrap">
+            <table>
+            <thead><tr><th scope="col">Permission</th><th scope="col">Why Lumae asks</th></tr></thead>
+            <tbody>
+            <tr><td>Local network, Wi-Fi and multicast; nearby Wi-Fi devices on Android</td><td>Reach your servers, Lumae Radio and speakers on your network. Never used for location.</td></tr>
+            <tr><td>Notifications</td><td>Show progress while music downloads and your library syncs.</td></tr>
+            <tr><td>Background audio and background work</td><td>Keep music playing, and let downloads and library sync finish with the app in the background.</td></tr>
+            <tr><td>Photos</td><td>Only when you choose a photo as a cover. The camera is never used.</td></tr>
+            <tr><td>Bluetooth (iPhone)</td><td>Used by Google’s Cast SDK to find Chromecast devices.</td></tr>
+            <tr><td>Microphone (iPhone) and Record audio (Android)</td><td>Only when you tap Record in Search by Recording on Discover. Lumae never listens in the background.</td></tr>
+            <tr><td>CarPlay</td><td>Show Lumae on your car’s screen.</td></tr>
+            </tbody>
+            </table>
+            </div>
+            <p>Lumae does not use your location. Libraries Lumae is built with can declare permissions Lumae itself never uses, such as fingerprint unlock for secure storage.</p>
+            <h2 id="search-by-recording">Search by Recording</h2>
+            <p>When you tap Record in Search by Recording on Discover, Lumae pauses your music and records about 20 seconds of the music playing near you; it listens only while the countdown runs. The clip leaves your phone only when you tap Search (or Send again after a search that did not finish), and only to your AudioMuse-AI server, which looks for the song in your library. The clip is a small audio file in the app’s cache, which is never backed up. Lumae deletes it when you leave the screen or no longer need it for the search, and removes any clip left behind by a crash the next time you open the screen. The clip goes nowhere else, and Lumae’s developer never receives it.</p>
+            <h2 id="photos-and-covers">Photos and covers</h2>
+            <p>When you choose a photo as a cover, Lumae crops it square and saves it as a small JPEG, which drops its location and camera details. It keeps the photo on your phone and uploads it to Lumae Analysis on your AudioMuse-AI server, so your other phones can show it. Lumae Radio shows covers but does not store them.</p>
+            <h2 id="device-backups">Device backups</h2>
+            <p>On Android, Lumae joins Android’s backup only on Android 9 or later, and only when the backup is encrypted with your screen lock or you transfer directly to a new phone. A cloud backup includes your preferences, your settings without passwords, tokens or keys, your personal data (ratings, Vibes, Collections, your Want List, memories and similar), and EQ presets. A direct phone-to-phone transfer also includes your library database and play history. Passwords, tokens, keys and downloaded music are never backed up.</p>
+            <p>On iPhone, Lumae leaves its settings, listening journal and caches out of backups, and its sign-ins never leave the phone. Your library database (including play history and ratings), your personal discovery data, music you keep offline and cover photos are included in iCloud and computer backups.</p>
+            <h2 id="sharing-a-vibe">Sharing a Vibe</h2>
+            <p>When you share a Vibe code, the code contains the Vibe’s name, the titles, artists, albums, playlists and Collections it is built from, and a summary of its sound. It goes only where you send it.</p>
+            <h2 id="diagnostics-and-support">Diagnostics and support</h2>
+            <p>Diagnostic logs stay on your phone unless you export and share them. An exported log contains the app version, phone model and operating-system version, the server type with a scrambled address, network status, library counts, recent sync history and recent performance events. Titles, names, sign-ins, addresses and file paths are removed, and other identifiers are scrambled. Look it over before you share it.</p>
+            <p>Issues opened on GitHub are public and fall under GitHub’s privacy statement, so don’t post logs or personal details there. Email them to <code>apps@rendyjansen.com</code> instead. When you email, the developer receives your email address and whatever you send, and uses it only to help you, look into problems and keep necessary support records.</p>
+            <h2 id="stealth">Stealth</h2>
+            <p>While Stealth is on, Lumae doesn’t add what you play to your history, doesn’t send it to your music server, Koito or Lumae Analysis, and doesn’t learn your taste from it. Lumae Radio is always in Stealth.</p>
+            <h2 id="keeping-and-deleting">Keeping and deleting</h2>
+            <p>Information on your phone stays until you delete it, it is replaced during sync, you clear it in the app, or the operating system removes it. Some is cleared on its own: detailed listening observations after 90 days, collection sync records after 30 days, unused cover photos after 2 days. Play history and preferences stay until you clear them.</p>
+            <p>Reset configuration keeps your synced library, downloads and ratings. To remove everything, clear Lumae’s app data or uninstall it. Device backups, and on iPhone the Keychain, can keep some information after you uninstall.</p>
+            <p>Disconnecting a service stops future requests but doesn’t delete what that service already has. Use its own account controls to manage or delete it, and revoke keys you no longer use.</p>
+            <h2 id="security">Security</h2>
+            <p>Use HTTPS for servers you reach over the internet. Lumae allows plain HTTP for self-hosted servers: on iPhone only for addresses on your local network, on Android for any server. Traffic security then depends on your network. Use trusted networks, a screen lock, strong passwords, and a VPN or HTTPS when you connect over the internet.</p>
+            <h2 id="ads-analytics-and-selling-data">Ads, analytics and selling data</h2>
+            <p>Lumae contains no advertising SDKs and no analytics or crash-reporting SDK of its own; Google’s Cast SDK is described above. The developer does not sell, rent or use your personal information for advertising or cross-app tracking.</p>
+            <h2 id="your-choices">Your choices</h2>
+            <p>You decide which servers and optional services Lumae uses. You can:</p>
+            <ul>
+            <li>Turn AI off, clear its key, or turn off AI-written titles.</li>
+            <li>Turn off music server sync, disconnect Koito, or turn off Last.fm suggestions and Share music details.</li>
+            <li>Use Stealth, reset your taste profile, remove downloads, or reset the configuration.</li>
+            <li>Forget a Lumae Radio, revoke its API keys, or sign out every browser.</li>
+            </ul>
+            <p>The developer can’t see or delete data that lives only on your phones and your own servers. Requests about information held by an AI service, Koito, Last.fm, Google, Expo or a casting service should go to that provider.</p>
+            <p>For questions or privacy requests about information the developer holds, email <code>apps@rendyjansen.com</code>.</p>
+            <h2 id="this-website">This website</h2>
+            <p>lumaemusic.app is a static site. It sets no cookies, runs no analytics and loads nothing from other companies: its fonts, images and scripts come from the site itself. If you switch between the light and dark theme, that choice is saved in your browser’s local storage, not in a cookie, and never sent anywhere.</p>
+            <p>The site is hosted on GitHub Pages. Like any web host, GitHub may log your IP address and browser details to deliver and protect the site; see <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>. The beta sign-up is a Google Form, under <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a>: what you enter there goes to the developer and is used to invite you to the beta. To have your sign-up deleted, email <code>apps@rendyjansen.com</code>.</p>
+            <h2 id="changes">Changes</h2>
+            <p>This policy changes when Lumae’s features or data practices do. The date at the top shows when it last changed.</p>
+            <h2 id="contact">Contact</h2>
+            <p>Questions about this policy: <code>apps@rendyjansen.com</code>.</p>
+            <p class="doc-source">
+              This page is generated from
+              <a href="https://github.com/rendyhd/lumae/blob/main/PRIVACY.md">PRIVACY.md on GitHub</a>, which keeps
+              its full history.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../">
+              <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../#how">How it works</a></li>
+              <li><a href="../#discover">Features</a></li>
+              <li><a href="../#need">What you need</a></li>
+              <li><a href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../radio/">Overview</a></li>
+              <li><a href="../radio/#stations">Stations</a></li>
+              <li><a href="../radio/#status">Status</a></li>
+              <li><a href="../radio/#install">Install</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>

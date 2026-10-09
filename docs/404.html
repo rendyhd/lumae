@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Page not found · Lumae</title>
+    <meta name="description" content="This page does not exist on lumaemusic.app." />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href="/assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="/">
+          <img class="only-dark" src="/assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="/assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="product-tabs" aria-label="Lumae products">
+          <a href="/" data-product="music"><span class="tab-long">Lumae </span>Music</a>
+          <a href="/radio/" data-product="radio"><span class="tab-long">Lumae </span>Radio</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="btn btn--primary btn--small" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--lost">
+        <div class="wrap lost">
+          <img class="lost-mark only-dark" src="/assets/img/brand/mark.svg" alt="" width="96" height="96" />
+          <img class="lost-mark only-light" src="/assets/img/brand/mark-light.svg" alt="" width="96" height="96" />
+          <p class="kicker">404</p>
+          <h1 class="h2">This page drifted off.</h1>
+          <p class="lead">Nothing plays at this address. Try one of these instead.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="/">Lumae Music</a>
+            <a class="btn btn--ghost" href="/radio/">Lumae Radio</a>
+            <a class="btn btn--ghost" href="/privacy/">Privacy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/">
+              <img class="only-dark" src="/assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="/assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="/#how">How it works</a></li>
+              <li><a href="/#discover">Features</a></li>
+              <li><a href="/#need">What you need</a></li>
+              <li><a href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="/radio/">Overview</a></li>
+              <li><a href="/radio/#stations">Stations</a></li>
+              <li><a href="/radio/#status">Status</a></li>
+              <li><a href="/radio/#install">Install</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="/privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>
