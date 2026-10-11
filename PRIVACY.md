@@ -1,6 +1,6 @@
 # Lumae Privacy Policy
 
-Last updated: October 9, 2026
+Last updated: October 11, 2026
 
 This policy covers Lumae, the music player for Android phones and iPhone; Lumae
 Radio, the radio you run on your own Raspberry Pi; and this website,
@@ -275,10 +275,10 @@ storage.
 
 When you tap Record in Search by Recording on Discover, Lumae pauses your music
 and records about 20 seconds of the music playing near you; it listens only
-while the countdown runs. The clip leaves your phone only when you tap Search
-(or Send again after a search that did not finish), and only to your
-AudioMuse-AI server, which looks for the song in your library. The clip is a
-small audio file in the app's cache, which is never backed up. Lumae deletes it
+while the countdown runs. When the countdown ends, Lumae sends the clip to your
+AudioMuse-AI server, which looks for the closest songs in your library. It sends
+the clip again only if you tap Send again after a search that did not finish.
+The clip is a small audio file in the app's cache, which is never backed up. Lumae deletes it
 when you leave the screen or no longer need it for the search, and removes any
 clip left behind by a crash the next time you open the screen. The clip goes
 nowhere else, and Lumae's developer never receives it.
