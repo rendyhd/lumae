@@ -325,6 +325,7 @@ function notFoundPage() {
 const source = readFileSync(join(DOCS, 'index.html'), 'utf8');
 const pages = [
   { file: 'radio/index.html', prefix: '../', current: 'radio' },
+  { file: 'radio/docs/index.html', prefix: '../../', current: 'radio' },
   { file: 'privacy/index.html', prefix: '../', current: null, render: privacyPage },
   { file: '404.html', prefix: '/', current: null, render: notFoundPage },
 ];

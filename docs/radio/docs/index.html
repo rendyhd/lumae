@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lumae Radio guide · Install, Home Assistant and API</title>
+    <meta
+      name="description"
+      content="How to install Lumae Radio on a Raspberry Pi, set it up with the Lumae app, add it to Home Assistant, and control it through its HTTPS API."
+    />
+    <link rel="canonical" href="https://lumaemusic.app/radio/docs/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Lumae Radio guide · Install, Home Assistant and API" />
+    <meta
+      property="og:description"
+      content="Install Lumae Radio on a Raspberry Pi, set it up with the Lumae app, add it to Home Assistant, and control it through its HTTPS API."
+    />
+    <meta property="og:url" content="https://lumaemusic.app/radio/docs/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-radio.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Lumae Radio remote on a phone: the song on air, why it was chosen, and today's energy flow." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../assets/fonts/geist-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc page-radio">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="../../">
+          <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="product-tabs" aria-label="Lumae products">
+          <a href="../../" data-product="music"><span class="tab-long">Lumae </span>Music</a>
+          <a href="../../radio/" data-product="radio" aria-current="page"><span class="tab-long">Lumae </span>Radio</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="btn btn--primary btn--small" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the app beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker kicker--teal">Lumae Radio guide</p>
+          <h1>Install, set up and connect your radio</h1>
+          <p class="doc-meta">For Lumae Radio 0.4.0-beta.1 · Updated October 12, 2026</p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li><a href="#before-you-start">Before you start</a></li>
+                <li><a href="#install">Install on the Pi</a></li>
+                <li><a href="#set-up">Set it up with the app</a></li>
+                <li><a href="#upgrade">Upgrade</a></li>
+                <li><a href="#home-assistant">Home Assistant</a></li>
+                <li><a href="#api">API</a></li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose">
+            <p>
+              Lumae Radio is in beta: it plays stations from your own library on a Raspberry Pi, and your phone is its remote.
+              This guide takes you from a blank card to a playing station, then shows how to reach the radio from Home Assistant
+              and your own scripts. The examples call the radio <code>kitchen</code>; use your Pi's host name instead.
+            </p>
+
+            <h2 id="before-you-start">Before you start</h2>
+            <ul>
+              <li>
+                <strong>A Raspberry Pi 4</strong> with a DAC board or USB DAC and speakers. The target is 2 GB of memory with a
+                library of about 60,000 tracks, which hasn't been measured on real hardware yet; a large library may need 4 GB.
+              </li>
+              <li><strong>Raspberry Pi OS Lite (64-bit),</strong> the Debian 13 image. The Legacy image can't run the radio.</li>
+              <li>
+                <strong>Your servers:</strong> Navidrome, or Jellyfin 12.0 or newer with Quick Connect turned on in its dashboard,
+                and AudioMuse-AI with Lumae Analysis (1.6.0 or newer for Jellyfin). To follow your Vibes, Lumae Analysis needs
+                1.4.0 or newer with its collection manager on.
+              </li>
+              <li>
+                <strong>Lumae on your phone,</strong> from the current beta build (1.0.0 (32) on Android, (26) on iPhone), on the
+                same network as the Pi.
+              </li>
+            </ul>
+
+            <h2 id="install">Install on the Pi</h2>
+            <div class="release-card">
+              <div class="release-head">
+                <p class="release-name">Lumae Radio <span class="release-id">0.4.0-beta.1</span></p>
+                <p class="release-meta">October 9, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
+              </div>
+              <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.4.0-beta.1">Files on GitHub</a>
+            </div>
+            <p>
+              The radio installs over SSH. The files come from GitHub; the checks below come from this page, so a changed
+              download can't pass them.
+            </p>
+            <ol class="install-steps" role="list">
+              <li>
+                <h3>Prepare the Pi</h3>
+                <p>
+                  In Raspberry Pi Imager choose <strong>Raspberry Pi OS Lite (64-bit)</strong>. Set a host name (the radio becomes
+                  <code>kitchen.local</code> on your network), a user and SSH, then sign in over SSH and install what the radio
+                  needs:
+                </p>
+                <pre class="cmd"><code>sudo apt-get update
+sudo apt-get install -y --no-install-recommends python3 openssl ca-certificates \
+  libstdc++6 libgcc-s1 libgstreamer1.0-0 libgstreamer-plugins-base1.0-0 \
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-alsa \
+  libasound2t64 libsqlite3-0 alsa-utils avahi-daemon</code></pre>
+                <p>Set up your DAC board's driver as its maker describes, if you use one.</p>
+              </li>
+              <li>
+                <h3>Download</h3>
+                <pre class="cmd"><code>mkdir -p ~/lumae-radio &amp;&amp; cd ~/lumae-radio
+r=lumae-radio-0.4.0-beta.1-linux-arm64
+url=https://github.com/rendyhd/lumae/releases/download/radio-v0.4.0-beta.1
+for f in $r.tar.gz $r.manifest.json $r.manifest.sig $r.install.py release-key.pem; do
+  curl -fLO "$url/$f"
+done</code></pre>
+              </li>
+              <li>
+                <h3>Check the key and the installer</h3>
+                <p>Both lines must say <code>OK</code>. If either doesn't, stop and don't install.</p>
+                <pre class="cmd"><code>sha256sum -c &lt;&lt;'EOF'
+cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4  release-key.pem
+7a2c4825e532739b7ee67cd7fca51ef5f19b5e51a4613f95b695c1ee423fa06a  lumae-radio-0.4.0-beta.1-linux-arm64.install.py
+EOF</code></pre>
+                <p>Then keep the key where the installer looks for it. Every release is signed with it.</p>
+                <pre class="cmd"><code>sudo install -d -o root -g root -m 755 /etc/lumae-radio
+sudo install -o root -g root -m 644 release-key.pem /etc/lumae-radio/release-key.pem</code></pre>
+              </li>
+              <li>
+                <h3>Verify, then install</h3>
+                <p>
+                  The installer checks the signature and every file before it changes anything. The first command only checks;
+                  the second installs and starts the radio.
+                </p>
+                <pre class="cmd"><code>args="--archive $r.tar.gz --manifest $r.manifest.json --signature $r.manifest.sig --public-key /etc/lumae-radio/release-key.pem"
+python3 -I -B $r.install.py $args
+sudo python3 -I -B $r.install.py $args --install</code></pre>
+                <p>
+                  It names the radio after the Pi's host name, makes it its own certificate, starts it and prints its web address,
+                  such as <code>https://kitchen.local:8443</code>. If the Pi had no network address yet, it stays stopped: connect
+                  it, then run
+                  <code>sudo python3 -I -B /opt/lumae-radio/current/packaging/configure.py --auto</code> and
+                  <code>sudo systemctl enable --now lumae-radio-audio.service lumae-radio.service</code>.
+                </p>
+              </li>
+            </ol>
+            <dl class="reqs">
+              <div class="req">
+                <dt>Key</dt>
+                <dd>
+                  SHA-256 of <code>release-key.pem</code>:
+                  <code class="hash">cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4</code>. The radio
+                  refuses a release signed with any other key.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Archive</dt>
+                <dd>
+                  SHA-256 of <code>lumae-radio-0.4.0-beta.1-linux-arm64.tar.gz</code>:
+                  <code class="hash">187de88324c18ee141d44b56b3a8c6dd4201ab29693baf3e00fd49f092308f3f</code>. The installer
+                  checks it against the signed manifest itself.
+                </dd>
+              </div>
+            </dl>
+
+            <h2 id="set-up">Set it up with the app</h2>
+            <p>
+              Do this soon after installing, on a network you trust: until a radio has an owner, the first phone that adopts it
+              wins. After that, its password is the only way in.
+            </p>
+            <ol class="doc-steps">
+              <li>
+                <strong>Find the radio.</strong> In Lumae, open Library ≡ → Settings → Servers &amp; accounts → Lumae Radio and
+                scan. Your radio shows up with <strong>Adopt</strong>.
+              </li>
+              <li>
+                <strong>Adopt it.</strong> The app makes a strong password for the radio and keeps it on your phone, pins the
+                radio's certificate, sends it your music server and AudioMuse-AI details, chooses the same library and starts the
+                first sync. With Jellyfin the app never sends your password: the radio signs itself in as its own device, and your
+                phone approves its Quick Connect code.
+              </li>
+              <li>
+                <strong>Choose the sound output.</strong> Open the radio's remote (the radio button top right of Home), tap ⋯ →
+                The radio, and pick your DAC while the radio is stopped. Wait for “Audio output updated” before you press Play.
+              </li>
+              <li>
+                <strong>Make a station.</strong> Switch station → New: start from one of your Vibes, the song your phone is
+                playing, a playlist or collection, seeds from the radio's library, or a pasted Vibe code. Set the energy for the
+                day, save, and press Play once it's prepared.
+              </li>
+            </ol>
+            <p>
+              The remote button appears on Home whenever your phone is on the same network as the radio. A radio someone already
+              set up shows <strong>Sign in</strong> instead of Adopt: enter its password once. <strong>Show password</strong>
+              under ⋯ → The radio → Access also signs you in to the radio's own web page, at its web address, in a browser that
+              trusts the radio's certificate.
+            </p>
+
+            <h2 id="upgrade">Upgrade</h2>
+            <p>
+              Download and check the new release as above (the key stays where it is), then run the installed installer. Your
+              stations, history and settings stay; the installer keeps a copy of the databases first.
+            </p>
+            <pre class="cmd"><code>sudo python3 -I -B /opt/lumae-radio/current/packaging/install.py $args --install</code></pre>
+
+            <h2 id="home-assistant">Home Assistant</h2>
+            <p>
+              The <a href="https://github.com/rendyhd/lumae-radio-home-assistant">Lumae Radio integration</a> adds each radio as a
+              media player, with its stations as sources, and a dashboard card like the app's remote: the cover, why this track,
+              play and pause, skip, stop, volume, the station switcher, and Favor, Less, Rest and Ban. It needs Home Assistant
+              2025.6 or later on the same network as the radio, and the radio set up with the app.
+            </p>
+            <h3>1. Make a key</h3>
+            <p>
+              In Lumae, open the radio's remote → ⋯ → The radio → Access → <strong>+ New key</strong> (or, on the radio's web
+              page, API access → Create a key). Tick <strong>Read</strong> and <strong>Control playback</strong>, and
+              <strong>Stations</strong> too if you want Favor, Less, Rest and Ban. Copy the key, which starts with
+              <code>lrk.</code>: the radio shows it only once. Home Assistant never uses the radio's password.
+            </p>
+            <h3>2. Install the integration</h3>
+            <ol class="doc-steps">
+              <li>
+                In HACS, open ⋮ → <strong>Custom repositories</strong>, add
+                <code>https://github.com/rendyhd/lumae-radio-home-assistant</code> as an <strong>Integration</strong>, and
+                install <strong>Lumae Radio</strong>.
+              </li>
+              <li>Restart Home Assistant.</li>
+              <li>
+                Open Settings → Devices &amp; services. The radio shows under <strong>Discovered</strong>; if it doesn't, choose
+                Add integration → Lumae Radio and enter its web address, such as <code>https://kitchen.local:8443</code>.
+              </li>
+              <li>
+                Check the identity Home Assistant shows (for example <code>3F:A1:07 … 52:9C</code>) against the one under Access
+                in the app, then paste the key.
+              </li>
+            </ol>
+            <p>
+              Like the app, Home Assistant pins the radio's certificate the first time and refuses any other one after that. If
+              you set the radio up again it gets a new identity: remove it from Home Assistant and add it again.
+            </p>
+            <h3>3. Add the card</h3>
+            <p>Pick “Lumae Radio” in the card picker, or add it in YAML:</p>
+            <pre class="cmd"><code>type: custom:lumae-radio-card
+entity: media_player.lumae_radio</code></pre>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Option</th><th scope="col">Default</th><th scope="col">What it does</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>entity</code></td><td></td><td>The radio's media player.</td></tr>
+                  <tr><td><code>theme</code></td><td><code>auto</code></td><td>Follows Home Assistant's light or dark mode; <code>dark</code> or <code>light</code> keeps one.</td></tr>
+                  <tr><td><code>show_volume</code></td><td><code>true</code></td><td>Show the volume slider.</td></tr>
+                  <tr><td><code>show_steering</code></td><td><code>true</code></td><td>Show Favor, Less, Rest and Ban (needs the key's Stations scope).</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Automations</h3>
+            <p>
+              The media player supports play, pause, stop, next, volume, <strong>source</strong> (the radio's stations by name)
+              and media browsing. The radio pushes every change, so Home Assistant updates at once. Start a station in the
+              morning:
+            </p>
+            <pre class="cmd"><code>action: media_player.select_source
+target:
+  entity_id: media_player.lumae_radio
+data:
+  source: Morning drift</code></pre>
+            <p>Or steer the track that's playing, on the station it plays on:</p>
+            <pre class="cmd"><code>action: lumae_radio.steer_track
+target:
+  entity_id: media_player.lumae_radio
+data:
+  choice: rest      # favor, less, no_preference, rest, end_rest, ban, allow
+  rest_days: 30     # or rest_until: "2026-12-24 08:00"; a week if left out</code></pre>
+            <h3>If it doesn't connect</h3>
+            <ul>
+              <li>
+                <strong>“Couldn't reach the radio.”</strong> The radio answers only private network addresses, so Home Assistant
+                must reach it directly, not through a VPN or a cloud relay.
+              </li>
+              <li>
+                <strong>“The radio doesn't answer to this address.”</strong> Use its <code>.local</code> name, or the address its
+                installer printed.
+              </li>
+              <li><strong>“This radio has no owner yet.”</strong> Set it up with the Lumae app first.</li>
+            </ul>
+
+            <h2 id="api">API</h2>
+            <p>
+              The radio's web page, the Lumae app and Home Assistant all use the same HTTPS API, and your scripts can too. It may
+              still change during the beta. Every path below starts with <code>https://kitchen.local:8443/api/v1</code>.
+            </p>
+            <h3>Connect</h3>
+            <p>
+              The radio speaks HTTPS only, on port 8443, and only to private network addresses: there is no port forwarding or
+              cloud relay. It answers only to the names it was set up with (its <code>.local</code> name or the address the
+              installer printed). Its certificate is its own, so pin it: save it once, check that its fingerprint matches the
+              identity under Access in the app, then pass it to every request.
+            </p>
+            <pre class="cmd"><code>RADIO=https://kitchen.local:8443
+openssl s_client -connect kitchen.local:8443 -servername kitchen.local &lt;/dev/null 2&gt;/dev/null \
+  | openssl x509 &gt; radio.pem
+openssl x509 -in radio.pem -noout -fingerprint -sha256</code></pre>
+            <h3>Keys</h3>
+            <p>
+              Make a key as for <a href="#home-assistant">Home Assistant</a> and send it as
+              <code>Authorization: Bearer lrk.…</code>. A key can do only what its scopes allow, and no key can make other keys
+              or sign in browsers. Revoking one under Access stops it at once.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Scope</th><th scope="col">Lets a key</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>read</code></td><td>Read status, the queue, stations, the library, settings and events.</td></tr>
+                  <tr><td><code>control</code></td><td>Play, pause, resume, stop, skip and set the volume.</td></tr>
+                  <tr><td><code>stations</code></td><td>Make, edit, prepare and delete stations, and Favor, Less, Rest and Ban tracks.</td></tr>
+                  <tr><td><code>admin</code></td><td>Change servers, sync, libraries, sound output, cache and other settings.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Scopes don't include each other: a key that controls playback and reads status needs both.</p>
+            <h3>Read</h3>
+            <pre class="cmd"><code>KEY=lrk.your-key
+curl --cacert radio.pem -H "Authorization: Bearer $KEY" $RADIO/api/v1/status</code></pre>
+            <p>
+              Answers are JSON. <code>/status</code> gives the playback state (<code>playing</code>, <code>paused</code>,
+              <code>stopped</code>, <code>buffering</code> or <code>fault</code>), the station, the track with its title, artist,
+              album and position, the volume and the radio's health. Each answer carries an <code>ETag</code>, which you need to
+              change anything.
+            </p>
+            <h3>Change</h3>
+            <p>Every change sends two headers:</p>
+            <ul>
+              <li>
+                <code>If-Match</code>: the <code>ETag</code> from the matching read, as it came. Playback commands use
+                <code>/status</code>'s, a new station uses <code>/stations</code>'s, and a change to a station, or to a track on it,
+                uses that station's.
+              </li>
+              <li>
+                <code>Idempotency-Key</code>: a new value for each change, 16 to 128 letters, digits, <code>-</code> or
+                <code>_</code>. Sending the same request again with the same key does it only once.
+              </li>
+            </ul>
+            <p>Play a station (its <code>id</code> comes from <code>GET /stations</code>):</p>
+            <pre class="cmd"><code>auth="Authorization: Bearer $KEY"
+etag=$(curl -s -o /dev/null -D - --cacert radio.pem -H "$auth" $RADIO/api/v1/status \
+  | awk -F': ' 'tolower($1)=="etag" {print $2}' | tr -d '\r')
+curl --cacert radio.pem -H "$auth" -H "If-Match: $etag" -H "Idempotency-Key: $(uuidgen)" \
+  -H "Content-Type: application/json" -d '{"action":"play","stationId":"STATION-ID"}' \
+  $RADIO/api/v1/commands</code></pre>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col"><code>POST /commands</code></th><th scope="col">Body</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Play a station</td><td><code>{"action":"play","stationId":"…"}</code></td></tr>
+                  <tr><td>Pause, resume, stop, skip</td><td><code>{"action":"pause"}</code>, <code>"resume"</code>, <code>"stop"</code>, <code>"skip"</code></td></tr>
+                  <tr><td>Volume</td><td><code>{"action":"volume","volume":0.4}</code>, from 0 to 1</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              A change the radio accepts but finishes later answers <code>202</code> with an <code>operationId</code>; read
+              <code>GET /operations/{id}</code> to see it complete. If something else changed the radio first, you get
+              <code>412</code> with the current revision in <code>ETag</code>: send the request again with that one.
+            </p>
+            <h3>Favor, Less, Rest and Ban</h3>
+            <p>
+              <code>POST /stations/{id}/feedback</code> with the <code>stations</code> scope and the station's
+              <code>ETag</code>. Read the station first: the soft choices also need its <code>feedbackRevision</code>.
+            </p>
+            <pre class="cmd"><code>{"trackId": "TRACK-ID", "action": "rest", "feedbackRevision": 3, "restUntilMs": 1791158400000}</code></pre>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col"><code>action</code></th><th scope="col">Effect on this station</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>favour</code>, <code>avoid</code>, <code>neutral</code></td><td>Favor, Less, or no preference. Needs <code>feedbackRevision</code>.</td></tr>
+                  <tr><td><code>rest</code>, <code>unrest</code></td><td>Rest until <code>restUntilMs</code> (within 365 days), or end the rest. Needs <code>feedbackRevision</code>.</td></tr>
+                  <tr><td><code>ban</code>, <code>unban</code></td><td>Keep the track off the station, or allow it again.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>None of these touch your own favorites, history or Pulse.</p>
+            <h3>Events</h3>
+            <p>
+              <code>GET /events</code> is a stream of server-sent events, so you don't need to poll. Each says what changed;
+              read that resource again.
+            </p>
+            <pre class="cmd"><code>curl -N --cacert radio.pem -H "Authorization: Bearer $KEY" $RADIO/api/v1/events
+
+event: update
+data: {"data":{},"type":"status"}</code></pre>
+            <p>
+              Types are <code>status</code> (playback, the track or a fault changed), <code>stations</code>,
+              <code>operation</code>, <code>settings</code> and <code>libraries</code>. A key can hold two streams at once.
+            </p>
+            <h3>Endpoints</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Scope</th><th scope="col">Routes</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>read</code></td>
+                    <td>
+                      <code>GET /status</code>, <code>/queue</code>, <code>/stations</code>, <code>/stations/{id}</code>,
+                      <code>/stations/{id}/feedback</code>, <code>/catalogue?q=</code>, <code>/vibes</code>,
+                      <code>/artwork/{id}</code>, <code>/operations/{id}</code>, <code>/settings</code>, <code>/libraries</code>,
+                      <code>/sync</code>, <code>/cache</code>, <code>/outputs</code>, <code>/events</code>
+                    </td>
+                  </tr>
+                  <tr><td><code>control</code></td><td><code>POST /commands</code></td></tr>
+                  <tr>
+                    <td><code>stations</code></td>
+                    <td>
+                      <code>POST /stations</code>, <code>PUT</code> and <code>DELETE /stations/{id}</code>,
+                      <code>POST /stations/{id}/prepare</code>, <code>/preview</code>, <code>/feedback</code>,
+                      <code>POST /vibes/decode</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>admin</code></td>
+                    <td>
+                      <code>GET</code> and <code>PUT /providers</code>, <code>PUT /settings</code>, <code>/libraries</code>,
+                      <code>/outputs</code>, <code>POST /sync</code>, <code>/cache</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Errors and limits</h3>
+            <p>
+              An error answers <code>{"error":{"code":"…"}}</code> with a fixed code, such as <code>insufficient-scope</code> or
+              <code>invalid-command</code>. <code>401</code> means the key is missing or revoked, <code>403</code> that it lacks
+              the scope, <code>428</code> that a change is missing its headers, and <code>429</code> that a key has more than four
+              reads in flight at once. Request bodies can be up to 256 KiB.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../../">
+              <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../../#how">How it works</a></li>
+              <li><a href="../../#discover">Features</a></li>
+              <li><a href="../../#need">What you need</a></li>
+              <li><a href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the app beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../../radio/">Overview</a></li>
+              <li><a href="../../radio/docs/#install">Install guide</a></li>
+              <li><a href="../../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../../radio/docs/#api">API</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>

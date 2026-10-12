@@ -274,9 +274,10 @@ storage.
 ## Search by Recording
 
 When you tap Record in Search by Recording on Discover, Lumae pauses your music
-and records about 20 seconds of the music playing near you; it listens only
-while the countdown runs. When the countdown ends, Lumae sends the clip to your
-AudioMuse-AI server, which looks for the closest songs in your library. It sends
+and records up to 20 seconds of the music playing near you; it listens only
+while the countdown runs. When the countdown ends, or when you tap Send now to
+end it early, Lumae sends the clip to your AudioMuse-AI server, which looks for
+the closest songs in your library. It sends
 the clip again only if you tap Send again after a search that did not finish.
 The clip is a small audio file in the app's cache, which is never backed up. Lumae deletes it
 when you leave the screen or no longer need it for the search, and removes any

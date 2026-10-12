@@ -8,6 +8,7 @@ nothing from other sites.
 | --- | --- |
 | Lumae Music | `docs/index.html` |
 | Lumae Radio | `docs/radio/index.html` |
+| Lumae Radio guide (install, Home Assistant, API) | `docs/radio/docs/index.html` |
 | Privacy | `docs/privacy/index.html`, built from `PRIVACY.md` |
 | Not found | `docs/404.html`, built |
 

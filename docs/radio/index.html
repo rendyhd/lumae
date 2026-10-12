@@ -109,7 +109,7 @@
               comes back.
             </p>
             <div class="hero-actions">
-              <a class="btn btn--primary" href="#install">Install the beta</a>
+              <a class="btn btn--primary" href="docs/">Install the beta</a>
               <a class="btn btn--ghost" href="#how">See how it works</a>
             </div>
             <ul class="hero-meta" aria-label="At a glance">
@@ -170,10 +170,10 @@
           <div class="notice notice--wide reveal">
             <h2 id="status-title" class="notice-title">Lumae Radio is in beta.</h2>
             <p>
-              You can <a class="text-link" href="#install">install it</a> today. It's in use on a Raspberry Pi with a
-              HiFiBerry DAC+ HD, but other boards and DACs, the 2 GB target with a 60,000-track library, long unattended runs
-              and Jellyfin on a radio are still being checked. Expect rough edges, and keep the Pi on a network you trust.
-              Setting it up and controlling it from your phone need the current Lumae beta build.
+              You can <a class="text-link" href="docs/#install">install it</a> today. It runs on a Raspberry Pi with a HiFiBerry
+              DAC+ HD; other boards and DACs, the 2 GB target with a 60,000-track library, long unattended runs and Jellyfin on
+              a radio are still being checked. Expect rough edges, keep the Pi on a network you trust, and use the current Lumae
+              beta build to set it up and control it.
             </p>
           </div>
         </div>
@@ -182,15 +182,16 @@
       <!-- What it is -->
       <section class="section section--alt" id="how" aria-labelledby="how-title">
         <div class="wrap">
-          <div class="section-head">
-            <p class="kicker kicker--teal">How it works</p>
-            <h2 id="how-title" class="h2">A radio that knows your library.</h2>
-            <p class="lead">
-              Lumae on your phone is for you. Lumae Radio is for the room: the kitchen, the living room, the shop. It plays
-              by itself all day, from the same servers, and your phone is only the remote.
-            </p>
-          </div>
-          <figure class="device-figure reveal">
+          <div class="split split--device">
+            <div class="section-head section-head--inline">
+              <p class="kicker kicker--teal">How it works</p>
+              <h2 id="how-title" class="h2">A radio that knows your library.</h2>
+              <p class="lead">
+                Lumae on your phone is for you. Lumae Radio is for the room: the kitchen, the living room, the shop. It plays by
+                itself all day, from the same servers, and your phone is only the remote.
+              </p>
+            </div>
+          <figure class="device-figure device-figure--compact reveal">
             <svg
               class="device-svg"
               viewBox="0 0 720 250"
@@ -240,14 +241,12 @@
               </g>
             </svg>
           </figure>
+          </div>
           <div class="flow reveal">
             <article class="flow-node">
               <span class="tag">Your server</span>
               <h3>Music and sound analysis</h3>
-              <p>
-                Navidrome or Jellyfin supplies the music and AudioMuse-AI the analysis, exactly as for the app. The radio
-                keeps its own copy of what it needs.
-              </p>
+              <p>Navidrome or Jellyfin supplies the music and AudioMuse-AI the analysis, as for the app. The radio keeps its own copy of what it needs.</p>
             </article>
             <div class="flow-arrow" aria-hidden="true">
               <svg><use href="#i-arrow" /></svg>
@@ -256,10 +255,7 @@
             <article class="flow-node flow-node--you">
               <span class="tag">Your Raspberry Pi</span>
               <h3>Lumae Radio</h3>
-              <p>
-                Chooses every track, crossfades, and plays through a DAC board or USB DAC on the Pi. It keeps going with your
-                phone switched off.
-              </p>
+              <p>Chooses every track, crossfades, and plays through a DAC board or USB DAC. It keeps going with your phone switched off.</p>
             </article>
             <div class="flow-arrow" aria-hidden="true">
               <svg><use href="#i-arrow" /></svg>
@@ -268,9 +264,7 @@
             <article class="flow-node">
               <span class="tag">Your phone or browser</span>
               <h3>The remote</h3>
-              <p>
-                Lumae finds the radio on your home network and becomes its remote. The radio also has its own web page for browsers at home.
-              </p>
+              <p>Lumae finds the radio on your home network and becomes its remote. The radio also has its own web page for browsers at home.</p>
             </article>
           </div>
         </div>
@@ -283,8 +277,8 @@
             <p class="kicker kicker--gold">Stations</p>
             <h2 id="stations-title" class="h2">Stations, not playlists.</h2>
             <p class="lead">
-              A station is a sound, not a list. Start one from a Vibe on your phone, a song, a few seeds or a Vibe code, and
-              the radio picks what fits, one track at a time, around the clock.
+              A station is a sound, not a list. Start one from a Vibe on your phone, a song, a few seeds or a Vibe code, and the
+              radio picks what fits, one track at a time, around the clock.
             </p>
           </div>
           <div data-tabs>
@@ -324,7 +318,7 @@
                   </ul>
                 </div>
                 <div class="phone-row">
-                  <figure class="phone phone--lg">
+                  <figure class="phone">
                     <img
                       class="only-dark"
                       src="../assets/img/screens/radio-station-sound.webp"
@@ -362,7 +356,7 @@
                   </ul>
                 </div>
                 <div class="phone-row">
-                  <figure class="phone phone--lg">
+                  <figure class="phone">
                     <img
                       class="only-dark"
                       src="../assets/img/screens/radio-station-energy.webp"
@@ -418,7 +412,7 @@
                   </p>
                 </div>
                 <div class="phone-row">
-                  <figure class="phone phone--lg">
+                  <figure class="phone">
                     <img
                       class="only-dark"
                       src="../assets/img/screens/radio-station-rotation.webp"
@@ -457,7 +451,7 @@
                   <p class="muted">Preparing a station on a large library can take a while.</p>
                 </div>
                 <div class="phone-row">
-                  <figure class="phone phone--lg">
+                  <figure class="phone">
                     <img
                       class="only-dark"
                       src="../assets/img/screens/radio-station-outlook.webp"
@@ -555,61 +549,61 @@
 
       <!-- Remote -->
       <section class="section" id="remote" aria-labelledby="remote-title">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="kicker kicker--sky">The remote</p>
-            <h2 id="remote-title" class="h2">Your phone is the remote.</h2>
-            <p class="lead">
-              At home, a radio button appears on Lumae's Home. Tap it to see what's on air and why: how well it fits the
-              station, when it last played, and how its energy compares to the moment.
-            </p>
+        <div class="wrap split split--top split--cards">
+          <div class="phone-row phone-row--captions">
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="../assets/img/screens/radio-remote.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The radio remote with the song on air, Favour, Less, Rest a week and Ban, and today's energy flow."
+              />
+              <img
+                class="only-light"
+                src="../assets/img/screens/radio-remote-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The radio remote in the light theme, with the song on air and today's energy flow."
+              />
+              <figcaption>On air</figcaption>
+            </figure>
+            <figure class="phone phone--offset">
+              <img
+                class="only-dark"
+                src="../assets/img/screens/radio-stations.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Stations sheet: Morning drift on air, Late light following a Vibe, and Focus ready to prepare, with a New button."
+              />
+              <img
+                class="only-light"
+                src="../assets/img/screens/radio-stations-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The Stations sheet: Morning drift on air, Late light following a Vibe, and Focus ready to prepare, with a New button."
+              />
+              <figcaption>Switch station</figcaption>
+            </figure>
           </div>
-          <div class="split split--top split--cards">
-            <div class="phone-row phone-row--captions">
-              <figure class="phone">
-                <img
-                  class="only-dark"
-                  src="../assets/img/screens/radio-remote.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The radio remote with the song on air, Favour, Less, Rest a week and Ban, and today's energy flow."
-                />
-                <img
-                  class="only-light"
-                  src="../assets/img/screens/radio-remote-light.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The radio remote in the light theme, with the song on air and today's energy flow."
-                />
-                <figcaption>On air</figcaption>
-              </figure>
-              <figure class="phone phone--offset">
-                <img
-                  class="only-dark"
-                  src="../assets/img/screens/radio-stations.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The Stations sheet: Morning drift on air, Late light following a Vibe, and Focus ready to prepare, with a New button."
-                />
-                <img
-                  class="only-light"
-                  src="../assets/img/screens/radio-stations-light.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The Stations sheet: Morning drift on air, Late light following a Vibe, and Focus ready to prepare, with a New button."
-                />
-                <figcaption>Switch station</figcaption>
-              </figure>
+          <div class="stack stack--lg">
+            <div class="section-head section-head--inline">
+              <p class="kicker kicker--sky">The remote</p>
+              <h2 id="remote-title" class="h2">Your phone is the remote.</h2>
+              <p class="lead">
+                At home, a radio button appears on Lumae's Home. Tap it to see what's on air and why: how well it fits the
+                station, when it last played, and how its energy compares to the moment.
+              </p>
             </div>
-            <div class="cards cards--2">
+            <div class="cards cards--list">
               <article class="card reveal">
                 <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-up" /></svg></div>
                 <h3 class="card-title">Favor</h3>
@@ -631,63 +625,8 @@
                 <p>Gone from this station, starting now. Your favorites and Pulse stay as they are.</p>
               </article>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Around the clock -->
-      <section class="section section--alt" id="always-on" aria-labelledby="always-title">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="kicker kicker--gold">Around the clock</p>
-            <h2 id="always-title" class="h2">Set it up once. Let it play.</h2>
-          </div>
-          <div class="split split--reverse split--top split--cards">
-            <div class="phone-row phone-row--captions">
-              <figure class="phone">
-                <img
-                  class="only-dark"
-                  src="../assets/img/screens/radio-schedules.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Schedules: Morning drift starts at 07:00 on weekdays and stops at 09:00, with an Add schedule button."
-                />
-                <img
-                  class="only-light"
-                  src="../assets/img/screens/radio-schedules-light.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Schedules: Morning drift starts at 07:00 on weekdays and stops at 09:00, with an Add schedule button."
-                />
-                <figcaption>Schedules</figcaption>
-              </figure>
-              <figure class="phone phone--offset">
-                <img
-                  class="only-dark"
-                  src="../assets/img/screens/radio-access.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Access: the owner password kept on this phone, the radio's pinned identity, an API key for Home Assistant that can read and control playback, and Sign out every browser."
-                />
-                <img
-                  class="only-light"
-                  src="../assets/img/screens/radio-access-light.webp"
-                  width="780"
-                  height="1688"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Access: the owner password kept on this phone, the radio's pinned identity, an API key for Home Assistant that can read and control playback, and Sign out every browser."
-                />
-                <figcaption>Access and API keys</figcaption>
-              </figure>
-            </div>
-            <div class="cards cards--2">
+            <h3 class="h3 sub-title" id="always-on">Set it up once. Let it play.</h3>
+            <div class="cards cards--list">
               <article class="card reveal">
                 <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-calendar" /></svg></div>
                 <h3 class="card-title">Schedules</h3>
@@ -696,20 +635,20 @@
               <article class="card reveal">
                 <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-cache" /></svg></div>
                 <h3 class="card-title">Ready if the network drops</h3>
-                <p>The radio aims to keep about six hours of upcoming music on its card, and syncs your library by itself every six
-                  hours.</p>
+                <p>It aims to keep about six hours of upcoming music on its card, and syncs your library every six hours.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-power" /></svg></div>
                 <h3 class="card-title">Picks up after a restart</h3>
-                <p>A station that was playing starts again once the radio is back and its clock, music and sound output check out.
-                  A Stop stays a Stop.</p>
+                <p>A station that was playing starts again once its clock, music and sound output check out. A Stop stays a Stop.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-key" /></svg></div>
                 <h3 class="card-title">Home automation</h3>
-                <p>Give Home Assistant or your own scripts a key to the radio's HTTPS API that can only do what you allow. Revoke
-                  it any time.</p>
+                <p>
+                  Give <a class="text-link" href="docs/#home-assistant">Home Assistant</a> or your own scripts a key to the
+                  radio's <a class="text-link" href="docs/#api">HTTPS API</a> that can only do what you allow. Revoke it any time.
+                </p>
               </article>
             </div>
           </div>
@@ -717,30 +656,30 @@
       </section>
 
       <!-- Privacy -->
-      <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <section class="section section--alt" id="privacy" aria-labelledby="privacy-title">
         <div class="wrap">
-          <div class="callout callout--teal reveal">
-            <p class="kicker kicker--teal">Private by design</p>
-            <h2 id="privacy-title" class="h2">Always in Stealth.</h2>
-            <p class="lead">
-              What the radio plays never becomes a listen in your history, a scrobble or a Pulse input. It keeps its own
-              rotation history, only for rotation.
-            </p>
-            <div class="privacy-points">
+          <div class="callout callout--teal callout--split reveal">
+            <div class="stack stack--lg">
+              <p class="kicker kicker--teal">Private by design</p>
+              <h2 id="privacy-title" class="h2">Always in Stealth.</h2>
+              <p class="lead">
+                What the radio plays never becomes a listen in your history, a scrobble or a Pulse input. It keeps its own
+                rotation history, only for rotation.
+              </p>
+              <a class="btn btn--ghost" href="../privacy/#lumae-radio">Read how the radio handles your data</a>
+            </div>
+            <div class="privacy-points cards--list">
               <article class="card">
                 <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-lock" /></svg></div>
                 <h3 class="card-title">Stays on your network</h3>
-                <p>
-                  HTTPS tied to the radio's own certificate from the first connection, an owner password, and keys you can
-                  revoke.
-                </p>
+                <p>HTTPS tied to the radio's own certificate from the first connection, an owner password, and keys you can revoke.</p>
               </article>
               <article class="card">
                 <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-server" /></svg></div>
                 <h3 class="card-title">Reads, never rewrites</h3>
                 <p>
-                  The radio changes nothing on your music server. The only thing it writes to AudioMuse-AI is a Vibe you save or edit from a station. Your server's own logs still
-                  show what it streamed.
+                  It changes nothing on your music server. The only thing it writes to AudioMuse-AI is a Vibe you save or edit from
+                  a station. Your server's own logs still show what it streamed.
                 </p>
               </article>
               <article class="card">
@@ -749,23 +688,21 @@
                 <p>No account and no Lumae server. The radio, your servers and your phone talk to each other directly.</p>
               </article>
             </div>
-            <a class="btn btn--ghost" href="../privacy/#lumae-radio">Read how the radio handles your data</a>
           </div>
         </div>
       </section>
 
-      <!-- Setup -->
-      <section class="section section--alt" id="setup" aria-labelledby="setup-title">
+      <!-- Get started -->
+      <section class="section" id="install" aria-labelledby="setup-title">
         <div class="wrap">
-          <div class="section-head">
-            <p class="kicker">Getting started</p>
-            <h2 id="setup-title" class="h2">How setup works.</h2>
+          <div class="section-head" id="setup">
+            <p class="kicker kicker--teal">Get started</p>
+            <h2 id="setup-title" class="h2">Install it, adopt it, press play.</h2>
           </div>
-          <ol class="steps" role="list">
+          <ol class="steps steps--compact steps--3" role="list">
             <li class="reveal">
               <h3>Install</h3>
-              <p>Put Raspberry Pi OS (64-bit) on the Pi and install Lumae Radio over SSH with its signed installer.
-                <a class="text-link" href="#install">Install steps</a></p>
+              <p>Put Raspberry Pi OS Lite (64-bit) on the Pi and install Lumae Radio over SSH with its signed installer.</p>
             </li>
             <li class="reveal">
               <h3>Adopt</h3>
@@ -779,163 +716,74 @@
               <p>Pick a Vibe, a song or a few seeds, set the energy for the day, and press play.</p>
             </li>
           </ol>
-          <p class="aside-note">
-            Adopt a new radio soon after installing it, on a network you trust: until a radio has an owner, the first phone
-            that adopts it wins.
-          </p>
-          <dl class="reqs reqs--spaced reveal">
+          <dl class="reqs reqs--grid reqs--3 reqs--spaced reveal">
             <div class="req">
               <dt>Hardware</dt>
               <dd>
-                The target is a <strong>Raspberry Pi 4 with 2 GB of memory</strong> and a library of about 60,000 tracks; that
-                hasn't been measured on real hardware yet, and a large library may need 4 GB. It runs Raspberry Pi OS (64-bit)
-                based on Debian 13, not the Legacy image, and plays through a DAC board or USB DAC whose driver you set up.
+                The target is a <strong>Raspberry Pi 4 with 2 GB</strong> and about 60,000 tracks, not yet measured on real
+                hardware; a large library may need 4 GB. Raspberry Pi OS (64-bit) on Debian 13, not the Legacy image, and a DAC
+                board or USB DAC whose driver you set up.
               </dd>
             </div>
             <div class="req">
               <dt>Servers</dt>
               <dd>
                 <strong>Navidrome</strong>, or <strong>Jellyfin 12.0</strong> or newer with Quick Connect on, plus
-                <strong>AudioMuse-AI</strong> with Lumae Analysis. To follow your Vibes, use 1.4.0 or newer with its collection
-                manager on, and sign the radio in as the same AudioMuse-AI user as your phone. Jellyfin needs 1.6.0 or
-                newer.
+                <strong>AudioMuse-AI</strong> with Lumae Analysis (1.6.0 or newer for Jellyfin). To follow your Vibes: 1.4.0 or
+                newer with its collection manager on, signed in as the same AudioMuse-AI user as your phone.
               </dd>
             </div>
             <div class="req">
               <dt>Remote</dt>
-              <dd>Lumae on your phone, from the current beta build (1.0.0 (32) on Android, (26) on iPhone), or a browser on
-                your home network once it trusts the radio's certificate.</dd>
+              <dd>
+                Lumae from the current beta build (1.0.0 (32) on Android, (26) on iPhone), or a browser on your home network once
+                it trusts the radio's certificate.
+              </dd>
             </div>
           </dl>
-        </div>
-      </section>
-
-      <!-- Install -->
-      <section class="section" id="install" aria-labelledby="install-title">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="kicker kicker--teal">Install</p>
-            <h2 id="install-title" class="h2">Install the beta.</h2>
-            <p class="lead">
-              Lumae Radio installs over SSH on Raspberry Pi OS Lite (64-bit), the Debian 13 image. The files come from GitHub;
-              the checks below come from this page, so a changed download can't pass them.
-            </p>
-          </div>
-          <div class="release-card reveal">
+          <div class="release-card release-card--spaced reveal">
             <div class="release-head">
               <p class="release-name">Lumae Radio <span class="release-id">0.4.0-beta.1</span></p>
               <p class="release-meta">October 9, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
             </div>
-            <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.4.0-beta.1">Files on GitHub</a>
+            <div class="release-actions">
+              <a class="btn btn--primary btn--small" href="docs/#install">Install guide</a>
+              <a class="btn btn--ghost btn--small" href="docs/#home-assistant">Home Assistant</a>
+              <a class="btn btn--ghost btn--small" href="docs/#api">API</a>
+            </div>
           </div>
-          <ol class="install-steps" role="list">
-            <li>
-              <h3>Prepare the Pi</h3>
-              <p>
-                In Raspberry Pi Imager choose <strong>Raspberry Pi OS Lite (64-bit)</strong>, not the Legacy image. Set a host
-                name (the radio becomes <code>&lt;name&gt;.local</code> on your network), a user and SSH, then sign in over SSH
-                and install what the radio needs:
-              </p>
-              <pre class="cmd"><code>sudo apt-get update
-sudo apt-get install -y --no-install-recommends python3 openssl ca-certificates \
-  libstdc++6 libgcc-s1 libgstreamer1.0-0 libgstreamer-plugins-base1.0-0 \
-  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-alsa \
-  libasound2t64 libsqlite3-0 alsa-utils avahi-daemon</code></pre>
-              <p>Set up your DAC board's driver as its maker describes, if you use one.</p>
-            </li>
-            <li>
-              <h3>Download</h3>
-              <pre class="cmd"><code>mkdir -p ~/lumae-radio &amp;&amp; cd ~/lumae-radio
-r=lumae-radio-0.4.0-beta.1-linux-arm64
-url=https://github.com/rendyhd/lumae/releases/download/radio-v0.4.0-beta.1
-for f in $r.tar.gz $r.manifest.json $r.manifest.sig $r.install.py release-key.pem; do
-  curl -fLO "$url/$f"
-done</code></pre>
-            </li>
-            <li>
-              <h3>Check the key and the installer</h3>
-              <p>Both lines must say <code>OK</code>. If either doesn't, stop and don't install.</p>
-              <pre class="cmd"><code>sha256sum -c &lt;&lt;'EOF'
-cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4  release-key.pem
-7a2c4825e532739b7ee67cd7fca51ef5f19b5e51a4613f95b695c1ee423fa06a  lumae-radio-0.4.0-beta.1-linux-arm64.install.py
-EOF</code></pre>
-              <p>Then keep the key where the installer looks for it. Every release is signed with it.</p>
-              <pre class="cmd"><code>sudo install -d -o root -g root -m 755 /etc/lumae-radio
-sudo install -o root -g root -m 644 release-key.pem /etc/lumae-radio/release-key.pem</code></pre>
-            </li>
-            <li>
-              <h3>Verify, then install</h3>
-              <p>
-                The installer checks the signature and every file before it changes anything. The first command only checks;
-                the second installs and starts the radio.
-              </p>
-              <pre class="cmd"><code>args="--archive $r.tar.gz --manifest $r.manifest.json --signature $r.manifest.sig --public-key /etc/lumae-radio/release-key.pem"
-python3 -I -B $r.install.py $args
-sudo python3 -I -B $r.install.py $args --install</code></pre>
-            </li>
-            <li>
-              <h3>Adopt it</h3>
-              <p>
-                Soon after installing, open Lumae on your phone: Settings → Servers &amp; accounts → Lumae Radio. Your phone
-                finds the radio, adopts it and sends it your server details. Then choose the sound output on the radio while
-                it's stopped.
-              </p>
-            </li>
-          </ol>
-          <dl class="reqs reqs--spaced reveal">
-            <div class="req">
-              <dt>Upgrade</dt>
-              <dd>
-                Download and check the new release the same way (the key stays), then run the installed installer:
-                <code>sudo python3 -I -B /opt/lumae-radio/current/packaging/install.py $args --install</code>. Your stations,
-                history and settings stay; the installer keeps a copy of the databases first.
-              </dd>
-            </div>
-            <div class="req">
-              <dt>Key</dt>
-              <dd>
-                SHA-256 of <code>release-key.pem</code>: <code class="hash">cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4</code>. The radio refuses a release
-                signed with any other key.
-              </dd>
-            </div>
-            <div class="req">
-              <dt>Archive</dt>
-              <dd>
-                SHA-256 of <code>lumae-radio-0.4.0-beta.1-linux-arm64.tar.gz</code>:
-                <code class="hash">187de88324c18ee141d44b56b3a8c6dd4201ab29693baf3e00fd49f092308f3f</code>. The installer checks it against the signed manifest itself.
-              </dd>
-            </div>
-          </dl>
+          <p class="aside-note">
+            Adopt a new radio soon after installing it, on a network you trust: until a radio has an owner, the first phone that
+            adopts it wins.
+          </p>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section class="section" id="faq" aria-labelledby="faq-title">
+      <section class="section section--alt" id="faq" aria-labelledby="faq-title">
         <div class="wrap">
           <div class="section-head">
             <p class="kicker kicker--gold">Questions</p>
             <h2 id="faq-title" class="h2">Good to know.</h2>
           </div>
-          <div class="faq">
+          <div class="faq faq--cols">
             <details>
               <summary>Can I buy one?</summary>
               <div>
-                <p>No. Lumae Radio is software you install on your own Raspberry Pi. <a class="text-link" href="#install">Install the beta</a></p>
+                <p>No. Lumae Radio is software you install on your own Raspberry Pi. <a class="text-link" href="docs/#install">Install the beta</a></p>
               </div>
             </details>
             <details>
               <summary>Does it play to AirPlay, Bluetooth, Sonos or other rooms?</summary>
               <div>
-                <p>
-                  No. It plays through a DAC board or USB DAC on the Pi, connected to the speakers in that room.
-                </p>
+                <p>No. It plays through a DAC board or USB DAC on the Pi, connected to the speakers in that room.</p>
               </div>
             </details>
             <details>
               <summary>Will it change my listening history or recommendations?</summary>
               <div>
                 <p>
-                  No. The radio is always in Stealth. Favour, Less, Rest and Ban only affect that station, never your own
+                  No. The radio is always in Stealth. Favor, Less, Rest and Ban only affect that station, never your own
                   favorites, history or Pulse.
                 </p>
               </div>
@@ -944,8 +792,9 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
               <summary>Does it need the internet?</summary>
               <div>
                 <p>
-                  It needs to reach your servers, and it sets its clock from the network before it plays. If the network drops, it plays on from the music saved on its card, about six hours by default; how well that
-                  holds up is still being tested.
+                  It needs to reach your servers, and it sets its clock from the network before it plays. If the network drops,
+                  it plays on from the music saved on its card, about six hours by default; how well that holds up is still being
+                  tested.
                 </p>
               </div>
             </details>
@@ -953,17 +802,15 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
               <summary>Which files can it play?</summary>
               <div>
                 <p>
-                  FLAC, MP3, Ogg Vorbis, Opus and WAV. For AAC and ALAC files it asks Navidrome for a FLAC copy; that
-                  path is still being tested.
+                  FLAC, MP3, Ogg Vorbis, Opus and WAV. For AAC and ALAC files it asks Navidrome for a FLAC copy; that path is still
+                  being tested.
                 </p>
               </div>
             </details>
             <details>
               <summary>Can it run on my server instead of a Pi?</summary>
               <div>
-                <p>
-                  No. It's made for a Raspberry Pi with speakers in the same room, and that's the only setup being tested.
-                </p>
+                <p>No. It's made for a Raspberry Pi with speakers in the same room, and that's the only setup being tested.</p>
               </div>
             </details>
           </div>
@@ -980,8 +827,8 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
             </div>
             <h2 id="cta-title" class="h2">Start with the app.</h2>
             <p class="lead">
-              The radio builds on Lumae. Join the beta, make a few Palettes or DNA Vibes you love, and they'll be ready to go
-              on air.
+              The radio builds on Lumae. Join the beta, make a few Palettes or DNA Vibes you love, and they'll be ready to go on
+              air.
             </p>
             <div class="hero-actions">
               <a class="btn btn--primary" href="https://forms.gle/4MYsAvnMfVqAtvjC6">Join the beta</a>
@@ -1017,9 +864,9 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
             <h2 id="footer-radio">Lumae Radio</h2>
             <ul role="list">
               <li><a href="../radio/">Overview</a></li>
-              <li><a href="../radio/#stations">Stations</a></li>
-              <li><a href="../radio/#status">Status</a></li>
-              <li><a href="../radio/#install">Install</a></li>
+              <li><a href="../radio/docs/#install">Install guide</a></li>
+              <li><a href="../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../radio/docs/#api">API</a></li>
             </ul>
           </nav>
           <nav aria-labelledby="footer-about">
