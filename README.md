@@ -13,7 +13,7 @@
   <p>Android and iPhone beta · Navidrome or Jellyfin 12 · AudioMuse-AI</p>
 
   <p>
-    <a href="https://forms.gle/4MYsAvnMfVqAtvjC6"><strong>Join the beta</strong></a>
+    <a href="https://lumaemusic.app/beta/"><strong>Join the beta</strong></a>
     ·
     <a href="https://lumaemusic.app">lumaemusic.app</a>
     ·
@@ -173,10 +173,10 @@ and search or Siri in CarPlay.
 1. **Install Lumae Analysis.** In AudioMuse-AI, open **Plugins** and install
    **Lumae Analysis** from the catalog. Turn on its collection manager if you want
    Collections, shelves, Vibes and covers to sync between phones.
-2. **Join the beta.** Sign up with the
-   [form](https://forms.gle/4MYsAvnMfVqAtvjC6) and I'll send you an invite:
-   Google Play on Android now, TestFlight on iPhone once Apple approves the
-   public beta.
+2. **Join the beta.** Install Lumae with TestFlight on iPhone:
+   [lumaemusic.app/beta](https://lumaemusic.app/beta/) shows how. Android is
+   waiting for Google Play's review; sign up there and I'll email you when it
+   opens. No server yet? Demo Mode lets you look around first.
 3. **Connect.** Lumae asks for your AudioMuse-AI and music server, and checks
    both before it changes anything on your phone.
 4. **Listen.** Your library is ready to browse as it arrives. A short guide shows
@@ -215,7 +215,7 @@ Analysis versions, your library's rough size, and what you were doing. In the ap
 saves a log with names, sign-ins
 and addresses removed; please email it rather than posting it in a public issue.
 
-**[Join the beta](https://forms.gle/4MYsAvnMfVqAtvjC6)** ·
+**[Join the beta](https://lumaemusic.app/beta/)** ·
 **[Open an issue](https://github.com/rendyhd/lumae/issues)** ·
 **[apps@rendyjansen.com](mailto:apps@rendyjansen.com)**
 

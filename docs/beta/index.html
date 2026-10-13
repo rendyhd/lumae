@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Join the Lumae beta · iPhone and Android</title>
+    <meta
+      name="description"
+      content="How to join the Lumae beta: TestFlight on iPhone, Google Play on Android, and Demo Mode if you don't have a server yet."
+    />
+    <link rel="canonical" href="https://lumaemusic.app/beta/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Join the Lumae beta · iPhone and Android" />
+    <meta
+      property="og:description"
+      content="TestFlight on iPhone, Google Play on Android: join the Lumae beta and play your own music library."
+    />
+    <meta property="og:url" content="https://lumaemusic.app/beta/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae Music on a phone." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="../">
+          <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="product-tabs" aria-label="Lumae products">
+          <a href="../" data-product="music"><span class="tab-long">Lumae </span>Music</a>
+          <a href="../radio/" data-product="radio"><span class="tab-long">Lumae </span>Radio</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="btn btn--primary btn--small" href="../beta/">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker">Lumae beta</p>
+          <h1>Join the beta</h1>
+          <p class="doc-meta">iPhone and Android · Updated October 13, 2026</p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li><a href="#before-you-start">Before you start</a></li>
+                <li><a href="#iphone">iPhone</a></li>
+                <li><a href="#android">Android</a></li>
+                <li><a href="#demo-mode">No server yet?</a></li>
+                <li><a href="#updates">Updates and feedback</a></li>
+                <li><a href="#leaving">Leaving the beta</a></li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose">
+            <p>
+              The Lumae beta is free and open to anyone who runs their own music. On iPhone, join with TestFlight in a few
+              minutes, no invite needed. On Android, sign up and I'll email you when it opens.
+            </p>
+
+            <h2 id="before-you-start">Before you start</h2>
+            <ul>
+              <li><strong>A music server:</strong> Navidrome, or Jellyfin 12.0 or newer.</li>
+              <li>
+                <strong>Sound analysis:</strong> AudioMuse-AI 3.2 or newer with the Lumae Analysis plugin (1.6.0 or newer for
+                Jellyfin).
+              </li>
+              <li><strong>A phone:</strong> an iPhone on iOS 16.4 or newer, or Android 7.0 or newer.</li>
+            </ul>
+
+            <h2 id="iphone">iPhone</h2>
+            <ol class="install-steps" role="list">
+              <li>
+                <h3>Install TestFlight</h3>
+                <p>Get Apple's free <a href="https://apps.apple.com/app/testflight/id899247664" rel="noopener">TestFlight</a> app from the App Store.</p>
+              </li>
+              <li>
+                <h3>Open the beta link on your iPhone</h3>
+                <p>
+                  Open <a href="https://testflight.apple.com/join/hnmuWX6h" rel="noopener">testflight.apple.com/join/hnmuWX6h</a>,
+                  then tap <strong>Accept</strong> and <strong>Install</strong>. If you got an email invite, it opens the same
+                  beta.
+                </p>
+              </li>
+              <li>
+                <h3>Connect your servers</h3>
+                <p>Open Lumae and follow the setup. Turn on automatic updates in TestFlight to get each new build.</p>
+              </li>
+            </ol>
+
+            <h2 id="android">Android</h2>
+            <p>
+              The Android beta is waiting for Google Play's review. <a href="https://forms.gle/4MYsAvnMfVqAtvjC6" rel="noopener">Sign up with the form</a> and
+              I'll email you as soon as it's open.
+            </p>
+
+            <h2 id="demo-mode">No server yet?</h2>
+            <p>
+              Try Lumae in Demo Mode: on the first screen, pull down, tap <strong>⋮</strong> at the top right, then
+              <strong>Enter Demo Mode</strong>. Five royalty-free songs show you around. When you're ready,
+              <strong>Exit Demo Mode</strong> in Settings takes you back to setup.
+            </p>
+
+            <h2 id="updates">Updates and feedback</h2>
+            <p>
+              New builds arrive through TestFlight. Smaller fixes arrive by themselves: open Lumae, leave it open
+              for about 20 seconds, then close and reopen it.
+            </p>
+            <p>
+              Tell me what Lumae got right and what felt slow, repetitive or confusing. For a problem, go to
+              <strong>Library ≡ → Settings → About &amp; help → Export diagnostic log</strong> and email the log to
+              <a href="mailto:apps@rendyjansen.com">apps@rendyjansen.com</a>. On iPhone you can also send screenshots from
+              TestFlight.
+            </p>
+
+            <h2 id="leaving">Leaving the beta</h2>
+            <p>
+              On iPhone, open TestFlight, choose Lumae and tap <strong>Stop Testing</strong>. When Lumae comes to the App Store and Google
+              Play, installing it there replaces the beta and keeps your library and settings.
+            </p>
+            <p>
+              Joining on iPhone goes through Apple, who shares details such as your email address with me so I can run the beta;
+              the Android sign-up is a Google Form. See
+              <a href="../privacy/#this-website">the privacy policy</a>.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../">
+              <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+            <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../#how">How it works</a></li>
+              <li><a href="../#discover">Features</a></li>
+              <li><a href="../#need">What you need</a></li>
+              <li><a href="../beta/">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../radio/">Overview</a></li>
+              <li><a href="../radio/docs/#install">Install guide</a></li>
+              <li><a href="../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../radio/docs/#api">API</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>
