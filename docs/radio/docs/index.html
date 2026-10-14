@@ -84,7 +84,7 @@
         <header class="wrap doc-head">
           <p class="kicker kicker--teal">Lumae Radio guide</p>
           <h1>Install, set up and connect your radio</h1>
-          <p class="doc-meta">For Lumae Radio 0.5.0 · Updated October 13, 2026</p>
+          <p class="doc-meta">For Lumae Radio 0.5.1 · Updated October 14, 2026</p>
         </header>
         <div class="wrap doc">
           <nav class="doc-toc" data-toc aria-label="On this page">
@@ -128,10 +128,10 @@
             <h2 id="install">Install on the Pi</h2>
             <div class="release-card">
               <div class="release-head">
-                <p class="release-name">Lumae Radio <span class="release-id">0.5.0</span></p>
-                <p class="release-meta">October 13, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
+                <p class="release-name">Lumae Radio <span class="release-id">0.5.1</span></p>
+                <p class="release-meta">October 14, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
               </div>
-              <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.5.0">Files on GitHub</a>
+              <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.5.1">Files on GitHub</a>
             </div>
             <p>
               The radio installs over SSH. The files come from GitHub; the checks below come from this page, so a changed
@@ -155,8 +155,8 @@ sudo apt-get install -y --no-install-recommends python3 openssl ca-certificates 
               <li>
                 <h3>Download</h3>
                 <pre class="cmd"><code>mkdir -p ~/lumae-radio &amp;&amp; cd ~/lumae-radio
-r=lumae-radio-0.5.0-linux-arm64
-url=https://github.com/rendyhd/lumae/releases/download/radio-v0.5.0
+r=lumae-radio-0.5.1-linux-arm64
+url=https://github.com/rendyhd/lumae/releases/download/radio-v0.5.1
 for f in $r.tar.gz $r.manifest.json $r.manifest.sig $r.install.py release-key.pem; do
   curl -fLO "$url/$f"
 done</code></pre>
@@ -166,7 +166,7 @@ done</code></pre>
                 <p>Both lines must say <code>OK</code>. If either doesn't, stop and don't install.</p>
                 <pre class="cmd"><code>sha256sum -c &lt;&lt;'EOF'
 cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4  release-key.pem
-7a2c4825e532739b7ee67cd7fca51ef5f19b5e51a4613f95b695c1ee423fa06a  lumae-radio-0.5.0-linux-arm64.install.py
+4e5313dfdc3b445542562082e5152430e0122c944ce40e5642c62fb8f929ed97  lumae-radio-0.5.1-linux-arm64.install.py
 EOF</code></pre>
                 <p>Then keep the key where the installer looks for it. Every release is signed with it.</p>
                 <pre class="cmd"><code>sudo install -d -o root -g root -m 755 /etc/lumae-radio
@@ -202,8 +202,8 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
               <div class="req">
                 <dt>Archive</dt>
                 <dd>
-                  SHA-256 of <code>lumae-radio-0.5.0-linux-arm64.tar.gz</code>:
-                  <code class="hash">cc701ac519d819b5b8b779c7a5b8424e89a9dddae6a9fd83598996ade3d1500b</code>. The installer
+                  SHA-256 of <code>lumae-radio-0.5.1-linux-arm64.tar.gz</code>:
+                  <code class="hash">35f19c9bc5e5fcaddde8fbf16b1d56def5185d5b1cadbb395fff941862a08196</code>. The installer
                   checks it against the signed manifest itself.
                 </dd>
               </div>
@@ -244,8 +244,17 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
 
             <h2 id="upgrade">Upgrade</h2>
             <p>
-              Download and check the new release as above (the key stays where it is), then run the installed installer. Your
-              stations, history and settings stay; the installer keeps a copy of the databases first.
+              From 0.5.1 the radio updates itself. Once a day it looks on GitHub for a newer release signed with the same key,
+              and installs it when nothing is playing, or at night. It stops for a minute or two while it updates. If the new
+              release doesn't start, keeps stopping or loses the sound, the radio goes back to the release it had and doesn't
+              install that one by itself again. On the radio's web page, Settings → Preferences →
+              <strong>Install updates automatically</strong> turns this off, and the Updates card has
+              <strong>Check for updates</strong> and <strong>Install update</strong>.
+            </p>
+            <p>
+              A radio on 0.5.0 or earlier doesn't have this yet: upgrade it by hand once. Download and check the new release as
+              above (the key stays where it is), then run the installed installer. Your stations, history and settings stay; the
+              installer keeps a copy of the databases first.
             </p>
             <pre class="cmd"><code>sudo python3 -I -B /opt/lumae-radio/current/packaging/install.py $args --install</code></pre>
 
