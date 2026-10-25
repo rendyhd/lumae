@@ -76,7 +76,7 @@
       <section class="section section--doc">
         <header class="wrap doc-head">
           <h1>Lumae Privacy Policy</h1>
-          <p class="doc-meta">Last updated: October 13, 2026</p>
+          <p class="doc-meta">Last updated: October 25, 2026</p>
         </header>
         <div class="wrap doc">
           <nav class="doc-toc" data-toc aria-label="On this page">
@@ -197,6 +197,7 @@
             <p>Lumae Radio runs on your own Raspberry Pi and talks only to the music server and AudioMuse-AI you set it up with. It has no cloud service, no analytics, no crash reporting and no automatic update check.</p>
             <p>It is always in Stealth: it never reports plays, what is playing now, ratings, play counts or favorites to your servers. It reads your favorites and playlists to shape stations. The only thing it writes is a Vibe, when you save a station as a Vibe or edit a Vibe that a station follows.</p>
             <p>The radio stores your sign-ins (for Navidrome a token instead of the password, for Jellyfin a token, for AudioMuse-AI your API token or username and password), its stations and schedules, a copy of your library with its sound analysis, a cache of music, and a radio-only play history of about 57 days. These are protected by the Pi’s file permissions, not encrypted.</p>
+            <p>Room tuning uses a USB microphone plugged into the radio. The radio opens the microphone only while it measures, for a room tuning you start as its owner, on its page or in the Lumae app, never from an API key. It keeps no recording: it turns what it hears into frequency curves at once, keeps those in memory until the next room tuning or a restart, and stores only the preset you apply (its filters, the microphone’s name and USB ID, the sound output and the date), and a calibration file if you upload one. Nothing it hears leaves the radio.</p>
             <p>Its web page and API answer only on your local network, over HTTPS, and need the radio’s password or an API key you made. Until a radio has an owner, anyone on your network can adopt it, so adopt it soon after installing, on a network you trust.</p>
             <h2 id="app-updates">App updates</h2>
             <p>Lumae uses Expo Application Services to check for and download app updates, at launch and when the app comes back to the foreground. Expo may receive your IP address, a random installation identifier, your phone’s operating system, the app and update versions, and occasionally technical details of an app launch that failed, as described in the <a href="https://expo.dev/privacy" rel="noopener">Expo Privacy Policy</a>.</p>

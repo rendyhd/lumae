@@ -1,6 +1,6 @@
 # Lumae Privacy Policy
 
-Last updated: October 13, 2026
+Last updated: October 25, 2026
 
 This policy covers Lumae, the music player for Android phones and iPhone; Lumae
 Radio, the radio you run on your own Raspberry Pi; and this website,
@@ -241,6 +241,14 @@ for Jellyfin a token, for AudioMuse-AI your API token or username and
 password), its stations and schedules, a copy of your library with its sound
 analysis, a cache of music, and a radio-only play history of about 57 days.
 These are protected by the Pi's file permissions, not encrypted.
+
+Room tuning uses a USB microphone plugged into the radio. The radio opens the
+microphone only while it measures, for a room tuning you start as its owner,
+on its page or in the Lumae app, never from an API key. It keeps no recording:
+it turns what it hears into frequency curves at once, keeps those in memory
+until the next room tuning or a restart, and stores only the preset you apply
+(its filters, the microphone's name and USB ID, the sound output and the date),
+and a calibration file if you upload one. Nothing it hears leaves the radio.
 
 Its web page and API answer only on your local network, over HTTPS, and need the
 radio's password or an API key you made. Until a radio has an owner, anyone on
