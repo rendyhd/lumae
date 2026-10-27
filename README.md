@@ -22,6 +22,8 @@
     <a href="PRIVACY.md">Privacy</a>
     ·
     <a href="https://github.com/rendyhd/lumae/issues">Give feedback</a>
+    ·
+    <a href="https://ko-fi.com/rendyhd">Support on Ko-fi</a>
   </p>
 </div>
 
@@ -217,6 +219,7 @@ and addresses removed; please email it rather than posting it in a public issue.
 
 **[Join the beta](https://lumaemusic.app/beta/)** ·
 **[Open an issue](https://github.com/rendyhd/lumae/issues)** ·
+**[Support on Ko-fi](https://ko-fi.com/rendyhd)** ·
 **[apps@rendyjansen.com](mailto:apps@rendyjansen.com)**
 
 ---
