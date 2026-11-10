@@ -20,7 +20,7 @@ anything you choose to send for support.
 - AI, Koito and Last.fm album suggestions are off until you turn them on, and
   each receives only what its feature needs.
 - Stealth keeps what you play out of your history, your taste and your server.
-  Lumae Radio is always in Stealth.
+  Lumae Radio and Undertone are always in Stealth.
 - No ads, no tracking, no selling of data.
 
 ## What Lumae keeps on your phone
@@ -35,7 +35,13 @@ Depending on the features you use, Lumae stores:
   shelves, Obsessions, your Want List, album memories and feedback; your
   preferences and EQ presets.
 - AI-written titles and the details used for AI album suggestions, if you use
-  AI.
+  AI, and the AI DJ's scene labels for your library's artists, with the name of
+  the AI model that gave them.
+- If you use Undertone: its music catalog (titles, artists, albums and file
+  paths), the fields, details and presets you add, and when you last started
+  each preset.
+- What a home-screen widget shows, and for the Lumae Radio widget, your radios'
+  names and addresses and its own key for each.
 - Music and artwork you keep offline, and photos you choose as covers.
 - A clip you record with Search by Recording, only until that search is done.
 - Server addresses, usernames and settings; for each Lumae Radio you add, its
@@ -43,8 +49,9 @@ Depending on the features you use, Lumae stores:
 - Short-lived diagnostic and performance logs.
 
 This information makes playback, offline listening, sync, recommendations and
-the rest of the app work. Chats with AI are not saved: they are kept in memory
-and cleared after four hours without use, or when you start a new chat.
+the rest of the app work. Chats with AI, the AI DJ's included, are not saved:
+they are kept in memory and cleared after four hours without use, or when you
+start a new chat.
 
 ## How your sign-ins are stored
 
@@ -58,6 +65,14 @@ Server addresses, usernames and other settings are kept in the app's private
 storage, which the operating system protects but does not separately encrypt.
 When you sign in to AudioMuse-AI with a username and password, its session
 cookie is kept in the system's cookie store.
+
+The Lumae Radio widget signs in to your radio with its own key, labeled "Lumae
+widget", which can read, control and change stations; it never gets your radio
+password. On Android the key is sealed with a key in the Android Keystore, in
+storage left out of backups. On iPhone it is kept in the Keychain, on that phone
+only, and shared with the widget through Lumae's app group. The password or
+token for a second server you add to Undertone is kept in secure storage, on
+iPhone on that phone only, and is never backed up, exported or synced.
 
 ## Your own servers
 
@@ -134,7 +149,11 @@ self-hosted server such as Ollama, Open WebUI, LM Studio or another
 OpenAI-compatible server. Lumae sends requests straight to that service, with
 your key.
 
-Discuss with AI and Extend with AI run when you use them. Once a service is
+Discuss with AI, the AI DJ and Extend with AI run when you use them. The AI
+DJ also sends two requests without a message from you: when a set with a length has played out, it
+writes a short summary of it; and while you use it with Share music details on,
+it sends the names of your library's artists in batches to learn which scene
+each belongs to, and after that only artists that are new. Once a service is
 connected, AI-written titles (The Pulse's headline, Home mix descriptions and
 Comfort mix names) run on their own, also in the background, until you turn
 off AI-written titles. Daily AI album suggestions run only if you also turn on
@@ -151,6 +170,11 @@ Depending on the feature, a request can contain:
 - Artists you've played recently or often, and favorite songs with rough
   periods, such as "your 2024 song".
 - Albums you rated or saved, and memories you chose to share.
+- The AI DJ's brief and plan: your words, and the energy, moods, genres and
+  length it set.
+- For an AI DJ set, each song's energy, how close the songs sound to each
+  other, and how many you skipped or rated four or five stars.
+- The names of the artists in your library, for the AI DJ's scene labels.
 
 Lumae never sends audio, raw sound analysis (embeddings), map coordinates,
 exact play counts or exact listening times. Don't put sensitive personal
@@ -166,19 +190,21 @@ or [OpenRouter's policy](https://openrouter.ai/privacy) before you connect one.
 
 ## Speakers, casting and the car
 
-When you play on Chromecast, AirPlay, Sonos, HEOS, Android Auto, CarPlay or
-Lumae Radio, Lumae shares track details, artwork and the queue with that device
-or system. Chromecast and HEOS speakers also receive stream links that include a
-sign-in value for your music server, so they can fetch the audio themselves.
+When you play on Chromecast, AirPlay, Sonos, HEOS, another UPnP/DLNA speaker,
+Android Auto, CarPlay or Lumae Radio, Lumae shares track details, artwork and the
+queue with that device or system. Chromecast and HEOS speakers also receive
+stream links that include a sign-in value for your music server, so they can
+fetch the audio themselves.
 
 Lumae searches your network for speakers when you open the output picker. It
 uses Wi-Fi and local-network access for this, never your location.
 
-For Sonos, Lumae can run a small relay on your phone so the speaker can fetch
-the audio. It serves only the tracks queued for that speaker, only on your local
-network, and stops when the speaker disconnects. If you run the optional Sonos
-companion yourself, it uses its own Navidrome sign-in and logs which tracks it
-streams.
+For Sonos and other UPnP/DLNA speakers, Lumae can run a small relay on your phone
+so the speaker can fetch the audio; UPnP/DLNA speakers, on Android only, always
+play through it. It serves only the tracks queued for that
+speaker, only on your local network, and stops when the speaker disconnects. If
+you run the optional Sonos companion yourself, it uses its own Navidrome sign-in
+and logs which tracks it streams.
 
 On Android, only Android Auto, the Google app and your car's assistant (checked
 by their signing certificates), and trusted system controls, can browse your
@@ -255,6 +281,19 @@ radio's password or an API key you made. Until a radio has an owner, anyone on
 your network can adopt it, so adopt it soon after installing, on a network you
 trust.
 
+## Home-screen widgets
+
+The Lumae Radio widget talks only to your radio, over the same pinned HTTPS
+connection as the app, with its "Lumae widget" key. It keeps your radios' names
+and addresses, and what each is playing with its artwork, in storage left out of
+backups. Forgetting a radio in Lumae removes it from the widget and revokes its
+key when the radio answers; otherwise you can revoke the key on the radio's
+Access screen.
+
+On Android, the Now playing widget shows what Lumae, or a Sonos or HEOS speaker
+it controls, is playing. It keeps the title, artist, album and cover on your
+phone, out of backups, and makes no network requests.
+
 ## App updates
 
 Lumae uses Expo Application Services to check for and download app updates, at
@@ -268,7 +307,8 @@ that failed, as described in the [Expo Privacy Policy](https://expo.dev/privacy)
 | Permission | Why Lumae asks |
 | --- | --- |
 | Local network, Wi-Fi and multicast; nearby Wi-Fi devices on Android | Reach your servers, Lumae Radio and speakers on your network. Never used for location. |
-| Notifications | Show progress while music downloads and your library syncs. |
+| Notifications | Show progress while music downloads and your library syncs, and ring Undertone's alarm. |
+| Alarms & reminders and full-screen notifications (Android); alarms (iPhone, iOS 26 or newer) | Only for Undertone's alarm, which you set. On Android you allow them from Settings → Undertone → Alarms; on iPhone Lumae asks when you set your first alarm. |
 | Background audio and background work | Keep music playing, and let downloads and library sync finish with the app in the background. |
 | Photos | Only when you choose a photo as a cover. The camera is never used. |
 | Bluetooth (iPhone) | Used by Google's Cast SDK to find Chromecast devices. |
@@ -307,12 +347,18 @@ a new phone. A cloud backup includes your preferences, your settings without
 passwords, tokens or keys, your personal data (ratings, Vibes, Collections, your
 Want List, memories and similar), and EQ presets. A direct phone-to-phone
 transfer also includes your library database and play history. Passwords,
-tokens, keys and downloaded music are never backed up.
+tokens, keys, downloaded music and home-screen widget data are never backed
+up.
+
+On Android 11 or later, a backup also includes a copy of Undertone's catalog,
+details and presets, without when you last started each preset. It is restored
+only to a phone that has no Undertone data yet.
 
 On iPhone, Lumae leaves its settings, listening journal and caches out of
 backups, and its sign-ins never leave the phone. Your library database
-(including play history and ratings), your personal discovery data, music you
-keep offline and cover photos are included in iCloud and computer backups.
+(including play history and ratings), Undertone's database, your personal
+discovery data, music you keep offline and cover photos are included in iCloud
+and computer backups. Home-screen widget data is left out.
 
 ## Sharing a Vibe
 
@@ -335,11 +381,33 @@ don't post logs or personal details there. Email them to
 email address and whatever you send, and uses it only to help you, look into
 problems and keep necessary support records.
 
+## Undertone
+
+Undertone is off until you turn it on. It plays focus, study and sleep music from
+a library on your music server, or from a second Navidrome or Jellyfin server you
+add; AudioMuse-AI isn't asked. Its catalog, details and presets are kept in their
+own database on your phone.
+
+Undertone is always in Stealth: nothing it plays goes into your history, your
+taste or your scrobbles. To suggest a preset on Home, it keeps when you last
+started each preset, on your phone only. Star ratings you give in Undertone sync
+with the music server it plays from, unless Sync star ratings is off or Offline
+mode is on.
+
+Sync with Lumae Analysis is off until you turn it on. Then Lumae sends your
+Undertone fields, categories, presets, groups and details, and an index of its
+music (titles, artists, albums, genres, lengths, file paths and MusicBrainz IDs),
+kept with your AudioMuse-AI sign-in. It never sends audio, sign-ins or what is
+playing.
+
+An Undertone file you export holds your fields, presets, groups and details, and
+the tracks they refer to with their file paths. It goes only where you send it.
+
 ## Stealth
 
 While Stealth is on, Lumae doesn't add what you play to your history, doesn't
 send it to your music server, Koito or Lumae Analysis, and doesn't learn your
-taste from it. Lumae Radio is always in Stealth.
+taste from it. Lumae Radio and Undertone are always in Stealth.
 
 ## Keeping and deleting
 
