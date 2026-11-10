@@ -1,6 +1,6 @@
 # Lumae Privacy Policy
 
-Last updated: October 25, 2026
+Last updated: November 10, 2026
 
 This policy covers Lumae, the music player for Android phones and iPhone; Lumae
 Radio, the radio you run on your own Raspberry Pi; and this website,
@@ -399,16 +399,17 @@ browser's local storage, not in a cookie, and never sent anywhere.
 The site is hosted on GitHub Pages. Like any web host, GitHub may log your IP
 address and browser details to deliver and protect the site; see
 [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
-You join the beta with Apple, or for Android with a Google Form, not on this
+You join the beta with Apple on iPhone, or with Google on Android, not on this
 site. On iPhone, TestFlight shares details such as your name or email address,
 the builds you install, and the crash reports and feedback you choose to send
 with the developer, under
-[Apple's privacy policy](https://www.apple.com/legal/privacy/). The Android
-sign-up is a Google Form, under
-[Google's privacy policy](https://policies.google.com/privacy): what you enter
-there goes to the developer and is used to tell you when the Android beta opens.
-The developer uses these only to run the beta. To leave, stop testing in
-TestFlight; to have your details or sign-up removed, email
+[Apple's privacy policy](https://www.apple.com/legal/privacy/). On Android, you
+join a Google Group and then the beta on Google Play, under
+[Google's privacy policy](https://policies.google.com/privacy): the group shows
+the developer the email address you join with, and Google Play gives the
+developer crash reports and the feedback you choose to send. The developer uses
+these only to run the beta. To leave, stop testing in TestFlight, or leave the
+beta on Google Play and the group; to have your details removed, email
 `apps@rendyjansen.com`.
 
 ## Changes

@@ -175,10 +175,10 @@ and search or Siri in CarPlay.
 1. **Install Lumae Analysis.** In AudioMuse-AI, open **Plugins** and install
    **Lumae Analysis** from the catalog. Turn on its collection manager if you want
    Collections, shelves, Vibes and covers to sync between phones.
-2. **Join the beta.** Install Lumae with TestFlight on iPhone:
-   [lumaemusic.app/beta](https://lumaemusic.app/beta/) shows how. Android is
-   waiting for Google Play's review; sign up there and I'll email you when it
-   opens. No server yet? Demo Mode lets you look around first.
+2. **Join the beta.** Install Lumae with TestFlight on iPhone, or from Google
+   Play on Android after joining the beta group:
+   [lumaemusic.app/beta](https://lumaemusic.app/beta/) shows how. No server
+   yet? Demo Mode lets you look around first.
 3. **Connect.** Lumae asks for your AudioMuse-AI and music server, and checks
    both before it changes anything on your phone.
 4. **Listen.** Your library is ready to browse as it arrives. A short guide shows
