@@ -3167,3 +3167,104 @@ figure {
 .section--cta {
   padding-block: clamp(32px, 4vw, 52px);
 }
+
+/* ---------- Pillars: Rediscover, Vibe, Library ---------- */
+@media (min-width: 901px) {
+  .pillars--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) and (min-width: 701px) {
+  .pillars--three {
+    grid-template-columns: 1fr;
+  }
+}
+.pillar--link {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.pillar--link:hover {
+  border-color: color-mix(in srgb, var(--p) 45%, var(--border));
+}
+.pillar--link:focus-visible {
+  outline: 2px solid var(--p);
+  outline-offset: 3px;
+}
+.pillar-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p);
+}
+.pillar-more svg {
+  width: 26px;
+  height: 10px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.pillar--link:hover .pillar-more svg {
+  transform: translateX(4px);
+}
+.pillars-thread {
+  margin-top: clamp(22px, 3vw, 32px);
+  max-width: 46rem;
+  color: var(--text-2);
+}
+
+/* ---------- How it works, its own section near the end ---------- */
+.how-section .need {
+  margin-top: clamp(32px, 4.5vw, 52px);
+}
+
+/* ---------- Ko-fi in the header ---------- */
+.btn--kofi svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 1100px) {
+  .btn--kofi .kofi-label {
+    display: none;
+  }
+  .btn--kofi {
+    width: 40px;
+    min-height: 40px;
+    padding: 0;
+    border-radius: 50%;
+  }
+}
+@media (max-width: 760px) {
+  .header-actions .btn--kofi {
+    display: inline-flex;
+  }
+}
+.pillar--link {
+  display: flex;
+  flex-direction: column;
+}
+.pillar--link p {
+  flex: 1;
+}
+.pillar--link .pillar-more {
+  align-self: flex-start;
+}
+@media (max-width: 480px) {
+  /* Room for Ko-fi: the mark stands for the name on narrow phones. */
+  .brand span {
+    display: none;
+  }
+}

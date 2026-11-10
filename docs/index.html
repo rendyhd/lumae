@@ -101,6 +101,10 @@
             <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
             <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
           </button>
+          <a class="btn btn--ghost btn--small btn--kofi" href="https://ko-fi.com/rendyhd" aria-label="Support Lumae on Ko-fi">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5h12v5.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8.5Z" /><path d="M16 10.5h1.25a2.75 2.75 0 0 1 0 5.5H16M8 3.5v2M12 3.5v2" /></svg>
+            <span class="kofi-label">Support on Ko-fi</span>
+          </a>
           <a class="btn btn--primary btn--small" href="beta/">Join the beta</a>
         </div>
       </div>
@@ -122,7 +126,7 @@
             </p>
             <div class="hero-actions">
               <a class="btn btn--primary" href="beta/">Join the beta</a>
-              <a class="btn btn--ghost" href="#how">How it works</a>
+              <a class="btn btn--ghost" href="https://ko-fi.com/rendyhd">Support on Ko-fi</a>
             </div>
             <div class="hero-needs">
               <span class="chip chip--status">Beta on Android and iPhone</span>
@@ -180,7 +184,7 @@
         </div>
       </section>
 
-      <!-- Philosophy -->
+      <!-- Pillars -->
       <section class="section section--alt" id="why" aria-labelledby="why-title">
         <div class="wrap">
           <div class="section-head">
@@ -189,99 +193,111 @@
               Your library is a landscape to <em>explore</em>, not a catalog to shuffle.
             </h2>
           </div>
-          <div class="pillars">
-            <article class="pillar reveal" style="--p: var(--accent)">
+          <div class="pillars pillars--three">
+            <a class="pillar pillar--link reveal" href="#discover" style="--p: var(--teal)">
               <span class="num">01</span>
-              <h3>Your library is enough.</h3>
-              <p>You own more great music than you remember. Every mix, queue and suggestion starts from your server.</p>
-            </article>
-            <article class="pillar reveal" style="--p: var(--teal)">
+              <h3>Rediscover</h3>
+              <p>Find your way back into what you own: albums you forgot, five-star songs you haven't played in months.</p>
+              <span class="pillar-more">Discover <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a class="pillar pillar--link reveal" href="#vibe" style="--p: var(--lavender)">
               <span class="num">02</span>
-              <h3>Sequence matters.</h3>
-              <p>Lumae never truly shuffles. Every mix, and every Shuffle, is ordered so each song leads into the next.</p>
-            </article>
-            <article class="pillar reveal" style="--p: var(--lavender)">
+              <h3>Vibe</h3>
+              <p>Mixes built on how songs sound, not on genre tags. Name a feeling and every song leads into the next.</p>
+              <span class="pillar-more">Vibe <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a class="pillar pillar--link reveal" href="#library" style="--p: var(--sky)">
               <span class="num">03</span>
-              <h3>Albums are art.</h3>
-              <p>Play one start to finish, in order, then rate it. Made for listening, not for scrolling.</p>
-            </article>
-            <article class="pillar reveal" style="--p: var(--sky)">
-              <span class="num">04</span>
-              <h3>Yours alone.</h3>
-              <p>No account and no Lumae server. Your music stays on your server; your taste is worked out on your phone.</p>
-            </article>
+              <h3>Library</h3>
+              <p>Albums as art. Play one start to finish, rate it, give it a place on your shelf.</p>
+              <span class="pillar-more">Library <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+            </a>
           </div>
-          <div class="how" id="how">
-            <div class="how-head">
-              <p class="kicker kicker--teal">How it works</p>
-              <h3 id="how-title" class="h3">Three pieces, all of them yours. No Lumae server in the middle.</h3>
-            </div>
-          <div class="flow reveal">
-            <article class="flow-node">
-              <span class="tag">Your server</span>
-              <h3>Your music server</h3>
-              <p>Navidrome or Jellyfin keeps your music as it does today. Lumae streams and downloads from it, and syncs ratings, plays and playlists.</p>
-            </article>
-            <div class="flow-arrow" aria-hidden="true">
-              <svg><use href="#i-arrow" /></svg>
-              <span>your music</span>
-            </div>
-            <article class="flow-node">
-              <span class="tag">Your server</span>
-              <h3>AudioMuse-AI</h3>
-              <p>Listens to every track once and describes its sound: energy, mood, tempo, key and a 200-number summary. Lumae's own plugin, Lumae Analysis, readies that for your phone.</p>
-            </article>
-            <div class="flow-arrow" aria-hidden="true">
-              <svg><use href="#i-arrow" /></svg>
-              <span>how it sounds</span>
-            </div>
-            <article class="flow-node flow-node--you">
-              <span class="tag">Your phone</span>
-              <h3>Lumae</h3>
-              <p>Syncs that description and works out mixes, queues and suggestions on the phone. The music streams straight from your server.</p>
-            </article>
+          <p class="pillars-thread">
+            Underneath all three, Lumae never truly shuffles: every song is placed so it leads into the next.
+            <a class="text-link" href="#anti-shuffle">How it flows</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Home and Now Playing -->
+      <section class="section" id="home" aria-labelledby="home-title">
+        <div class="wrap split split--reverse split--top split--cards">
+          <div class="phone-row phone-row--captions">
+            <figure class="phone">
+              <img
+                class="only-dark"
+                src="assets/img/screens/home-mixes.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/home-mixes-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
+              />
+              <figcaption>Comfort mixes and Suggested vibes</figcaption>
+            </figure>
+            <figure class="phone phone--offset">
+              <img
+                class="only-dark"
+                src="assets/img/screens/queue-journey.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
+              />
+              <img
+                class="only-light"
+                src="assets/img/screens/queue-journey-light.webp"
+                width="780"
+                height="1688"
+                loading="lazy"
+                decoding="async"
+                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
+              />
+              <figcaption>The queue</figcaption>
+            </figure>
           </div>
-          <div class="need need--stacked" id="need">
-            <div class="need-head">
-              <h3 class="h3">What you need</h3>
-              <p class="muted">
-                Lumae is for people who already run their own music server. Once AudioMuse-AI has analyzed your library and
-                Lumae Analysis is installed, connecting takes a few minutes; the first import can take longer.
-              </p>
+          <div class="stack stack--lg">
+            <div class="stack">
+              <p class="kicker">Home and Now Playing</p>
+              <h2 id="home-title" class="h2">Start with a mix for right now. Steer it as it plays.</h2>
             </div>
-            <dl class="reqs reqs--grid reveal">
-              <div class="req">
-                <dt>Music server</dt>
-                <dd><strong>Navidrome</strong>, or <strong>Jellyfin 12.0</strong> or newer. Other Subsonic servers, Plex, Emby and Lyrion aren't supported.</dd>
+            <p class="lead">
+              Open Lumae and The Pulse is waiting: one mix for this time of day and what you've been into lately. Play it,
+              or skip to another.
+            </p>
+            <ul class="list-check" role="list">
+              <li><strong>Shift the vibe</strong> toward Calm, Mellow, Active or High. The song playing keeps going.</li>
+              <li><strong>Comfort mixes</strong> from music you keep coming back to, and <strong>Suggested vibes</strong> from your library's sound.</li>
+              <li>
+                <strong>Instant Play:</strong> up to twelve favorites one tap away, on Home and in the car. In the current beta it's called Quick Launch.
+              </li>
+            </ul>
+            <div class="stack" id="queue">
+              <p class="muted">On Now Playing, open the queue to see the sonic path ahead and steer where it goes. Every change can be undone.</p>
+              <div class="intents">
+                <div class="intent"><strong>Similar songs</strong><span>Keep a similar sound.</span></div>
+                <div class="intent"><strong>Go further</strong><span>A similar sound you rarely play.</span></div>
+                <div class="intent"><strong>Rediscover</strong><span>Your 4–5★ songs, unheard for a month.</span></div>
+                <div class="intent"><strong>Related album</strong><span>A whole album from your library.</span></div>
               </div>
-              <div class="req">
-                <dt>Sound analysis</dt>
-                <dd>
-                  <strong>AudioMuse-AI 3.2 or newer</strong> with the latest <strong>Lumae Analysis</strong> plugin from its catalog. Older
-                  plugin versions work with fewer features; Jellyfin needs 1.6.0 or newer.
-                </dd>
-              </div>
-              <div class="req">
-                <dt>Phone</dt>
-                <dd>
-                  <strong>Android 7.0</strong> or newer, or an <strong>iPhone on iOS 16.4</strong> or newer. Phones only, in portrait, in English for now. On iPhone, servers outside your home network need HTTPS.
-                </dd>
-              </div>
-              <div class="req">
-                <dt>Optional</dt>
-                <dd>
-                  An AI service (OpenAI, Anthropic, OpenRouter, or self-hosted like Ollama, Open WebUI or LM Studio); a
-                  Last.fm API key for album suggestions; Koito for your listening history.
-                </dd>
-              </div>
-            </dl>
-          </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Anti-shuffle -->
-      <section class="section" id="anti-shuffle" aria-labelledby="shuffle-title">
+      <section class="section section--alt" id="anti-shuffle" aria-labelledby="shuffle-title">
         <div class="wrap split">
           <div class="stack stack--lg">
             <div class="stack">
@@ -349,90 +365,6 @@
         </div>
       </section>
 
-      <!-- Home and Now Playing -->
-      <section class="section section--alt" id="home" aria-labelledby="home-title">
-        <div class="wrap split split--reverse split--top split--cards">
-          <div class="phone-row phone-row--captions">
-            <figure class="phone">
-              <img
-                class="only-dark"
-                src="assets/img/screens/home-mixes.webp"
-                width="780"
-                height="1688"
-                loading="lazy"
-                decoding="async"
-                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
-              />
-              <img
-                class="only-light"
-                src="assets/img/screens/home-mixes-light.webp"
-                width="780"
-                height="1688"
-                loading="lazy"
-                decoding="async"
-                alt="Further down Home: Comfort mixes such as Harbor &amp; hearth and Slow-burn soul, then Suggested vibes such as Coastal hush and Neon after dark."
-              />
-              <figcaption>Comfort mixes and Suggested vibes</figcaption>
-            </figure>
-            <figure class="phone phone--offset">
-              <img
-                class="only-dark"
-                src="assets/img/screens/queue-journey.webp"
-                width="780"
-                height="1688"
-                loading="lazy"
-                decoding="async"
-                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
-              />
-              <img
-                class="only-light"
-                src="assets/img/screens/queue-journey-light.webp"
-                width="780"
-                height="1688"
-                loading="lazy"
-                decoding="async"
-                alt="The queue, titled The journey: a row of dots for played and upcoming songs, four choices (Similar songs, Go further, Rediscover, Related album) and a Steer the path button."
-              />
-              <figcaption>The queue</figcaption>
-            </figure>
-          </div>
-          <div class="stack stack--lg">
-            <div class="stack">
-              <p class="kicker">Home and Now Playing</p>
-              <h2 id="home-title" class="h2">Start with a mix for right now. Steer it as it plays.</h2>
-            </div>
-            <p class="lead">
-              Open Lumae and The Pulse is waiting: one mix for this time of day and what you've been into lately. Play it,
-              or skip to another.
-            </p>
-            <ul class="list-check" role="list">
-              <li><strong>Shift the vibe</strong> toward Calm, Mellow, Active or High. The song playing keeps going.</li>
-              <li>
-                <strong>Comfort mixes,</strong> four to eight a day from music you keep coming back to, and up to eight
-                <strong>Suggested vibes</strong> drawn from your library's sound.
-              </li>
-              <li>
-                <strong>Instant Play:</strong> up to twelve favorites one tap away, on Home and in the car. In the current beta it's called Quick Launch.
-              </li>
-              <li><strong>Quick Vibe:</strong> pick up to three songs for an endless mix around them.</li>
-            </ul>
-            <div class="stack" id="queue">
-              <p class="muted">
-                On Now Playing, album art comes first, always large. Open the queue to see the sonic path ahead, and change
-                where it goes:
-              </p>
-              <div class="intents">
-                <div class="intent"><strong>Similar songs</strong><span>Keep a similar sound.</span></div>
-                <div class="intent"><strong>Go further</strong><span>A similar sound you rarely play.</span></div>
-                <div class="intent"><strong>Rediscover</strong><span>Your 4–5★ songs, unheard for a month.</span></div>
-                <div class="intent"><strong>Related album</strong><span>A whole album from your library.</span></div>
-              </div>
-              <p class="muted">Or steer it brighter, darker, calmer or more intense. Every change can be undone.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Discover -->
       <section class="section" id="discover" aria-labelledby="discover-title">
         <div class="wrap">
@@ -487,12 +419,10 @@
                 <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-mic" /></svg></div>
                 <h3 class="card-title">Search by Recording</h3>
                 <p>
-                  Hear something you think you own? Tap the microphone on Discover and record about twenty seconds. Your
-                  AudioMuse-AI server finds the song in your library, and you play on from there.
+                  Hear something you think you own? Record about twenty seconds and your AudioMuse-AI server finds it in your library.
                 </p>
                 <p class="eg">
-                  Needs AudioMuse-AI 3.6.2 or newer with Neural Fingerprint turned on. The clip goes only to your server and is
-                  deleted after the search.
+                  Needs AudioMuse-AI 3.6.2 or newer with Neural Fingerprint on. The clip goes only to your server.
                 </p>
               </article>
             </div>
@@ -502,41 +432,30 @@
               <p class="kicker kicker--teal">Discover</p>
               <h2 id="discover-title" class="h2">Find the next thing in what you already have.</h2>
               <p class="lead">
-                Invitations, not a to-do list. Each tool walks your library a different way; only Albums to discover looks past it.
+                Invitations, not a to-do list. Each tool walks your library a different way.
               </p>
             </div>
             <div class="cards cards--list">
               <article class="card reveal">
                 <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-drift" /></svg></div>
                 <h3 class="card-title">Drift</h3>
-                <p>Start from any song and wander twenty steps away. Try a quiet acoustic song and see where you end up.</p>
+                <p>Start from any song and wander twenty steps away.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-bridge" /></svg></div>
                 <h3 class="card-title">Sonic Bridge</h3>
-                <p>Pick two songs, say a jazz ballad and a techno track. Lumae finds a path of two to seven stops between them.</p>
+                <p>Pick two songs, say a jazz ballad and a techno track, and walk the path between them.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-memory" /></svg></div>
                 <h3 class="card-title">Memory Lane</h3>
-                <p>Songs you loved, then stopped playing for three months or more. And your taste through time: play an era.</p>
-              </article>
-              <article class="card reveal">
-                <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-hole" /></svg></div>
-                <h3 class="card-title">Rabbit Hole</h3>
-                <p>Choose what comes next, pick by pick. Save the trail as a playlist on your server.</p>
+                <p>Songs you loved, then stopped playing for three months or more.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-chat" /></svg></div>
                 <h3 class="card-title">Discuss with AI</h3>
-                <p>Describe what you want; get up to three songs from your library, each with a reason.</p>
-                <p class="eg">Needs your own AI service: OpenAI, Anthropic, OpenRouter or self-hosted.</p>
-              </article>
-              <article class="card reveal">
-                <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-disc" /></svg></div>
-                <h3 class="card-title">Albums to discover</h3>
-                <p>Once a day, albums you don't own yet, picked by Last.fm or your AI. Save them to your Want List.</p>
-                <p class="eg">Off until you turn it on.</p>
+                <p>Describe what you want and get songs from your library, each with a reason.</p>
+                  <p class="eg">Needs your own AI service.</p>
               </article>
             </div>
             </div>
@@ -581,20 +500,19 @@
                 <p class="kicker kicker--lavender">Vibe</p>
                 <h2 id="vibe-title" class="h2">Build a mix around a feeling.</h2>
                 <p class="lead">
-                  Describe it, shape it with sliders, or blend it from songs you love. Save it as a Vibe and it plays endlessly,
-                  in anti-shuffle order, from your own library.
+                  Describe it, shape it with sliders, or blend it from songs you love. Save it as a Vibe and it plays on from your own library.
                 </p>
               </div>
               <div class="cards cards--list">
                 <article class="card reveal">
                   <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-compass" /></svg></div>
                   <h3 class="card-title">Mood Compass</h3>
-                  <p>Type a few words, like “rock workout” or “deep focus”. Keep it strict or let it wander.</p>
+                  <p>Type a few words, like “rock workout” or “deep focus”.</p>
                 </article>
                 <article class="card reveal">
                   <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-sliders" /></svg></div>
                   <h3 class="card-title">DNA Vibe</h3>
-                  <p>Ten sliders, from energy and mood to vocals and atmosphere. Matches appear as you move them.</p>
+                  <p>Ten sliders, from energy and mood to vocals and atmosphere.</p>
                 </article>
                 <article class="card reveal">
                   <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-palette" /></svg></div>
@@ -602,25 +520,11 @@
                   <p>Mix up to ten tracks, albums and playlists, and set how much each one counts.</p>
                 </article>
                 <article class="card reveal">
-                  <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-print" /></svg></div>
-                  <h3 class="card-title">Sonic Fingerprint</h3>
-                  <p>The shape of your last 90 days of listening. Play one side of your taste, or explore it.</p>
-                </article>
-                <article class="card reveal">
-                  <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-blend" /></svg></div>
-                  <h3 class="card-title">Vibe Alchemy</h3>
-                  <p>Blend two Palettes and find the space between them.</p>
-                </article>
-                <article class="card reveal">
                   <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-star" /></svg></div>
                   <h3 class="card-title">Saved Vibes</h3>
-                  <p>Push a Vibe while it plays: warmer or cooler, sparser or denser, familiar or new.</p>
+                  <p>Push one while it plays: warmer or cooler, familiar or new. They follow you to your other phones.</p>
                 </article>
               </div>
-              <p class="muted small">
-                Saved Vibes follow you to your other phones. Share a Palette as a code, and it is rebuilt from the other person's
-                library by sound.
-              </p>
             </div>
           </div>
         </div>
@@ -663,41 +567,8 @@
         </div>
       </section>
 
-      <!-- Deep Listen (always dark, like in the app) -->
-      <section class="section force-dark deep" id="deep-listen" aria-labelledby="deep-title">
-        <div class="wrap split">
-          <div class="stack stack--lg">
-            <div class="stack">
-              <p class="kicker">Deep Listen</p>
-              <h2 id="deep-title" class="h2">Some albums deserve your full attention.</h2>
-            </div>
-            <p class="lead">
-              Press Play album and Lumae gets out of the way. The album plays in order, without crossfades or loudness
-              changes, and ends in a moment of silence.
-            </p>
-            <p class="muted">
-              Then it asks how it was: stars, whether you'd return to it, and which vibe it fits. Give it five stars and
-              Lumae offers to follow its sonic neighbors down a Rabbit Hole. Ratings sync both ways with your music server,
-              so stars you give elsewhere count too.
-            </p>
-          </div>
-          <div class="phone-row">
-            <figure class="phone">
-              <img
-                src="assets/img/screens/deep-listen.webp"
-                width="780"
-                height="1688"
-                loading="lazy"
-                decoding="async"
-                alt="Deep Listen: track 1 of 8, large album art, the song Saltwater Hymn and simple controls, with silence after the album."
-              />
-            </figure>
-          </div>
-        </div>
-      </section>
-
       <!-- Library -->
-      <section class="section" id="library" aria-labelledby="library-title">
+      <section class="section section--alt" id="library" aria-labelledby="library-title">
         <div class="wrap">
           <div class="split split--reverse split--top split--cards">
             <div class="phone-row phone-row--captions">
@@ -754,32 +625,22 @@
               <article class="card reveal">
                 <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-shelf" /></svg></div>
                 <h3 class="card-title">Album Shelf</h3>
-                <p>A shelf you curate, shown large, one album at a time. Beyond your shelf deals albums you already own, with reasons.</p>
+                <p>A shelf you curate, shown large, one album at a time.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-stack" /></svg></div>
                 <h3 class="card-title">Collections</h3>
-                <p>Whole albums and single tracks in your own order. Play one as a Vibe, keep it offline, give it a cover.</p>
+                <p>Whole albums and single tracks in your own order, with your own cover.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-rules" /></svg></div>
                 <h3 class="card-title">Smart playlists</h3>
-                <p>Rules like genre, mood, tempo, energy, key, year or rating, saved as real playlists on your server.</p>
+                <p>Rules like mood, tempo, energy or rating, saved as real playlists on your server.</p>
               </article>
               <article class="card reveal">
                 <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-person" /></svg></div>
                 <h3 class="card-title">Artists and credits</h3>
-                <p>Discographies, your top tracks, artists who sound alike, and credits that connect albums through the people who made them.</p>
-              </article>
-              <article class="card reveal">
-                <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-grow" /></svg></div>
-                <h3 class="card-title">Sonic Extend</h3>
-                <p>Grow a playlist or collection with songs from your library that fit its sound, or let your AI choose.</p>
-              </article>
-              <article class="card reveal">
-                <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-spark" /></svg></div>
-                <h3 class="card-title">Covers</h3>
-                <p>An album cover, your own photo or, for a Vibe, a color. Covers follow you to your other phones.</p>
+                <p>Discographies, artists who sound alike, and credits that connect albums through the people who made them.</p>
               </article>
             </div>
             </div>
@@ -788,7 +649,7 @@
       </section>
 
       <!-- Sound -->
-      <section class="section section--alt" id="sound" aria-labelledby="sound-title">
+      <section class="section" id="sound" aria-labelledby="sound-title">
         <div class="wrap split">
           <div class="stack stack--lg">
             <div class="stack">
@@ -796,16 +657,14 @@
               <h2 id="sound-title" class="h2">Crossfades that know how each song ends.</h2>
             </div>
             <p class="lead">
-              SmoothFade times each crossfade to where one song really ends and the next really begins, from Lumae Analysis's
-              measurements of both. Songs that follow each other on an album play gapless instead.
+              SmoothFade times each crossfade to where one song really ends and the next really begins. Songs that follow each other on an album play gapless.
             </p>
             <ul class="list-check" role="list">
               <li><strong>Loudness, leveled.</strong> Loud songs are turned down to a steady level; quiet ones are never pushed up.</li>
               <li><strong>Buffer ahead.</strong> The next songs are kept whole on your phone, so the music rides out dead spots.</li>
               <li>
-                <strong>Quality you choose.</strong> Original files on Wi-Fi, lossless if they are, and a lighter 192 kbps stream on cellular. Or originals everywhere.
+                <strong>Quality you choose.</strong> Original files on Wi-Fi, a lighter stream on cellular, or originals everywhere.
               </li>
-              <li><strong>Parametric EQ</strong> on Android, with AutoEq import and extra gain for quiet Bluetooth adapters.</li>
             </ul>
           </div>
           <figure class="panel reveal xfade-panel" style="--panel-glow: var(--sky)">
@@ -839,7 +698,7 @@
       </section>
 
       <!-- Everywhere -->
-      <section class="section section--alt section--follow" id="everywhere" aria-labelledby="everywhere-title">
+      <section class="section section--follow" id="everywhere" aria-labelledby="everywhere-title">
         <div class="wrap">
           <div class="section-head section-head--row">
             <p class="kicker kicker--teal">Everywhere</p>
@@ -849,39 +708,24 @@
             <article class="card reveal">
               <div class="glyph g-teal"><svg aria-hidden="true"><use href="#i-offline" /></svg></div>
               <h3 class="card-title">Offline</h3>
-              <p>Keep any album, playlist, collection, artist or Palette offline. Smart downloads keeps a rotating set you'll want; a full mirror keeps whole libraries.</p>
+              <p>Keep anything offline, let Smart downloads pick what you'll want, or mirror the whole library.</p>
             </article>
             <article class="card reveal">
               <div class="glyph g-sky"><svg aria-hidden="true"><use href="#i-car" /></svg></div>
               <h3 class="card-title">In the car</h3>
-              <p>Android Auto and CarPlay, with Home, Vibes, Library and Downloads. Android Auto takes voice search too.</p>
+              <p>Android Auto and CarPlay, with Home, Vibes, Library and Downloads.</p>
             </article>
             <article class="card reveal">
               <div class="glyph g-gold"><svg aria-hidden="true"><use href="#i-speaker" /></svg></div>
               <h3 class="card-title">Speakers</h3>
               <p>Chromecast on both phones and AirPlay on iPhone. On Android, Sonos and Marantz (HEOS) speakers too.</p>
             </article>
-            <article class="card reveal">
-              <div class="glyph g-lavender"><svg aria-hidden="true"><use href="#i-stealth" /></svg></div>
-              <h3 class="card-title">Stealth mode</h3>
-              <p>Keep some listens out of your history, taste and scrobbles: for three hours, until midnight, or until you turn it off.</p>
-            </article>
-            <article class="card reveal">
-              <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-resume" /></svg></div>
-              <h3 class="card-title">Pick up where you left off</h3>
-              <p>Reopen Lumae within two hours, or as long as you choose, and your last queue is back. On Android, Play in the car or on headphones does it too.</p>
-            </article>
-            <article class="card reveal">
-              <div class="glyph g-rose"><svg aria-hidden="true"><use href="#i-lyrics" /></svg></div>
-              <h3 class="card-title">Lyrics</h3>
-              <p>Synced or plain lyrics from your music server, right over the album art.</p>
-            </article>
           </div>
         </div>
       </section>
 
       <!-- Privacy -->
-      <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <section class="section section--alt" id="privacy" aria-labelledby="privacy-title">
         <div class="wrap">
           <div class="callout callout--split reveal">
             <div class="stack stack--lg">
@@ -902,7 +746,7 @@
                 <div class="glyph g-bronze"><svg aria-hidden="true"><use href="#i-chat" /></svg></div>
                 <h3 class="card-title">AI only if you add it</h3>
                 <p>
-                  Off until you connect your own service. It gets titles, artists, genres, moods and some ratings, never your audio or exact listening times. Once on, it also names your mixes; you can turn that off.
+                  Off until you connect your own service. It never gets your audio or exact listening times.
                 </p>
               </article>
               <article class="card">
@@ -912,6 +756,75 @@
               </article>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- How it works and what you need -->
+      <section class="section how-section" id="how" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker kicker--teal">How it works</p>
+            <h2 id="how-title" class="h2">Three pieces, all of them yours.</h2>
+            <p class="lead">No Lumae server in the middle. Your music and its analysis stay on servers you run.</p>
+          </div>
+          <div class="flow reveal">
+            <article class="flow-node">
+              <span class="tag">Your server</span>
+              <h3>Your music server</h3>
+              <p>Navidrome or Jellyfin keeps your music as it does today. Lumae streams from it and syncs ratings and playlists.</p>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">
+              <svg><use href="#i-arrow" /></svg>
+              <span>your music</span>
+            </div>
+            <article class="flow-node">
+              <span class="tag">Your server</span>
+              <h3>AudioMuse-AI</h3>
+              <p>Listens to every track once and describes its sound. Lumae's plugin, Lumae Analysis, readies that for your phone.</p>
+            </article>
+            <div class="flow-arrow" aria-hidden="true">
+              <svg><use href="#i-arrow" /></svg>
+              <span>how it sounds</span>
+            </div>
+            <article class="flow-node flow-node--you">
+              <span class="tag">Your phone</span>
+              <h3>Lumae</h3>
+              <p>Works out mixes, queues and suggestions on your phone, from that description.</p>
+            </article>
+          </div>
+          <div class="need need--stacked" id="need">
+            <div class="need-head">
+              <h3 class="h3">What you need</h3>
+              <p class="muted">
+                Lumae is for people who already run their own music server. Once AudioMuse-AI has analyzed your library and
+                Lumae Analysis is installed, connecting takes a few minutes; the first import can take longer.
+              </p>
+            </div>
+            <dl class="reqs reqs--grid reveal">
+              <div class="req">
+                <dt>Music server</dt>
+                <dd><strong>Navidrome</strong>, or <strong>Jellyfin 12.0</strong> or newer. Other Subsonic servers, Plex, Emby and Lyrion aren't supported.</dd>
+              </div>
+              <div class="req">
+                <dt>Sound analysis</dt>
+                <dd>
+                  <strong>AudioMuse-AI 3.2 or newer</strong> with the latest <strong>Lumae Analysis</strong> plugin from its catalog. Older
+                  plugin versions work with fewer features; Jellyfin needs 1.6.0 or newer.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Phone</dt>
+                <dd>
+                  <strong>Android 7.0</strong> or newer, or an <strong>iPhone on iOS 16.4</strong> or newer. Phones only, in portrait, in English for now. On iPhone, servers outside your home network need HTTPS.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Optional</dt>
+                <dd>
+                  Your own AI service, cloud or self-hosted; a Last.fm API key for album suggestions; Koito for your listening history.
+                </dd>
+              </div>
+            </dl>
         </div>
       </section>
 
