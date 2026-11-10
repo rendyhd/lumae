@@ -30,8 +30,8 @@
 <p align="center">
   <img src="docs/assets/img/screens/home.webp" width="200" alt="Home: The Pulse, a mix for right now, above search, Quick Vibe and Instant Play">
   <img src="docs/assets/img/screens/now-playing.webp" width="200" alt="Now Playing: large album art, rating and controls, with the queue's sonic path below">
-  <img src="docs/assets/img/screens/discover.webp" width="200" alt="Discover: Discuss with AI, the Explore tools and Albums to discover">
-  <img src="docs/assets/img/screens/vibe.webp" width="200" alt="The Vibe tab: Instant Play and six ways to build a mix around a feeling">
+  <img src="docs/assets/img/screens/discover.webp" width="200" alt="Discover: Discuss with AI and the tools for finding music">
+  <img src="docs/assets/img/screens/vibe.webp" width="200" alt="The Vibe tab: favorite vibes and the tools to build a mix around a feeling">
 </p>
 
 ---
@@ -99,7 +99,7 @@ leads into the next.
 </table>
 
 <p align="center">
-  <img src="docs/assets/img/screens/queue-journey.webp" width="190" alt="The queue: the sonic path and four ways to change where it goes">
+  <img src="docs/assets/img/screens/queue-journey.webp" width="190" alt="The queue: the sonic path, steering and the songs up next">
   <img src="docs/assets/img/screens/mood-compass.webp" width="190" alt="Mood Compass: describe the vibe in a few words">
   <img src="docs/assets/img/screens/album-shelf.webp" width="190" alt="The Album Shelf: one album at a time, large">
   <img src="docs/assets/img/screens/collection.webp" width="190" alt="A collection: whole albums and single tracks in your own order">

@@ -1,0 +1,231 @@
+<!doctype html>
+<!--
+  The 1200×630 share images in docs/assets/img/og/. Open with ?kind=music or
+  ?kind=radio at 1200×630 and capture the page (tools/README.md, "Share images").
+  The phones are the site's own screenshots, so recapture those first.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lumae share image</title>
+    <style>
+      @font-face {
+        font-family: 'Geist';
+        src: url('../../docs/assets/fonts/geist-400.woff2') format('woff2');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'Geist';
+        src: url('../../docs/assets/fonts/geist-400-italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: 'Geist';
+        src: url('../../docs/assets/fonts/geist-500.woff2') format('woff2');
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: 'Geist';
+        src: url('../../docs/assets/fonts/geist-600.woff2') format('woff2');
+        font-weight: 600;
+      }
+      @font-face {
+        font-family: 'Geist Mono';
+        src: url('../../docs/assets/fonts/geist-mono-500.woff2') format('woff2');
+        font-weight: 500;
+      }
+      :root {
+        --bg: #0d0d0f;
+        --text: #f4f3f1;
+        --text-2: #a6a7ab;
+        --accent: #d8a07a;
+        --teal: #7ad0c2;
+        --gold: #e0a93e;
+        --border: #2a2b2e;
+        --bezel: #050506;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Geist', sans-serif;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background:
+          radial-gradient(520px 420px at 960px 300px, rgba(216, 160, 122, 0.1), transparent 70%),
+          var(--bg);
+      }
+      .rings {
+        position: absolute;
+        left: 940px;
+        top: 315px;
+      }
+      .rings span {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transform: translate(-50%, -50%);
+      }
+      .copy {
+        position: absolute;
+        left: 72px;
+        top: 0;
+        bottom: 0;
+        width: 560px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 28px;
+      }
+      .brand img {
+        width: 36px;
+        height: 36px;
+      }
+      .kicker {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: 'Geist Mono', monospace;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-2);
+        margin-bottom: 20px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--dot);
+        box-shadow: 0 0 10px var(--dot);
+      }
+      h1 {
+        font-weight: 600;
+        font-size: 66px;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+        margin-bottom: 26px;
+      }
+      h1 em {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--accent);
+      }
+      .lead {
+        max-width: 500px;
+        font-size: 24px;
+        line-height: 1.42;
+        color: var(--text-2);
+        margin-bottom: 30px;
+      }
+      .chip {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        border: 1px solid var(--chip-border);
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .phone {
+        position: absolute;
+        width: 236px;
+        aspect-ratio: 390 / 844;
+        border-radius: 34px;
+        padding: 6px;
+        background: var(--bezel);
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.09),
+          0 40px 90px -30px rgba(0, 0, 0, 0.9),
+          0 18px 40px -20px rgba(0, 0, 0, 0.7);
+      }
+      .phone img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+      }
+      .phone--back {
+        left: 962px;
+        top: 30px;
+        opacity: 0.94;
+      }
+      .phone--front {
+        left: 752px;
+        top: 70px;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="rings" id="rings"></div>
+      <div class="copy" id="copy"></div>
+      <figure class="phone phone--back"><img id="back" alt="" /></figure>
+      <figure class="phone phone--front"><img id="front" alt="" /></figure>
+    </div>
+    <script>
+      const KINDS = {
+        music: {
+          kicker: 'For people who listen',
+          dot: '#d8a07a',
+          title: 'Rediscover<br />the music you<br /><em>already own</em>.',
+          lead: 'A music player for your own music server. Mixes that flow, queues that never jolt, albums played whole.',
+          chip: 'Beta on Android and iPhone',
+          chipDot: '#7ad0c2',
+          front: 'home',
+          back: 'now-playing',
+        },
+        radio: {
+          kicker: 'Lumae Radio',
+          dot: '#7ad0c2',
+          title: 'Your library,<br /><em>on the air</em>.',
+          lead: 'An always-on radio for a Raspberry Pi, playing stations made from your own music.',
+          chip: 'Beta',
+          chipDot: '#e0a93e',
+          front: 'radio-remote',
+          back: 'radio-why',
+        },
+      };
+      const kind = KINDS[new URLSearchParams(location.search).get('kind')] || KINDS.music;
+      const shots = '../../docs/assets/img/screens/';
+      document.getElementById('front').src = shots + kind.front + '.webp';
+      document.getElementById('back').src = shots + kind.back + '.webp';
+      document.getElementById('copy').innerHTML = `
+        <div class="brand"><img src="../../docs/assets/img/brand/mark.svg" alt="" />Lumae</div>
+        <div class="kicker" style="--dot:${kind.dot}"><span class="dot"></span>${kind.kicker}</div>
+        <h1>${kind.title}</h1>
+        <p class="lead">${kind.lead}</p>
+        <span class="chip" style="--dot:${kind.chipDot};--chip-border:${kind.chipDot}55"><span class="dot"></span>${kind.chip}</span>`;
+      const rings = document.getElementById('rings');
+      for (let r = 120; r <= 1300; r += 70) {
+        const s = document.createElement('span');
+        s.style.width = s.style.height = r * 2 + 'px';
+        s.style.borderColor = `rgba(255,255,255,${Math.max(0.018, 0.07 - r / 26000)})`;
+        rings.appendChild(s);
+      }
+    </script>
+  </body>

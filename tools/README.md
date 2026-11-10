@@ -33,7 +33,15 @@ Then open http://127.0.0.1:8095/. It serves `docs/` the way GitHub Pages does.
 
 Screenshots in `docs/assets/img/screens/` come from the app's design harness
 with made-up music. To replace one, keep the name and size (780×1688 WebP).
+Capture with the browser window exactly 390×844 at 2× and the harness sidebar
+hidden, so the phone fills the window: sheets that open as modals then land on
+the phone, and screens see a phone-sized window. The harness frame draws the
+iPhone status bar; set the clock to 9:41.
+
 `docs/assets/img/og/` holds the 1200×630 images shown when a page is shared.
+They're drawn by `tools/og/og.html` from the screenshots: open it from disk at
+1200×630 with `?kind=music` or `?kind=radio`, capture the page, and save it as a
+JPEG (`og-music.jpg`, `og-radio.jpg`).
 
 ## Publish with GitHub Pages
 
