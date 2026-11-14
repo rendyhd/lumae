@@ -327,6 +327,10 @@ li {
   color: var(--text-2);
   max-width: 38em;
 }
+.lead strong {
+  color: var(--text);
+  font-weight: 600;
+}
 .muted {
   color: var(--text-2);
 }
