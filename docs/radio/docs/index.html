@@ -57,27 +57,25 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- site-header:start -->
-    <header class="site-header">
-      <div class="wrap header-row">
+    <header class="p-header">
+      <div class="wrap">
         <a class="brand" href="../../">
           <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
-            <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
           <span>Lumae</span>
         </a>
-        <nav class="product-tabs" aria-label="Lumae products">
-          <a href="../../" data-product="music"><span class="tab-long">Lumae </span>Music</a>
-          <a href="../../radio/" data-product="radio" aria-current="page"><span class="tab-long">Lumae </span>Radio</a>
+        <nav class="p-nav" aria-label="Lumae">
+          <a href="../../" data-nav="music">Music</a>
+          <a href="../../radio/" data-nav="radio" aria-current="page">Radio</a>
+          <a href="../../guide/" data-nav="guide">Guide</a>
+          <a href="../../changelog/" data-nav="changelog">What’s new</a>
         </nav>
-        <div class="header-actions">
+        <div class="p-header-actions">
           <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
             <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
             <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
           </button>
-          <a class="btn btn--ghost btn--small btn--kofi" href="https://ko-fi.com/rendyhd" aria-label="Support Lumae on Ko-fi">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5h12v5.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8.5Z" /><path d="M16 10.5h1.25a2.75 2.75 0 0 1 0 5.5H16M8 3.5v2M12 3.5v2" /></svg>
-            <span class="kofi-label">Support on Ko-fi</span>
-          </a>
-          <a class="btn btn--primary btn--small" href="../../beta/">Join the app beta</a>
+          <a class="p-cta" href="../../beta/">Join the app beta</a>
         </div>
       </div>
     </header>
@@ -514,7 +512,7 @@ data: {"data":{},"type":"status"}</code></pre>
           <div>
             <a class="brand" href="../../">
               <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
-            <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
               <span>Lumae</span>
             </a>
             <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
@@ -522,9 +520,12 @@ data: {"data":{},"type":"status"}</code></pre>
           <nav aria-labelledby="footer-music">
             <h2 id="footer-music">Lumae Music</h2>
             <ul role="list">
-              <li><a href="../../#how">How it works</a></li>
-              <li><a href="../../#discover">Features</a></li>
+              <li><a href="../../#features">Features</a></li>
+              <li><a href="../../#library">Album Shelf</a></li>
               <li><a href="../../#need">What you need</a></li>
+              <li><a href="../../#setup">Set up</a></li>
+              <li><a href="../../guide/">Guide</a></li>
+              <li><a href="../../changelog/">What’s new</a></li>
               <li><a href="../../beta/">Join the app beta</a></li>
             </ul>
           </nav>
@@ -535,6 +536,7 @@ data: {"data":{},"type":"status"}</code></pre>
               <li><a href="../../radio/docs/#install">Install guide</a></li>
               <li><a href="../../radio/docs/#home-assistant">Home Assistant</a></li>
               <li><a href="../../radio/docs/#api">API</a></li>
+              <li><a href="../../changelog/#lumae-radio">What’s new</a></li>
             </ul>
           </nav>
           <nav aria-labelledby="footer-about">

@@ -69,7 +69,7 @@ leads into the next.
   <tr>
     <td valign="top">
       <h3>Discover what you already have</h3>
-      <p><b>Drift</b> wanders twenty steps away from any song. <b>Sonic Bridge</b> walks between two. <b>Memory Lane</b> brings back songs you loved and stopped playing. <b>Rabbit Hole</b> builds a playlist pick by pick. <b>Search by Recording</b> finds a song playing nearby in your library. With your own AI service, <b>Discuss with AI</b> answers with songs from your library and the <b>AI DJ</b> plans a whole set.</p>
+      <p><b>Wander</b> walks outward from any song, step by step. <b>Sonic Bridge</b> walks between two. <b>Memory Lane</b> brings back songs you loved and stopped playing. <b>Rabbit Hole</b> builds a playlist pick by pick. <b>Search by Recording</b> finds a song playing nearby in your library. With your own AI service, <b>Discuss with AI</b> answers with songs from your library and the <b>AI DJ</b> plans a whole set.</p>
     </td>
     <td valign="top">
       <h3>Build a mix around a feeling</h3>
@@ -126,7 +126,8 @@ Google Play and TestFlight, with their latest automatic update:
 - **Ease loud starts** (Settings → Sound): a loud song comes in gently after a
   quiet ending.
 
-Smaller fixes arrive by themselves; see [Updating the beta](#setup).
+Smaller fixes arrive by themselves; see [Updating the beta](#setup). Every
+build and update is on [What's new](https://lumaemusic.app/changelog/).
 
 Not there yet: a sleep timer for your library (Undertone has its own),
 playback speed, queue reordering, EQ on iPhone, and search or Siri in CarPlay.
@@ -162,6 +163,9 @@ through one.
    both before it changes anything on your phone.
 4. **Listen.** Your library is ready to browse as it arrives. A short guide shows
    you around while the sound analysis syncs.
+
+The [Lumae guide](https://lumaemusic.app/guide/) covers setup step by step, then
+keeping music offline, speakers, the car, widgets, sound, the AI DJ and Undertone.
 
 Tip: if artists show album covers instead of photos, add `deezer` to Navidrome's
 `ND_AGENTS`.

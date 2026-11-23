@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Prepare your music for Undertone · Lumae guide</title>
+    <meta
+      name="description"
+      content="Get focus, study and sleep music ready for Lumae's Undertone: folders, tags, even volume with rsgain, the details spreadsheet and its template, filters and presets."
+    />
+    <link rel="canonical" href="https://lumaemusic.app/guide/undertone/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Prepare your music for Undertone · Lumae guide" />
+    <meta
+      property="og:description"
+      content="Folders, tags, even volume and the details spreadsheet: get focus, study and sleep music ready for Lumae's Undertone."
+    />
+    <meta property="og:url" content="https://lumaemusic.app/guide/undertone/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae on two phones: Home with The Pulse, and Now Playing with large album art." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../assets/fonts/geist-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="p-header">
+      <div class="wrap">
+        <a class="brand" href="../../">
+          <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+          <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="p-nav" aria-label="Lumae">
+          <a href="../../" data-nav="music">Music</a>
+          <a href="../../radio/" data-nav="radio">Radio</a>
+          <a href="../../guide/" data-nav="guide" aria-current="page">Guide</a>
+          <a href="../../changelog/" data-nav="changelog">What’s new</a>
+        </nav>
+        <div class="p-header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="p-cta" href="../../beta/">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker kicker--lavender"><a href="../">Lumae guide</a> · Undertone</p>
+          <h1>Prepare your music for Undertone</h1>
+          <p class="doc-meta">For 1.0.0 (38) on Android and (32) on iPhone · Updated November 11, 2026</p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li><a href="#where">Where everything lives</a></li>
+                <li><a href="#set-aside">1. Set the music aside</a></li>
+                <li><a href="#tags">2. Check the tags</a></li>
+                <li><a href="#volume">3. Even out the volume</a></li>
+                <li><a href="#connect">4. Connect it</a></li>
+                <li><a href="#details">5. Fill in the details</a></li>
+                <li><a href="#fields">Ready-made fields</a></li>
+                <li><a href="#filters">What a filter can do</a></li>
+                <li><a href="#presets">6. Make your presets</a></li>
+                <li><a href="#checklist">Checklist</a></li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose">
+            <p>
+              Undertone plays focus, study and sleep music from one library on a music server, in sessions of its own and off the
+              record. This page takes you from a folder of files to presets. Most of it happens on a computer, once. The short
+              version is in the app: Settings → Undertone → <strong>How to prepare your music</strong>.
+            </p>
+
+            <h2 id="where">Where everything lives</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">What</th><th scope="col">Where it lives</th><th scope="col">How you change it</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>The audio, cover images</td><td>Files your music server reads</td><td>Your file manager</td></tr>
+                  <tr><td>Album, artist, title, track number, ReplayGain</td><td>Tags in those files</td><td>A tag editor</td></tr>
+                  <tr><td>Effect, Style, Vocals, your own fields</td><td>Lumae, not the files</td><td>The phone, a spreadsheet, or the Lumae Analysis page</td></tr>
+                  <tr><td>Presets, categories, groups</td><td>Lumae</td><td>The phone, the Undertone file, or the Lumae Analysis page</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              So you never put “Sleep” or “Rain” into a tag for Undertone to find. Tags say what a track is called; details say
+              what it is for.
+            </p>
+
+            <h2 id="set-aside">1. Set the music aside</h2>
+            <p>Keep the music in one folder, with a folder per album:</p>
+            <pre class="cmd"><code>undertone-music/
+  Sleep Rain/
+    cover.jpg
+    01 First Rain.flac
+    02 Second Rain.flac
+  Deep Focus/
+    cover.jpg
+    01 Long Piece.flac</code></pre>
+            <p>
+              Undertone reads <strong>one library</strong>, so everything you want in it goes under one root folder. Mounting two
+              folders side by side counts as one library.
+            </p>
+            <p>
+              A separate server is the cleanest choice: the music stays out of Lumae's library, Search and mixes, and AudioMuse-AI
+              doesn't analyze it. Navidrome takes a few lines of Docker:
+            </p>
+            <pre class="cmd"><code>services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    ports:
+      - '4533:4533'
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_AUTOIMPORTPLAYLISTS: 'false'
+    volumes:
+      - ./navidrome-data:/data
+      - /path/to/undertone-music:/music:ro</code></pre>
+            <p>
+              Open port 4533 in a browser, create the admin account, and let the first scan finish.
+              <code>ND_AUTOIMPORTPLAYLISTS</code> keeps stray <code>.m3u</code> files from becoming playlists. Jellyfin 12.0 or
+              later works too, with a music library pointed at the same folder.
+            </p>
+            <p>
+              A second library on Lumae's own server works, and so does Lumae's own library: Undertone sessions stay off the record
+              either way. Only a separate library or server keeps the tracks out of Lumae's mixes.
+            </p>
+
+            <h2 id="tags">2. Check the tags</h2>
+            <p>Your music server builds albums from tags, not folders.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Tag</th><th scope="col">Needed?</th><th scope="col">What it does</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Album, album artist</td><td>Yes</td><td>The same on every track of an album, or the album splits</td></tr>
+                  <tr><td>Title, artist</td><td>Yes</td><td>Shown everywhere, and used to find tracks on import</td></tr>
+                  <tr><td>Track number</td><td>Yes</td><td>Used to find tracks on import, and sets the album's order</td></tr>
+                  <tr><td>Genre</td><td>Optional</td><td>Fills Genre on the album, once</td></tr>
+                  <tr><td>BPM</td><td>Optional</td><td>Fills BPM on the track, once. Leave it off sounds without a beat</td></tr>
+                  <tr><td>ReplayGain</td><td>Recommended</td><td>Evens out the volume (<a href="#volume">step 3</a>)</td></tr>
+                  <tr><td>MusicBrainz ID</td><td>Optional</td><td>Finds a track again if its other tags change</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Name each album's image <code>cover.jpg</code>.</p>
+            <p>
+              <strong>Finish the tags before you fill in details.</strong> Navidrome builds its IDs from album, album artist,
+              release date, disc, track number and title, so changing them gives tracks new IDs, and your details stay with the
+              old ones. If you have to change them later:
+            </p>
+            <ol class="doc-steps">
+              <li>In Lumae: Settings → Undertone → <strong>Export Undertone file</strong>.</li>
+              <li>Change the tags and let the server scan.</li>
+              <li>
+                In Lumae: <strong>Read the library again</strong>, then <strong>Import</strong> the file. Lumae finds the music by
+                path and tags.
+              </li>
+            </ol>
+
+            <h2 id="volume">3. Even out the volume</h2>
+            <p>
+              Undertone reads ReplayGain tags and turns loud tracks down. It never turns a track up, and a track with no tag plays
+              as it is. Sleep and nature recordings can differ by 30 dB or more, so this step matters more than it does for albums
+              of music.
+            </p>
+            <p>
+              <a href="https://github.com/complexlogic/rsgain">rsgain</a> writes the tags and leaves the audio alone. Its usual
+              target of −18 LUFS only pulls down what's above it. In a library only Undertone uses, a lower target brings the loud
+              tracks down to the quiet ones. Save this as <code>undertone-rsgain.ini</code>:
+            </p>
+            <pre class="cmd"><code>[Global]
+TargetLoudness=-30</code></pre>
+            <p>Then run it on the folder. Try one album first:</p>
+            <pre class="cmd"><code>rsgain easy -p undertone-rsgain.ini "/path/to/undertone-music"</code></pre>
+            <p>
+              Everything plays quieter afterward, so raise the phone's volume. Tracks quieter than −30 LUFS stay quieter than the
+              rest. Don't use a low target on a library Lumae also plays: Lumae and other apps read the same tags.
+            </p>
+
+            <h2 id="connect">4. Connect it</h2>
+            <ol class="doc-steps">
+              <li>Settings → Undertone → <strong>Use Undertone</strong>.</li>
+              <li>
+                Choose the library, or <strong>On another server</strong> and enter its address and sign-in. The sign-in stays on
+                this phone.
+              </li>
+              <li>Lumae reads the albums and tracks.</li>
+            </ol>
+            <p>
+              After you change files, let the server scan them, then choose <strong>Read the library again</strong>. Your details
+              stay.
+            </p>
+
+            <h2 id="details">5. Fill in the details</h2>
+            <p>
+              Details go in through the app: Settings → Undertone → <strong>Import</strong> takes a spreadsheet or an Undertone
+              file. You don't need Lumae Analysis. With sync on, its Undertone page edits the same details in a table, and it
+              imports and exports the Undertone file, not the spreadsheet.
+            </p>
+            <ol class="doc-steps">
+              <li>
+                Settings → Undertone → <strong>Spreadsheet template</strong>. Share the file to a computer. It lists every album
+                and track, with the values already set.
+              </li>
+              <li>Fill in what you care about. One row per album is often enough.</li>
+              <li>Save it as <strong>CSV UTF-8</strong> and get it onto the phone.</li>
+              <li>
+                Settings → Undertone → <strong>Import</strong>, then check what was found and import. Undo puts everything back.
+              </li>
+            </ol>
+            <div class="release-card">
+              <div class="release-head">
+                <p class="release-name">Blank template <span class="release-id">CSV</span></p>
+                <p class="release-meta">The columns and two example rows, to see the format before you start</p>
+              </div>
+              <a
+                class="btn btn--primary btn--small"
+                href="../../assets/undertone/undertone-details-template.csv"
+                download="undertone-details-template.csv"
+                >Download template</a
+              >
+            </div>
+            <p>
+              Replace its two example rows, or better, start from the app's Spreadsheet template, which already holds your music.
+              The blank one looks like this:
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">kind</th><th scope="col">artist</th><th scope="col">album</th><th scope="col">title</th>
+                    <th scope="col">track</th><th scope="col">seconds</th><th scope="col">id</th><th scope="col">BPM</th>
+                    <th scope="col">Style</th><th scope="col">Genre</th><th scope="col">Effect</th><th scope="col">Vocals</th>
+                    <th scope="col">Loops seamlessly</th><th scope="col">Sound</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>album</td><td>Album artist</td><td>Album name</td><td></td><td></td><td></td><td></td><td></td>
+                    <td>Continuous</td><td>Nature sounds</td><td><code>Sleep|Mask noise</code></td><td>None</td><td></td>
+                    <td><code>Rain|Thunder</code></td>
+                  </tr>
+                  <tr>
+                    <td>track</td><td>Track artist</td><td>Album name</td><td>Track title</td><td>1</td><td>1800</td><td></td>
+                    <td>60</td><td></td><td></td><td></td><td></td><td>yes</td><td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>The rules:</p>
+            <ul>
+              <li>
+                <strong>An album's values reach its tracks</strong> until a track has its own. A track's value replaces the album's
+                for that field; it doesn't add to it.
+              </li>
+              <li><strong>An empty cell changes nothing.</strong> A spreadsheet can't clear a value; do that on the phone.</li>
+              <li><strong><code>|</code> separates several values:</strong> <code>Sleep|Mask noise</code>.</li>
+              <li>
+                <strong>A new column becomes a new field, and every field can filter.</strong> It's a tags field if any cell in the
+                column holds a <code>|</code>, a number field if every filled cell is a number (<code>15</code>,
+                <code>12.5</code>), and text otherwise. Number fields filter by range; the others by value. Choose a column's kind
+                by how you'll want to filter it: <code>Calm|Serene</code> lets you ask for either or both, and <code>15</code> lets
+                you ask for 10 to 30. The template's <strong>Sound</strong> column is one of these.
+              </li>
+              <li>
+                <strong>Keep the first columns as they are</strong> (<code>kind</code>, <code>artist</code>, <code>album</code>,
+                <code>title</code>, <code>track</code>, <code>seconds</code>, <code>id</code>). They're how Lumae finds the music:
+                album rows by album and artist; track rows by artist, album, title and track number, with the length within 2
+                seconds.
+              </li>
+              <li><strong>Not found isn't lost.</strong> Rows Lumae can't find are kept and tried again after each library read.</li>
+              <li>Comma, semicolon and tab separators all work.</li>
+            </ul>
+
+            <h3 id="fields">Ready-made fields</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Column</th><th scope="col">Kind</th><th scope="col">Values</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>BPM</td><td>Number, or a range like <code>55–65</code> on albums</td><td></td></tr>
+                  <tr><td>Style</td><td>Tags</td><td>Your own</td></tr>
+                  <tr><td>Genre</td><td>Tags</td><td>Replaces what the server filled in</td></tr>
+                  <tr><td>Effect</td><td>Tags</td><td>Calm, Focus, Sleep, Mask noise, or your own</td></tr>
+                  <tr><td>Vocals</td><td>One of</td><td>None, Wordless, Lyrics</td></tr>
+                  <tr><td>Loops seamlessly</td><td>Yes or no, tracks only</td><td><code>yes</code>, <code>no</code></td></tr>
+                  <tr><td>Brainwave band</td><td>One of, hidden until you turn it on in Fields</td><td>Delta, Theta, Alpha, Beta</td></tr>
+                  <tr><td>Noise color</td><td>One of, tracks only, hidden until you turn it on in Fields</td><td>White, Pink, Brown</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 id="filters">What a filter can do</h3>
+            <p>
+              In Undertone's library, Tracks → Filter shows every field with the values in it, and how many tracks each one would
+              find. Choices that would find nothing stay out of the way.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">To find</th><th scope="col">Do this</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Tracks with this value</td><td>Tap it</td></tr>
+                  <tr><td>Tracks with either value</td><td>Tap both</td></tr>
+                  <tr><td>Tracks with both values (tags)</td><td>Tap both, then choose All of these</td></tr>
+                  <tr><td>Everything except a value</td><td>Tap it twice</td></tr>
+                  <tr><td>A value, without another</td><td>Tap one once and the other twice: Sound: Rain, not Thunder</td></tr>
+                  <tr><td>A span of numbers, like BPM</td><td>Enter From, To, or both</td></tr>
+                  <tr><td>Long tracks, or short ones</td><td>Length, in minutes. It comes from the file, so you don't tag it</td></tr>
+                  <tr><td>What still needs tagging</td><td>Not set</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Different fields narrow each other: Effect: Sleep and Vocals: None finds tracks with both. A filter can't ask for one
+              field or another (Effect: Sleep or Vocals: None); make a tag for that if you want it. Play what matches, or save it as
+              a preset, and change a preset's filter from the preset.
+            </p>
+            <p>
+              <strong>Don't go by titles.</strong> Sleep and nature albums are often titled for search. Tracks called “Loop for 8
+              hours” can be two-minute clips that fade out, and a track called “Wind” can be music. Listen before you set Loops
+              seamlessly.
+            </p>
+
+            <h2 id="presets">6. Make your presets</h2>
+            <p>Open Undertone and make a preset from an album, a track, a group or a filter.</p>
+            <ul>
+              <li>
+                <strong>Gapless</strong> suits long pieces and music made to run together. Between clips that cut off, you hear the
+                jump.
+              </li>
+              <li>
+                <strong>Fade</strong> overlaps tracks by 6 seconds. Short clips often fade in and out on their own, and Fade fills
+                most of those dips. It also avoids the short gap Gapless can leave when sample rates change.
+              </li>
+              <li><strong>Timer:</strong> fade out over 30 seconds to 15 minutes, or finish the track.</li>
+              <li><strong>Filter presets</strong> pick up new music on their own, at the start of each round.</li>
+            </ul>
+            <p>
+              Export the Undertone file now and then. It keeps your details and presets if you change phones or servers.
+            </p>
+
+            <h2 id="checklist">Checklist</h2>
+            <ul>
+              <li>One root folder, a folder per album, <code>cover.jpg</code> in each</li>
+              <li>Album, album artist, title and track number on every track</li>
+              <li>ReplayGain tags written</li>
+              <li>Library on your music server, or a separate server, scanned</li>
+              <li>Undertone on, library read</li>
+              <li>Template filled in, saved as CSV UTF-8, imported</li>
+              <li>Presets made, Undertone file exported</li>
+            </ul>
+            <p class="doc-source">
+              Back to the <a href="../#undertone">Lumae guide</a>, which covers turning Undertone on, the timer and alarms.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../../">
+              <img class="only-dark" src="../../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+              <img class="only-light" src="../../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../../#features">Features</a></li>
+              <li><a href="../../#library">Album Shelf</a></li>
+              <li><a href="../../#need">What you need</a></li>
+              <li><a href="../../#setup">Set up</a></li>
+              <li><a href="../../guide/">Guide</a></li>
+              <li><a href="../../changelog/">What’s new</a></li>
+              <li><a href="../../beta/">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../../radio/">Overview</a></li>
+              <li><a href="../../radio/docs/#install">Install guide</a></li>
+              <li><a href="../../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../../radio/docs/#api">API</a></li>
+              <li><a href="../../changelog/#lumae-radio">What’s new</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+              <li><a href="https://ko-fi.com/rendyhd">Support on Ko-fi</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>

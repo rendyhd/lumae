@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>What’s new in Lumae</title>
+  <subtitle>Lumae beta builds and updates, and Lumae Radio releases.</subtitle>
+  <id>https://lumaemusic.app/changelog/</id>
+  <link rel="self" type="application/atom+xml" href="https://lumaemusic.app/changelog/feed.xml" />
+  <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/" />
+  <updated>2026-11-13T00:00:00Z</updated>
+  <author><name>Lumae</name></author>
+  <icon>https://lumaemusic.app/assets/img/brand/favicon-32.png</icon>
+  <entry>
+    <title>Lumae Radio · 0.6.13</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-13</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-13" />
+    <updated>2026-11-13T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 13, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.13&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stop, Pause, Skip and Volume answer at once.&lt;/strong&gt; While the radio downloaded songs ahead, a press could wait up to half a minute. Playback now goes first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A slow clock check no longer pauses the music.&lt;/strong&gt; The radio keeps playing when it can’t read the time for a moment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A list moves on from a song that won’t play.&lt;/strong&gt; After three tries the radio passes over the song, and it downloads a damaged file again.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A library that shrinks by more than half is held.&lt;/strong&gt; The radio keeps the music it has and says so. Press Sync now again to accept the smaller library; the automatic sync never accepts it.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 10, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-10</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-10" />
+    <updated>2026-11-10T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Update for Android 1.0.0 (38) and iPhone 1.0.0 (32)&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-10-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI DJ.&lt;/strong&gt; In Discuss with AI, switch from Quick picks to AI DJ and talk about the moment: who’s there, how it should feel, what to leave out. The DJ asks a question or two, proposes a mix from your library, and plays it as a live set you can keep steering from the queue. Needs your own AI service.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Undertone plays as one session.&lt;/strong&gt; One player for a session, with its loop, details and stars. Stars sync with Undertone’s music server, track rows show the album and tags, and the library is a tap away.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-10-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A song you start stays in charge.&lt;/strong&gt; The songs queued after a song you start stay closer to it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Undertone’s filter&lt;/strong&gt; hides choices that would find nothing, and categories with the same name fold into one.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A repeating track keeps playing&lt;/strong&gt; in Undertone, and a preset you tap after its session ended starts again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-10-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;In the car, a song your music server won’t stream plays from downloads when it’s kept offline.&lt;/li&gt;
+&lt;li&gt;Moving Undertone’s library never deletes the details you added.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 7, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-07</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-07" />
+    <updated>2026-11-07T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (38) on Google Play, iPhone 1.0.0 (32) on TestFlight&lt;/p&gt;
+&lt;p&gt;On Android, this build also brings everything in the iPhone’s October 27 build below, and on a speaker the volume buttons move by the step you choose in Settings.&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-07-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Undertone.&lt;/strong&gt; Focus, study and sleep music, kept apart from your library: pick an album, folder or track and it plays on repeat, with presets in categories, a timer and an alarm. The alarm needs Android’s alarm permission, or iOS 26 or later on iPhone. Undertone is always off the record.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home-screen widgets.&lt;/strong&gt; The Lumae Radio widget on Android and iPhone (iOS 17 or later), and a Now playing widget for Lumae itself on Android.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Search the words.&lt;/strong&gt; Find a track by a line you remember, and start it at that line when its lyrics are synced. When AudioMuse-AI has analyzed lyrics, Search also finds songs about what you type, and Mood Compass and Discuss with AI use it too.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sonic Bridge&lt;/strong&gt; plays a path from one song to another. Choose its length and route, swap or pin a stop, and save the path as a playlist or a journey.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wander&lt;/strong&gt; (formerly Drift in Discover) walks outward from one track, says how far each step goes, and can keep going from the last song.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rabbit Hole&lt;/strong&gt; deals six choices as covers, in lanes for direction, mood and era, and lets you go back to an earlier track.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UPnP/DLNA speakers&lt;/strong&gt; on Android, next to Sonos and Marantz: TVs, streamers, receivers, Kodi. Mark speakers as favorites or hide them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ease loud starts.&lt;/strong&gt; When a quiet ending runs into a much louder opening, the next song comes in lower and rises to its level after the fade. Settings → Sound.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playlists sync by themselves&lt;/strong&gt; whenever Lumae syncs, sets up or opens.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-07-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Offline means downloaded.&lt;/strong&gt; With Offline mode on, lists, search, suggestions and the Vibe tools show only songs on this phone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Downloads&lt;/strong&gt; stop before the phone’s storage fills, every downloaded album keeps its cover, and changing mirror quality swaps files without a gap.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home has a speaker button&lt;/strong&gt;, so you can choose a speaker before choosing music.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sonic DNA and the Sonic Fingerprint&lt;/strong&gt; draw a radar and a chart that follow the sliders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quick Vibe&lt;/strong&gt; opens as a sheet, and every sheet closes with a swipe down.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On Android&lt;/strong&gt;, tapping the media notification opens the player.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-07-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A resumed queue keeps getting songs, for whatever it was playing.&lt;/li&gt;
+&lt;li&gt;A Back by accident keeps what you were building: tool pages, radio stations and Undertone presets.&lt;/li&gt;
+&lt;li&gt;A cover changed on your music server replaces the one Lumae saved.&lt;/li&gt;
+&lt;li&gt;While casting to a UPnP/DLNA speaker, Next moves one track and the screen stays lit.&lt;/li&gt;
+&lt;li&gt;The radio remote’s clock no longer jumps back.&lt;/li&gt;
+&lt;li&gt;Android Auto no longer shows an error when a second tap replaces the first.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.12</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-12</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-12" />
+    <updated>2026-11-07T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 7, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.12&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The remote’s clock stays put.&lt;/strong&gt; While the radio filled its queue or prepared a station, the phone’s timeline could jump back. The radio now says where the song is right now.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.11</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-11</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-11" />
+    <updated>2026-11-06T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 6, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.11&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;One song, however many copies.&lt;/strong&gt; A song you own on several albums counts as one song, even when the tags spell it differently. Once it plays, every copy rests.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Songs on many albums still come round more often&lt;/strong&gt;, so the songs you own most stay on the air.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ban and Rest follow the song&lt;/strong&gt; to every copy on that station. Favor and Less still apply to the one track.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.10</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-10</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-10" />
+    <updated>2026-11-04T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 4, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.10&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check a station’s songs.&lt;/strong&gt; The station editor deals 10 songs with clips. Answer Keep, Ban or Skip, and the radio shows what it guessed and why it asked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loud starts come in gently&lt;/strong&gt;: up to 6 dB lower, rising over 8 seconds after the fade. Preferences → SmoothFade → Ease loud starts. Party mode leaves it off.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Songs between two regions play again.&lt;/strong&gt; A song in two of a station’s regions counts by whichever is most due.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shuffle weighs sound&lt;/strong&gt;, not only how well two songs fade.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The radio says why a Vibe or collection has no music&lt;/strong&gt;, and names each music server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The album year&lt;/strong&gt; reaches the remote and the home-screen widget.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · October 27, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-10-27</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-10-27" />
+    <updated>2026-10-27T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;iPhone 1.0.0 (30) on TestFlight, and an update the same day&lt;/p&gt;
+&lt;p&gt;Android got these with 1.0.0 (38).&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-10-27-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Journeys.&lt;/strong&gt; Put albums in an order and play them chapter by chapter. Grow a journey with new releases, keep the next chapter offline, and pick it up with Continue journey in the car. Journeys sync between phones with Lumae Analysis 1.9.0 or newer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lyrics on Now Playing&lt;/strong&gt;, with the cover shrunk into a header row.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Volume leveling.&lt;/strong&gt; Quiet, Normal or Loud in Settings → Sound, with album gain over whole albums. Lumae reads loudness from Lumae Analysis, ReplayGain tags or Jellyfin. Casting says it isn’t leveled.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lumae Radio from the phone.&lt;/strong&gt; Play an album, playlist or collection on the radio from its sheet, and tune the radio’s Parametric EQ and Room tuning from the remote.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-10-27-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fades avoid two singers at once&lt;/strong&gt; when lyrics are synced.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comfort and Momentum mixes&lt;/strong&gt; order songs by tempo and key.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every replay sounds different.&lt;/strong&gt; A single, album or vibe continues differently each time, and songs heard in the last four hours rank lower everywhere.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sync status&lt;/strong&gt; opens with the health of your servers and the last sync.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-10-27-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Plays heard with the screen locked reach your music server.&lt;/li&gt;
+&lt;li&gt;A song whose clock freezes while playing recovers by itself on iPhone.&lt;/li&gt;
+&lt;li&gt;AirPlay plays the music, never a video of it.&lt;/li&gt;
+&lt;li&gt;The Album Shelf and Artist Shelf open with their art drawn.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.8</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-8</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-8" />
+    <updated>2026-10-27T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;October 27, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.8&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Smoother song changes.&lt;/strong&gt; Among the songs a station would play next anyway, it picks the one that fades best from the song before.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Calm hours stay calm, not silent.&lt;/strong&gt; A station’s energy margin follows its own range of songs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No more near-silent starts.&lt;/strong&gt; A station passes over a song whose first 30 seconds are near silence. Lists still play every song.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cache fills leave room on the Wi-Fi&lt;/strong&gt;, so the remote stays quick while they run.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.7</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-7</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-7" />
+    <updated>2026-10-25T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;October 25, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.7&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Parametric EQ.&lt;/strong&gt; Shape the radio’s sound for your speakers and room: presets of up to 10 filters, a response graph, and Compare. Import AutoEq, Equalizer APO or REW files. The EQ never makes the radio louder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Room tuning.&lt;/strong&gt; With a USB measurement microphone on the radio, Room tuning measures your speakers at your seat and makes a preset that cuts the room’s bass peaks. The radio keeps no recording.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Signing in again.&lt;/strong&gt; When a session ends, the radio’s page asks you to sign in, and the app’s remote signs in again by itself.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+</feed>

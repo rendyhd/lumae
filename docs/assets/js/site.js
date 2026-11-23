@@ -1,4 +1,4 @@
-/* lumaemusic.app: theme, header, reveal and the small explainers on each page.
+/* lumaemusic.app: theme, the path's stops and the small explainers on each page.
    No dependencies, no network requests. Every demo is an illustration with
    made-up songs; the page reads fine without this script. */
 (function () {
@@ -26,16 +26,6 @@
     var el = document.createElementNS(SVG_NS, name);
     for (var k in attrs) el.setAttribute(k, attrs[k]);
     return el;
-  }
-  // Small deterministic random generator so a demo looks the same on every visit.
-  function mulberry32(seed) {
-    return function () {
-      seed |= 0;
-      seed = (seed + 0x6d2b79f5) | 0;
-      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
   }
   // Calls start when el scrolls into view and stop when it leaves.
   function whileVisible(el, start, stop, threshold) {
@@ -121,294 +111,6 @@
   var systemTheme = window.matchMedia('(prefers-color-scheme: light)');
   if (systemTheme.addEventListener) systemTheme.addEventListener('change', syncThemeUi);
   syncThemeUi();
-
-  /* ---------- Header ---------- */
-
-  var header = $('.site-header');
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle('is-scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* ---------- Hero rings rest while off screen ---------- */
-
-  var hero = $('.hero');
-  if (hero && $('.hero-rings', hero)) {
-    whileVisible(
-      hero,
-      function () {
-        hero.classList.remove('is-offscreen');
-      },
-      function () {
-        hero.classList.add('is-offscreen');
-      },
-      0,
-    );
-  }
-
-  /* ---------- Reveal on scroll ---------- */
-
-  // Content is only hidden once this runs (see .reveal-armed in site.css),
-  // so nothing disappears if the script is blocked.
-  var reveals = $all('.reveal');
-  if ('IntersectionObserver' in window && !reduceMotion.matches && reveals.length) {
-    var revealer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            revealer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -6% 0px', threshold: 0.06 },
-    );
-    reveals.forEach(function (el) {
-      var box = el.getBoundingClientRect();
-      // Whatever is already on screen stays put; the rest rises in.
-      if (box.top < window.innerHeight && box.bottom > 0) el.classList.add('is-visible');
-      else revealer.observe(el);
-    });
-    root.classList.add('reveal-armed');
-  }
-
-  /* ---------- Anti-shuffle map ---------- */
-
-  function initShuffleDemo(panel) {
-    var svg = $('svg', panel);
-    var pathLayer = $('.paths', svg);
-    var dotLayer = $('.dots', svg);
-    var avgOut = $('[data-out="avg"]', panel);
-    var maxOut = $('[data-out="max"]', panel);
-    var avgBar = $('[data-bar="avg"]', panel);
-    var maxBar = $('[data-bar="max"]', panel);
-    var caption = $('[data-out="caption"]', panel);
-    var modeButtons = $all('[data-mode]', panel);
-    var W = 600;
-    var H = 380;
-    var PAD = 30;
-    var DIAG = Math.sqrt(W * W + H * H);
-    var seed = 11;
-    var mode = 'shuffle';
-    var points = [];
-    var shuffleRand = mulberry32(97);
-    var touched = false;
-
-    function gauss(rand) {
-      var u = 1 - rand();
-      var v = rand();
-      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-    }
-
-    function makePoints() {
-      var rand = mulberry32(seed);
-      // Five loose groups of similar-sounding songs, spread over the map.
-      var spots = [
-        [0.14, 0.28],
-        [0.36, 0.74],
-        [0.55, 0.3],
-        [0.78, 0.7],
-        [0.88, 0.22],
-      ];
-      var clusters = spots.map(function (s) {
-        return {
-          x: PAD + (s[0] + (rand() - 0.5) * 0.12) * (W - 2 * PAD),
-          y: PAD + (s[1] + (rand() - 0.5) * 0.16) * (H - 2 * PAD),
-        };
-      });
-      points = [];
-      for (var i = 0; i < 20; i++) {
-        var cl = clusters[i % clusters.length];
-        var x = Math.min(W - PAD, Math.max(PAD, cl.x + gauss(rand) * 30));
-        var y = Math.min(H - PAD, Math.max(PAD, cl.y + gauss(rand) * 30));
-        // Energy follows the horizontal axis loosely, so color shows the jumps.
-        var energy = Math.min(1, Math.max(0, (x - PAD) / (W - 2 * PAD) + gauss(rand) * 0.08));
-        points.push({ x: x, y: y, energy: energy });
-      }
-    }
-
-    function dist(a, b) {
-      return Math.hypot(points[a].x - points[b].x, points[a].y - points[b].y);
-    }
-
-    function lumaeOrder() {
-      // Nearest neighbor from the opener, then 2-opt to iron out crossings:
-      // the same idea as the app's anti-shuffle, without its extra signals.
-      var n = points.length;
-      var order = [0];
-      var used = { 0: true };
-      while (order.length < n) {
-        var last = order[order.length - 1];
-        var best = -1;
-        var bestD = Infinity;
-        for (var j = 0; j < n; j++) {
-          if (used[j]) continue;
-          var d = dist(last, j);
-          if (d < bestD) {
-            bestD = d;
-            best = j;
-          }
-        }
-        used[best] = true;
-        order.push(best);
-      }
-      var improved = true;
-      var guard = 0;
-      while (improved && guard++ < 50) {
-        improved = false;
-        for (var i = 1; i < n - 1; i++) {
-          for (var k = i + 1; k < n; k++) {
-            var a = order[i - 1];
-            var b = order[i];
-            var c = order[k];
-            var before = dist(a, b);
-            var after = dist(a, c);
-            if (k + 1 < n) {
-              var e = order[k + 1];
-              before += dist(c, e);
-              after += dist(b, e);
-            }
-            if (after + 0.01 < before) {
-              var mid = order.slice(i, k + 1).reverse();
-              order.splice.apply(order, [i, mid.length].concat(mid));
-              improved = true;
-            }
-          }
-        }
-      }
-      return order;
-    }
-
-    function shuffledOrder() {
-      var rest = [];
-      for (var i = 1; i < points.length; i++) rest.push(i);
-      for (var j = rest.length - 1; j > 0; j--) {
-        var r = Math.floor(shuffleRand() * (j + 1));
-        var t = rest[j];
-        rest[j] = rest[r];
-        rest[r] = t;
-      }
-      return [0].concat(rest);
-    }
-
-    function energyColor(e) {
-      if (e < 0.25) return 'var(--sky)';
-      if (e < 0.5) return 'var(--teal)';
-      if (e < 0.75) return 'var(--gold)';
-      return 'var(--accent)';
-    }
-
-    function drawDots() {
-      dotLayer.textContent = '';
-      points.forEach(function (p, i) {
-        dotLayer.appendChild(
-          svgEl('circle', {
-            class: 'node',
-            cx: p.x.toFixed(1),
-            cy: p.y.toFixed(1),
-            r: i === 0 ? 7 : 5.5,
-            fill: energyColor(p.energy),
-          }),
-        );
-      });
-      var s = points[0];
-      dotLayer.appendChild(svgEl('circle', { class: 'start', cx: s.x.toFixed(1), cy: s.y.toFixed(1), r: 13 }));
-      var label = svgEl('text', {
-        x: s.x.toFixed(1),
-        y: (s.y < 60 ? s.y + 36 : s.y - 22).toFixed(1),
-        'text-anchor': 'middle',
-      });
-      label.textContent = 'first song';
-      dotLayer.appendChild(label);
-    }
-
-    function draw() {
-      var order = mode === 'lumae' ? lumaeOrder() : shuffledOrder();
-      var d = '';
-      var total = 0;
-      var max = 0;
-      order.forEach(function (idx, i) {
-        var p = points[idx];
-        d += (i ? ' L' : 'M') + p.x.toFixed(1) + ' ' + p.y.toFixed(1);
-        if (i) {
-          var step = dist(order[i - 1], idx);
-          total += step;
-          if (step > max) max = step;
-        }
-      });
-      pathLayer.textContent = '';
-      var path = svgEl('path', { class: 'path path--' + mode, d: d });
-      pathLayer.appendChild(path);
-      if (!reduceMotion.matches && path.getTotalLength) {
-        var len = path.getTotalLength();
-        path.style.strokeDasharray = len + ' ' + len;
-        path.style.strokeDashoffset = String(len);
-        path.getBoundingClientRect();
-        path.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
-        path.style.strokeDashoffset = '0';
-      }
-      var avg = total / (order.length - 1);
-      var avgPct = Math.round((avg / DIAG) * 100);
-      var maxPct = Math.round((max / DIAG) * 100);
-      avgOut.textContent = avgPct + '%';
-      maxOut.textContent = maxPct + '%';
-      avgBar.style.setProperty('--v', Math.min(100, avgPct * 1.6) + '%');
-      maxBar.style.setProperty('--v', Math.min(100, maxPct * 1.6) + '%');
-      caption.textContent =
-        mode === 'lumae'
-          ? 'Lumae: each song steps to a close neighbor, so the sound changes gradually.'
-          : 'Random shuffle: the next song can come from anywhere, so the sound lurches.';
-    }
-
-    function setMode(next) {
-      mode = next;
-      modeButtons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-mode') === mode));
-      });
-      draw();
-    }
-
-    modeButtons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        touched = true;
-        setMode(btn.getAttribute('data-mode'));
-      });
-    });
-    var again = $('[data-action="new-songs"]', panel);
-    if (again) {
-      again.addEventListener('click', function () {
-        touched = true;
-        seed += 1;
-        makePoints();
-        drawDots();
-        draw();
-      });
-    }
-    makePoints();
-    drawDots();
-    if (reduceMotion.matches) {
-      setMode('lumae');
-      return;
-    }
-    // Show the random order first, then let Lumae sort it once, in view.
-    setMode('shuffle');
-    var sorted = false;
-    whileVisible(
-      panel,
-      function () {
-        if (sorted || touched) return;
-        sorted = true;
-        setTimeout(function () {
-          if (!touched) setMode('lumae');
-        }, 1800);
-      },
-      function () {},
-      0.5,
-    );
-  }
 
   /* ---------- Mood Compass typing ---------- */
 
@@ -983,7 +685,7 @@
     activate(selected || tabs[0], false);
   }
 
-  /* ---------- Privacy page contents ---------- */
+  /* ---------- Contents of a document page ---------- */
 
   function initToc(toc) {
     var details = $('details', toc);
@@ -1002,7 +704,10 @@
     links.forEach(function (a) {
       map[a.getAttribute('href').slice(1)] = a;
     });
-    var headings = $all('.prose h2[id]');
+    // Every heading the contents link to, in page order (nested lists included).
+    var headings = $all('.prose [id]').filter(function (el) {
+      return map[el.id];
+    });
     if (!headings.length) return;
     var queued = false;
     function update() {
@@ -1028,7 +733,36 @@
     update();
   }
 
-  $all('[data-demo="shuffle"]').forEach(initShuffleDemo);
+  // The song line: the same twenty songs in Lumae's order or in random order.
+  function initLine(fig) {
+    var buttons = $all('button[data-mode]', fig);
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.getAttribute('data-mode');
+        fig.setAttribute('data-mode', mode);
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+      });
+    });
+  }
+
+  // A link to a stop on the path (#vibe, #sound) opens that stop.
+  function openTargetStop() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (!target || !target.classList.contains('p-stop')) return;
+    var details = $('details', target);
+    if (details && !details.open) {
+      details.open = true;
+      target.scrollIntoView();
+    }
+  }
+  window.addEventListener('hashchange', openTargetStop);
+  openTargetStop();
+
+  $all('[data-demo="line"]').forEach(initLine);
   $all('[data-demo="compass"]').forEach(initCompass);
   $all('[data-demo="radar"]').forEach(initRadar);
   $all('[data-demo="energy"]').forEach(initEnergy);

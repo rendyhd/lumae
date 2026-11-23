@@ -1,0 +1,3 @@
+kind,artist,album,title,track,seconds,id,BPM,Style,Genre,Effect,Vocals,Loops seamlessly,Sound
+album,Album artist,Album name,,,,,,Continuous,Nature sounds,Sleep|Mask noise,None,,Rain|Thunder
+track,Track artist,Album name,Track title,1,1800,,60,,,,,yes,

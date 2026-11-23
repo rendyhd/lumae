@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Builds the parts of lumaemusic.app that are derived from other files:
 //   - copies the shared header and footer from docs/index.html into every
-//     other page, adjusting relative links and the current product tab;
+//     other page, adjusting relative links and the current header link;
 //   - renders docs/privacy/index.html from PRIVACY.md;
+//   - renders docs/changelog/index.html and its Atom feed from CHANGELOG.md;
 //   - renders docs/404.html.
 // The site itself needs no build step: the output is committed.
 //
@@ -41,7 +42,7 @@ function localize(block, { prefix, current }) {
   out = out.replace(/ aria-current="page"/g, '');
   if (current) {
     out = out.replace(
-      new RegExp(`(<a [^>]*data-product="${current}")`),
+      new RegExp(`(<a [^>]*data-nav="${current}")`),
       '$1 aria-current="page"',
     );
   }
@@ -60,7 +61,7 @@ function withSharedBlocks(html, file, options, source) {
   return result;
 }
 
-/* ---------- Markdown (only what PRIVACY.md uses) ---------- */
+/* ---------- Markdown (only what PRIVACY.md and CHANGELOG.md use) ---------- */
 
 function escapeHtml(text) {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -95,7 +96,8 @@ function inline(text) {
   return out;
 }
 
-function markdown(md) {
+// idPrefix keeps heading ids unique when several pieces share one page.
+function markdown(md, idPrefix = '') {
   const lines = md.replace(/\r\n/g, '\n').split('\n');
   const html = [];
   const headings = [];
@@ -106,9 +108,10 @@ function markdown(md) {
   let meta = '';
 
   const uniqueId = (text) => {
-    let id = slug(text) || 'section';
+    const base = idPrefix + (slug(text) || 'section');
+    let id = base;
     let n = 2;
-    while (used.has(id)) id = `${slug(text)}-${n++}`;
+    while (used.has(id)) id = `${base}-${n++}`;
     used.add(id);
     return id;
   };
@@ -119,7 +122,7 @@ function markdown(md) {
       i++;
       continue;
     }
-    const heading = /^(#{1,3}) (.+)$/.exec(line);
+    const heading = /^(#{1,4}) (.+)$/.exec(line);
     if (heading) {
       const level = heading[1].length;
       const text = heading[2].trim();
@@ -164,7 +167,7 @@ function markdown(md) {
       continue;
     }
     const para = [];
-    while (i < lines.length && lines[i].trim() && !/^(#{1,3} |\||- )/.test(lines[i])) para.push(lines[i++].trim());
+    while (i < lines.length && lines[i].trim() && !/^(#{1,4} |\||- )/.test(lines[i])) para.push(lines[i++].trim());
     const text = para.join(' ');
     if (seenH1 && /^Last updated:/.test(text) && !html.some((h) => h.startsWith('<p'))) {
       meta = inline(text);
@@ -196,8 +199,11 @@ const THEME_SPRITE = `<svg class="sprite" aria-hidden="true" focusable="false">
       </symbol>
     </svg>`;
 
-function head({ prefix, title, description, path, robots }) {
+function head({ prefix, title, description, path, robots, feed }) {
   const canonical = path ? `\n    <link rel="canonical" href="${SITE}${path}" />` : '';
+  const alternate = feed
+    ? `\n    <link rel="alternate" type="application/atom+xml" title="${feed}" href="${prefix}changelog/feed.xml" />`
+    : '';
   const og = path
     ? `
     <meta property="og:type" content="website" />
@@ -224,7 +230,7 @@ function head({ prefix, title, description, path, robots }) {
     <link rel="icon" href="${prefix}assets/img/brand/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="${prefix}assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="${prefix}assets/img/brand/apple-touch-icon.png" />
-    <link rel="manifest" href="${prefix}site.webmanifest" />${og}
+    <link rel="manifest" href="${prefix}site.webmanifest" />${alternate}${og}
     <link rel="preload" href="${prefix}assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="${prefix}assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="${prefix}assets/css/site.css" />
@@ -295,6 +301,187 @@ ${body}
   );
 }
 
+/* ---------- Changelog ---------- */
+
+// CHANGELOG.md: "# Title", an intro, then "## Product" groups of
+// "### Name {#id}" releases. A "> " line right under a release is its meta
+// line. Each release names its date ("November 7, 2026") in its name or meta.
+// Links to the site are written in full (https://lumaemusic.app/...) so they
+// work on GitHub too; the page makes them relative.
+
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+const DATE = new RegExp(`\\b(${MONTHS.join('|')}) (\\d{1,2}), (\\d{4})\\b`);
+
+function findDate(text) {
+  const m = DATE.exec(text);
+  if (!m) return null;
+  const month = String(MONTHS.indexOf(m[1]) + 1).padStart(2, '0');
+  return { text: m[0], iso: `${m[3]}-${month}-${m[2].padStart(2, '0')}` };
+}
+
+function parseChangelog() {
+  const md = readFileSync(join(REPO, 'CHANGELOG.md'), 'utf8');
+  const lines = md.replace(/\r\n/g, '\n').split('\n');
+  let title = '';
+  const intro = [];
+  const groups = [];
+  let group = null;
+  let release = null;
+  for (const line of lines) {
+    let m;
+    if ((m = /^# (.+)$/.exec(line))) {
+      title = m[1].trim();
+    } else if ((m = /^## (.+)$/.exec(line))) {
+      group = { name: m[1].trim(), id: slug(m[1]), intro: [], releases: [] };
+      groups.push(group);
+      release = null;
+    } else if ((m = /^### (.+?)\s*\{#([a-z0-9-]+)\}\s*$/.exec(line))) {
+      if (!group) throw new Error(`CHANGELOG.md: "${line}" comes before any "## " product`);
+      release = { name: m[1].trim(), id: m[2], meta: '', body: [], group };
+      group.releases.push(release);
+    } else if (/^### /.test(line)) {
+      throw new Error(`CHANGELOG.md: give "${line}" an id, like {#music-2026-11-10}`);
+    } else if (release && !release.body.some((l) => l.trim()) && (m = /^> ?(.*)$/.exec(line))) {
+      release.meta = `${release.meta} ${m[1].trim()}`.trim();
+    } else if (release) {
+      release.body.push(line);
+    } else if (group) {
+      group.intro.push(line);
+    } else if (!/^# /.test(line)) {
+      intro.push(line);
+    }
+  }
+  if (!title) throw new Error('CHANGELOG.md: missing "# " title');
+  const ids = new Set();
+  for (const r of groups.flatMap((g) => g.releases)) {
+    if (ids.has(r.id)) throw new Error(`CHANGELOG.md: two releases use {#${r.id}}`);
+    ids.add(r.id);
+    r.date = findDate(r.name) || findDate(r.meta);
+    if (!r.date) throw new Error(`CHANGELOG.md: "${r.name}" names no date, like "November 7, 2026"`);
+    r.html = markdown(r.body.join('\n'), `${r.id}-`).html;
+  }
+  return { title, intro: markdown(intro.join('\n')).html, groups, ids };
+}
+
+const withTime = (html, date) =>
+  html.replace(date.text, `<time datetime="${date.iso}">${date.text}</time>`);
+
+const indent = (html, pad) =>
+  html
+    .split('\n')
+    .map((l) => (l ? pad + l : l))
+    .join('\n');
+
+function changelogPage() {
+  const { title, intro, groups } = parseChangelog();
+  const latest = groups.flatMap((g) => g.releases).sort((a, b) => b.date.iso.localeCompare(a.date.iso))[0];
+  const relative = (html) => html.replace(/(href)="https:\/\/lumaemusic\.app\//g, '$1="../');
+  const toc = groups
+    .map(
+      (g) => `                <li>
+                  <a href="#${g.id}">${inline(g.name)}</a>
+                  <ol role="list">
+${g.releases.map((r) => `                    <li><a href="#${r.id}">${inline(r.name)}</a></li>`).join('\n')}
+                  </ol>
+                </li>`,
+    )
+    .join('\n');
+  const body = groups
+    .map((g) => {
+      const releases = g.releases
+        .map((r) => {
+          const name = withTime(inline(r.name), r.date);
+          const meta = r.meta ? withTime(inline(r.meta), r.date) : '';
+          return `<section class="change" aria-labelledby="${r.id}">
+  <header class="change-head">
+    <h3 id="${r.id}">${name}</h3>${meta ? `\n    <p class="change-meta">${meta}</p>` : ''}
+  </header>
+${indent(r.html, '  ')}
+</section>`;
+        })
+        .join('\n');
+      const groupIntro = markdown(g.intro.join('\n'), `${g.id}-`).html;
+      return `<h2 id="${g.id}">${inline(g.name)}</h2>${groupIntro ? `\n${groupIntro}` : ''}\n${releases}`;
+    })
+    .join('\n');
+  const main = `      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker">Changelog</p>
+          <h1>${inline(title)}</h1>
+          <p class="doc-meta">Updated ${latest.date.text} · <a href="feed.xml">Atom feed</a></p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc doc-toc--nested" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+${toc}
+              </ol>
+            </details>
+          </nav>
+          <article class="prose changelog">
+${indent(relative(intro), '            ')}
+${indent(relative(body), '            ')}
+            <p class="doc-source">
+              This page is generated from
+              <a href="https://github.com/rendyhd/lumae/blob/main/CHANGELOG.md">CHANGELOG.md on GitHub</a>. Follow it in a feed
+              reader with the <a href="feed.xml">Atom feed</a>.
+            </p>
+          </article>
+        </div>
+      </section>`;
+  return (
+    head({
+      prefix: '../',
+      title: 'What’s new · Lumae',
+      description:
+        'What changed in each Lumae beta build and update for Android and iPhone, and in each Lumae Radio release.',
+      path: '/changelog/',
+      feed: 'What’s new in Lumae',
+    }) + shell({ prefix: '../', main, bodyClass: 'page-doc' })
+  );
+}
+
+function escapeXml(text) {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function changelogFeed() {
+  const { title, groups } = parseChangelog();
+  const releases = groups
+    .flatMap((g) => g.releases)
+    .sort((a, b) => b.date.iso.localeCompare(a.date.iso));
+  const page = `${SITE}/changelog/`;
+  const entries = releases
+    .map((r) => {
+      const content = (r.meta ? `<p>${inline(r.meta)}</p>\n` : '') + r.html;
+      return `  <entry>
+    <title>${escapeXml(`${r.group.name} · ${r.name}`)}</title>
+    <id>${page}#${r.id}</id>
+    <link rel="alternate" type="text/html" href="${page}#${r.id}" />
+    <updated>${r.date.iso}T00:00:00Z</updated>
+    <content type="html">${escapeXml(content)}</content>
+  </entry>`;
+    })
+    .join('\n');
+  return `<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>${escapeXml(title.replace(/'/g, '’'))}</title>
+  <subtitle>Lumae beta builds and updates, and Lumae Radio releases.</subtitle>
+  <id>${page}</id>
+  <link rel="self" type="application/atom+xml" href="${page}feed.xml" />
+  <link rel="alternate" type="text/html" href="${page}" />
+  <updated>${releases[0].date.iso}T00:00:00Z</updated>
+  <author><name>Lumae</name></author>
+  <icon>${SITE}/assets/img/brand/favicon-32.png</icon>
+${entries}
+</feed>
+`;
+}
+
 function notFoundPage() {
   const main = `      <section class="section section--lost">
         <div class="wrap lost">
@@ -326,8 +513,12 @@ const source = readFileSync(join(DOCS, 'index.html'), 'utf8');
 const pages = [
   { file: 'radio/index.html', prefix: '../', current: 'radio' },
   { file: 'radio/docs/index.html', prefix: '../../', current: 'radio' },
+  { file: 'guide/index.html', prefix: '../', current: 'guide' },
+  { file: 'guide/undertone/index.html', prefix: '../../', current: 'guide' },
   { file: 'beta/index.html', prefix: '../', current: null },
   { file: 'privacy/index.html', prefix: '../', current: null, render: privacyPage },
+  { file: 'changelog/index.html', prefix: '../', current: 'changelog', render: changelogPage },
+  { file: 'changelog/feed.xml', render: changelogFeed, raw: true },
   { file: '404.html', prefix: '/', current: null, render: notFoundPage },
 ];
 
@@ -335,7 +526,7 @@ let stale = 0;
 for (const page of pages) {
   const path = join(DOCS, page.file);
   const base = page.render ? page.render() : readFileSync(path, 'utf8');
-  const next = withSharedBlocks(base, page.file, page, source);
+  const next = page.raw ? base : withSharedBlocks(base, page.file, page, source);
   const current = existsSync(path) ? readFileSync(path, 'utf8') : null;
   if (current === next) continue;
   if (check) {

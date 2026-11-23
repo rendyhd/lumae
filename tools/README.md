@@ -7,8 +7,11 @@ nothing from other sites.
 | Page | File |
 | --- | --- |
 | Lumae Music | `docs/index.html` |
+| Lumae guide (setup, offline, speakers, car, widgets, sound, AI, Undertone) | `docs/guide/index.html` |
+| Preparing music for Undertone, with its blank template | `docs/guide/undertone/index.html`, `docs/assets/undertone/undertone-details-template.csv` (a copy of the app repo's `docs/templates/undertone-details-template.csv`) |
 | Lumae Radio | `docs/radio/index.html` |
 | Lumae Radio guide (install, Home Assistant, API) | `docs/radio/docs/index.html` |
+| What's new (changelog) | `docs/changelog/index.html` and `feed.xml`, built from `CHANGELOG.md` |
 | Privacy | `docs/privacy/index.html`, built from `PRIVACY.md` |
 | Not found | `docs/404.html`, built |
 
@@ -27,6 +30,12 @@ Then open http://127.0.0.1:8095/. It serves `docs/` the way GitHub Pages does.
   to copy them into the other pages.
 - **The privacy policy:** edit `PRIVACY.md`, then run
   `node tools/build-site.mjs`.
+- **What's new:** add a release to `CHANGELOG.md` (newest first, under its
+  product), then run `node tools/build-site.mjs`. Each release is a
+  `### Name {#id}` heading with a `> ` meta line under it, and names its date
+  ("November 7, 2026") in one of the two. List only what a build or update has
+  actually delivered. Write links to the site in full
+  (`https://lumaemusic.app/...`); the page makes them relative.
 - **Before publishing:** run `node tools/check-site.mjs`. It checks every link,
   image, font and `#anchor`, alt text, ids, and that nothing loads from another
   site. The app repository's tests run both scripts.

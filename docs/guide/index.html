@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lumae guide · Set up, offline, speakers and more</title>
+    <meta
+      name="description"
+      content="How to set up Lumae with Navidrome or Jellyfin and AudioMuse-AI, keep music offline, play on speakers and in the car, and get the most from its sound, widgets, Undertone and AI DJ."
+    />
+    <link rel="canonical" href="https://lumaemusic.app/guide/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="Lumae guide · Set up, offline, speakers and more" />
+    <meta
+      property="og:description"
+      content="Set up Lumae with your own music server and AudioMuse-AI, then keep music offline, play on speakers and in the car, and shape its sound."
+    />
+    <meta property="og:url" content="https://lumaemusic.app/guide/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae on two phones: Home with The Pulse, and Now Playing with large album art." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/geist-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="p-header">
+      <div class="wrap">
+        <a class="brand" href="../">
+          <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+          <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="p-nav" aria-label="Lumae">
+          <a href="../" data-nav="music">Music</a>
+          <a href="../radio/" data-nav="radio">Radio</a>
+          <a href="../guide/" data-nav="guide" aria-current="page">Guide</a>
+          <a href="../changelog/" data-nav="changelog">What’s new</a>
+        </nav>
+        <div class="p-header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="p-cta" href="../beta/">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker">Lumae guide</p>
+          <h1>Set up Lumae and make it yours</h1>
+          <p class="doc-meta">For 1.0.0 (38) on Android and (32) on iPhone · Updated November 11, 2026</p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li><a href="#before-you-start">Before you start</a></li>
+                <li><a href="#set-up">Set up Lumae</a></li>
+                <li><a href="#reverse-proxy">Behind a reverse proxy</a></li>
+                <li><a href="#offline">Keep music offline</a></li>
+                <li><a href="#speakers">Play on speakers</a></li>
+                <li><a href="#car">In the car</a></li>
+                <li><a href="#widgets">Home-screen widgets</a></li>
+                <li><a href="#sound">Sound</a></li>
+                <li><a href="#ai">Discuss with AI and the AI DJ</a></li>
+                <li><a href="#undertone">Undertone</a></li>
+                <li><a href="#radio">Lumae Radio</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#help">Get help</a></li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose">
+            <p>
+              Lumae is a music player for the library you already own: your music on Navidrome or Jellyfin, understood through
+              AudioMuse-AI's sound analysis. This guide takes you from a fresh install to your first mix, then through the things
+              people ask about most. Lumae is in beta; <a href="../changelog/">What's new</a> lists every build and update.
+            </p>
+
+            <h2 id="before-you-start">Before you start</h2>
+            <dl class="reqs">
+              <div class="req">
+                <dt>Music server</dt>
+                <dd>
+                  <strong>Navidrome</strong>, or <strong>Jellyfin 12.0</strong> or newer. Other Subsonic servers, Plex, Emby and
+                  Lyrion aren't supported.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Sound analysis</dt>
+                <dd>
+                  <strong>AudioMuse-AI 3.2 or newer</strong>, with your library analyzed, and the latest
+                  <strong>Lumae Analysis</strong> from its plugin catalog. Older Lumae Analysis versions work with fewer features;
+                  Jellyfin needs 1.6.0 or newer.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Phone</dt>
+                <dd>
+                  <strong>Android 7.0</strong> or newer, or an <strong>iPhone on iOS 16.4</strong> or newer, with the beta from
+                  <a href="../beta/">Google Play or TestFlight</a>. On iPhone, servers outside your home network need HTTPS.
+                </dd>
+              </div>
+              <div class="req">
+                <dt>Optional</dt>
+                <dd>
+                  Your own AI service, cloud or self-hosted; a Last.fm API key for album suggestions; Koito for your listening
+                  history.
+                </dd>
+              </div>
+            </dl>
+            <p>
+              No server yet? <a href="../beta/#demo-mode">Demo Mode</a> shows you around with five royalty-free songs.
+            </p>
+            <h2 id="set-up">Set up Lumae</h2>
+            <ol class="doc-steps">
+              <li>
+                <strong>Install Lumae Analysis.</strong> In AudioMuse-AI, open Plugins and install Lumae Analysis from the catalog.
+                Turn on its collection manager if you want Collections, shelves, Vibes, journeys and covers to sync between phones.
+              </li>
+              <li>
+                <strong>Start setup.</strong> Open Lumae and tap <strong>Start setup</strong>. On iPhone, allow Local Network
+                access when your phone asks.
+              </li>
+              <li>
+                <strong>Connect AudioMuse-AI.</strong> Enter its address, then sign in with <strong>Username &amp;
+                password</strong> or an <strong>API token</strong> (leave the token empty if your AudioMuse-AI has no login).
+                <strong>Test &amp; connect</strong> shows which Lumae Analysis it found and how much of your library is analyzed.
+              </li>
+              <li>
+                <strong>Connect your music server.</strong> Choose Navidrome or Jellyfin and sign in. Jellyfin also offers
+                <strong>Quick Connect</strong>: Lumae shows a code to approve in another Jellyfin app you're signed in to, and
+                keeps only Jellyfin's sign-in for this phone, never your password.
+              </li>
+              <li>
+                <strong>Import listening history</strong> from your music server or Koito, if you like. It's optional.
+              </li>
+              <li>
+                <strong>Discovery &amp; AI</strong> sets up an AI service and album suggestions. <strong>Skip for now</strong>
+                leaves them off; both live in Settings later.
+              </li>
+              <li>
+                <strong>Listen.</strong> A short guide shows you around while the first import runs. Tap
+                <strong>Continue while setup runs</strong> to start browsing. On Android, setup keeps going in the background
+                with a “Preparing your music library” notification; on iPhone, it keeps going while Lumae is open.
+              </li>
+            </ol>
+            <p>
+              Lumae checks both servers before it changes anything on your phone. If the first import stops, try again from
+              Library ☰ → Sync status. Settings live in Library's ☰ menu.
+            </p>
+            <p>
+              Artists showing album covers instead of photos? Add <code>deezer</code> to Navidrome's <code>ND_AGENTS</code>.
+            </p>
+
+            <h2 id="reverse-proxy">Behind a reverse proxy</h2>
+            <p>
+              If AudioMuse-AI sits behind a proxy with its own sign-in (Traefik forward auth, Authelia, Authentik and the like),
+              let these paths through without that sign-in. AudioMuse-AI still checks Lumae's own login on each of them. A
+              blocked path answers with the proxy's sign-in page, and Lumae says “Couldn't ask AudioMuse-AI”.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th scope="col">Path</th><th scope="col">Method</th><th scope="col">Used for</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>/auth</code></td><td>POST</td><td>Signing in with a username and password</td></tr>
+                  <tr><td><code>/api/sync</code></td><td>GET</td><td>Syncing the sound analysis</td></tr>
+                  <tr><td><code>/api/models</code></td><td>GET</td><td>Which analyses AudioMuse-AI has run (lyrics, neural fingerprints)</td></tr>
+                  <tr><td><code>/api/version</code></td><td>GET</td><td>AudioMuse-AI's version, for Search by Recording</td></tr>
+                  <tr><td><code>/api/lyrics/search/text</code></td><td>POST</td><td>Search by meaning: Mood Compass, Discover chat and Search</td></tr>
+                  <tr><td><code>/api/lyrics/warmup</code></td><td>POST</td><td>Loading the lyrics model before a meaning search</td></tr>
+                  <tr><td><code>/api/recording_search/search</code></td><td>POST</td><td>Search by Recording</td></tr>
+                  <tr><td><code>/api/recording_search/warmup</code></td><td>POST</td><td>Loading the recording model before a search</td></tr>
+                  <tr><td><code>/plugins/lumae_analysis/api/*</code></td><td>GET, POST</td><td>Lumae Analysis: catalog, profiles, collections, covers, shelves, Vibes and journeys</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="offline">Keep music offline</h2>
+            <ul>
+              <li>
+                <strong>Keep offline</strong> is in the ⋯ menu of an album, playlist or collection, and is a button on an artist's
+                page. For a saved vibe, touch and hold it in Vibe → Saved Vibes.
+              </li>
+              <li>
+                <strong>Smart downloads</strong> (Settings → Downloads) keeps something to play on the phone within a budget you
+                set: your taste, music you rated four or five stars, what you played recently, and offline vibes. What you keep
+                offline yourself is never removed.
+              </li>
+              <li>
+                <strong>Full library mirror</strong>, on the same page, keeps whole libraries on the phone, outside the budget,
+                at the mirror quality you choose.
+              </li>
+              <li>
+                <strong>Download over</strong> Wi-Fi only or any network, and <strong>Download quality</strong> (Original, or a
+                smaller 192 kbps copy) are in Settings → Downloads. On Android, <strong>Storage location</strong> can move
+                downloads to an SD card. Settings → Downloads → <strong>Manage downloads</strong> shows what's on the phone.
+              </li>
+              <li>
+                <strong>Buffer ahead</strong> (Settings → Playback) downloads the next songs in the queue while you stream, 6 by
+                default and up to 36, so a tunnel or a dead spot doesn't stop the music.
+              </li>
+              <li>
+                <strong>Offline mode</strong> is the tile at the top of Settings. Auto goes offline when your server is out of
+                reach, On plays downloads only, Off always tries to stream. Offline, lists, search, suggestions and the Vibe
+                tools show only songs on this phone, and plays and ratings wait to reach your server.
+              </li>
+            </ul>
+
+            <h2 id="speakers">Play on speakers</h2>
+            <p>
+              Tap <strong>Play on a speaker</strong> on Home, or the output button on Now Playing, to open
+              <strong>Play on</strong>.
+            </p>
+            <ul>
+              <li><strong>iPhone:</strong> AirPlay (AirPods, HomePod, receivers) and Chromecast.</li>
+              <li>
+                <strong>Android:</strong> Chromecast, and Sonos, Marantz (HEOS) and UPnP/DLNA speakers on your network: TVs,
+                streamers, receivers, Kodi. Turn on Settings → Car &amp; speakers → <strong>Network speakers</strong>.
+              </li>
+            </ul>
+            <p>
+              On Android, Settings → Car &amp; speakers → <strong>Speakers</strong> puts favorites at the top of Play on, hides
+              speakers you never use, and adds one Lumae doesn't find by itself: a Sonos or Marantz by its IP address, a UPnP/DLNA
+              speaker by its description link (such as <code>http://192.168.1.50:1234/description.xml</code>). Under
+              <strong>Volume buttons</strong>, choose how far each press moves a speaker's volume.
+            </p>
+            <p>
+              To bring the music back, choose <strong>This phone</strong> or <strong>This iPhone</strong> in Play on. While
+              casting, SmoothFade, loudness normalization and the Parametric EQ are off and songs play at their own levels;
+              steering still works.
+            </p>
+
+            <h2 id="car">In the car</h2>
+            <p>
+              Lumae works in Android Auto and CarPlay with nothing to set up. The car shows Home (The Pulse, Instant Play, Comfort
+              mixes, Suggested vibes, what you played and added recently, and Continue journey), Vibes, Library and Downloads.
+              CarPlay's Up Next button and Android Auto's queue show what's coming.
+            </p>
+            <ul>
+              <li>
+                <strong>Instant Play</strong> for the car is in Settings → Car &amp; speakers → Android Auto, or Settings → CarPlay.
+              </li>
+              <li>
+                <strong>Resume last queue</strong> (Settings → Playback) decides how long Lumae picks up where you left off: off,
+                30 minutes, 2 hours (the default), 8 hours or always. On Android, <strong>Resume from Play buttons</strong> lets a
+                car or headset start it with Play.
+              </li>
+              <li>Keep offline what you'll want on the road; <a href="#offline">Buffer ahead</a> covers the dead spots.</li>
+            </ul>
+
+            <h2 id="widgets">Home-screen widgets</h2>
+            <ul>
+              <li>
+                <strong>Lumae Radio</strong> shows what your radio is playing, with Play/Pause, Next and Ban. On Android, add
+                <strong>Radio</strong> or <strong>Radio, small</strong> and choose a radio; touch and hold the widget to choose
+                another. On iPhone (iOS 17 or later), add Lumae Radio in small or medium. It needs a radio set up in
+                <a href="#radio">Settings</a> first.
+              </li>
+              <li>
+                <strong>Now playing</strong> (Android) shows what Lumae plays, with Play, Next and Love, and follows a Sonos or
+                Marantz speaker while one plays. It needs no setup.
+              </li>
+            </ul>
+            <p>
+              If an Android widget falls behind, the radio remote offers to open App info: set App battery usage to
+              <strong>Unrestricted</strong> to keep it current.
+            </p>
+
+            <h2 id="sound">Sound</h2>
+            <p>Everything here is in Settings → Sound.</p>
+            <ul>
+              <li>
+                <strong>SmoothFade</strong> blends each song's real ending into the next one's opening, using the profiles Lumae
+                Analysis makes (or analysis on the phone). <strong>Party mode</strong> lets the ending song play on while the
+                next comes in fast.
+              </li>
+              <li>
+                <strong>Loudness normalization</strong> evens out songs at <strong>Quiet</strong>, <strong>Normal</strong> or
+                <strong>Loud</strong>. <strong>Album loudness</strong> (Auto, Track or Album) decides whether a whole album keeps
+                its own balance between songs.
+              </li>
+              <li>
+                <strong>Ease loud starts</strong>, with SmoothFade and loudness normalization both on: when a quiet ending runs
+                into a much louder opening, the next song comes in lower and rises to its level after the fade.
+              </li>
+              <li>
+                <strong>Parametric EQ</strong> (Android): up to 10 filters per preset, a preset per output route, and import and
+                export of Equalizer APO, AutoEq and Lumae files. <strong>Output gain</strong> adjusts the level over Bluetooth.
+              </li>
+              <li>
+                <strong>Play at 44.1 kHz</strong> (Android, under Compatibility): some music players, such as the HiBy R4, let
+                an app play only one audio stream above 44.1 kHz. On those, each song goes silent about 15 seconds before the
+                next one starts. Turn this on if you hear that. Every song is then converted to 44.1 kHz, so hi-res files play
+                at CD quality. It starts with the next song.
+              </li>
+            </ul>
+
+            <h2 id="ai">Discuss with AI and the AI DJ</h2>
+            <p>
+              Lumae's AI features use your own AI service. Set it up in Settings → Taste &amp; discovery →
+              <strong>AI Discovery</strong>: OpenAI, Anthropic, OpenRouter, or self-hosted (Ollama or any OpenAI-compatible
+              server). AI-written titles also need <strong>Share music details</strong>, under Discovery sources.
+            </p>
+            <ul>
+              <li>
+                <strong>Discuss with AI</strong> on Discover: describe a moment and get picks from your library. Switch from
+                <strong>Quick picks</strong> to <strong>AI DJ</strong> for a whole set.
+              </li>
+              <li>
+                <strong>AI DJ:</strong> talk about who's there, how it should feel and what to leave out, then
+                <strong>Build the mix</strong>. <strong>Lock in</strong> keeps a song where it is, <strong>More like this</strong>
+                steers, and <strong>Play the set</strong> starts it. While it plays, <strong>Talk to the DJ</strong> on Now
+                Playing or in the queue changes where it goes next.
+              </li>
+              <li><strong>Extend with AI</strong> on a playlist or collection adds songs that fit it.</li>
+            </ul>
+
+            <h2 id="undertone">Undertone</h2>
+            <p>
+              Focus, study and sleep music, from your library or one set aside for it. It plays in sessions of its own, off the
+              record, and never mixes into your listening.
+            </p>
+            <ol class="doc-steps">
+              <li>
+                <strong>Turn it on</strong> in Settings → Undertone → <strong>Use Undertone</strong>, and choose a library on your
+                music server, or another Navidrome or Jellyfin server.
+              </li>
+              <li>
+                <strong>Prepare your music.</strong> Folders, tags, even volume, and details such as Effect, Vocals and your own
+                fields, filled in with a spreadsheet. <a href="undertone/">Prepare your music for Undertone</a> walks through it
+                and has the template; the app has the short version under <strong>How to prepare your music</strong>.
+              </li>
+              <li>
+                <strong>Make presets</strong> in categories: what plays, a timer (15 to 90 minutes, or until a time), what happens
+                at the end (fade out or finish the track), and an alarm.
+              </li>
+              <li>
+                <strong>Play.</strong> Open Undertone from Library ☰ or its Home button. In a session, add or take off 10
+                minutes, or <strong>Stop and go back to your music</strong>.
+              </li>
+            </ol>
+            <p>
+              Alarms need permission: on Android, allow Alarms &amp; reminders, and full-screen alarms to ring on the lock screen
+              (Settings → Undertone → Alarms shows both). On iPhone, alarms need iOS 26 or later; the timer works on any.
+            </p>
+
+            <h2 id="radio">Lumae Radio</h2>
+            <p>
+              Lumae Radio plays stations from your library on a Raspberry Pi, and your phone is its remote. Find and adopt it in
+              Settings → Servers &amp; accounts → <strong>Lumae Radio</strong>. The <a href="../radio/docs/">Lumae Radio guide</a>
+              covers installing the Pi, setup, Home Assistant and the API.
+            </p>
+
+            <h2 id="updates">Updates</h2>
+            <p>
+              Install the newest build from TestFlight or Google Play when it appears. Smaller fixes arrive by themselves: open
+              Lumae, leave it open for about 20 seconds, then close and reopen it. Settings → About &amp; help shows the version
+              you run, and <a href="../changelog/">What's new</a> says what changed.
+            </p>
+            <p>
+              Settings travel with your phone's own backup on Android, but sign-ins never do: after a restore, sign in again in
+              Settings → Servers &amp; accounts.
+            </p>
+
+            <h2 id="help">Get help</h2>
+            <ul>
+              <li>
+                <strong>Sync status</strong> (Library ☰) shows Server health and Sync health, and can sync everything again.
+              </li>
+              <li>
+                <strong>Export diagnostic log</strong> (Settings → About &amp; help → Diagnostics) saves a log with names, sign-ins
+                and addresses removed. Email it to <a href="mailto:apps@rendyjansen.com">apps@rendyjansen.com</a> rather than
+                posting it in a public issue.
+              </li>
+              <li>
+                Report anything else on <a href="https://github.com/rendyhd/lumae/issues">GitHub</a>, with your phone, your music
+                server, AudioMuse-AI and Lumae Analysis versions, your library's rough size, and what you were doing.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../">
+              <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+              <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../#features">Features</a></li>
+              <li><a href="../#library">Album Shelf</a></li>
+              <li><a href="../#need">What you need</a></li>
+              <li><a href="../#setup">Set up</a></li>
+              <li><a href="../guide/">Guide</a></li>
+              <li><a href="../changelog/">What’s new</a></li>
+              <li><a href="../beta/">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../radio/">Overview</a></li>
+              <li><a href="../radio/docs/#install">Install guide</a></li>
+              <li><a href="../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../radio/docs/#api">API</a></li>
+              <li><a href="../changelog/#lumae-radio">What’s new</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+              <li><a href="https://ko-fi.com/rendyhd">Support on Ko-fi</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>What’s new · Lumae</title>
+    <meta name="description" content="What changed in each Lumae beta build and update for Android and iPhone, and in each Lumae Radio release." />
+    <link rel="canonical" href="https://lumaemusic.app/changelog/" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0d0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/img/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="alternate" type="application/atom+xml" title="What’s new in Lumae" href="../changelog/feed.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumae" />
+    <meta property="og:title" content="What’s new · Lumae" />
+    <meta property="og:description" content="What changed in each Lumae beta build and update for Android and iPhone, and in each Lumae Radio release." />
+    <meta property="og:url" content="https://lumaemusic.app/changelog/" />
+    <meta property="og:image" content="https://lumaemusic.app/assets/img/og/og-music.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumae on two phones: Home with The Pulse, and Now Playing with large album art." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="../assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.className = d.className.replace('no-js', 'js');
+        try {
+          var t = localStorage.getItem('lumae-site-theme');
+          if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="page-doc">
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- site-header:start -->
+    <header class="p-header">
+      <div class="wrap">
+        <a class="brand" href="../">
+          <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+          <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+          <span>Lumae</span>
+        </a>
+        <nav class="p-nav" aria-label="Lumae">
+          <a href="../" data-nav="music">Music</a>
+          <a href="../radio/" data-nav="radio">Radio</a>
+          <a href="../guide/" data-nav="guide">Guide</a>
+          <a href="../changelog/" data-nav="changelog" aria-current="page">What’s new</a>
+        </nav>
+        <div class="p-header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <a class="p-cta" href="../beta/">Join the beta</a>
+        </div>
+      </div>
+    </header>
+    <!-- site-header:end -->
+
+    <main id="main">
+      <section class="section section--doc">
+        <header class="wrap doc-head">
+          <p class="kicker">Changelog</p>
+          <h1>What’s new in Lumae</h1>
+          <p class="doc-meta">Updated November 13, 2026 · <a href="feed.xml">Atom feed</a></p>
+        </header>
+        <div class="wrap doc">
+          <nav class="doc-toc doc-toc--nested" data-toc aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol role="list">
+                <li>
+                  <a href="#lumae-music">Lumae Music</a>
+                  <ol role="list">
+                    <li><a href="#music-2026-11-10">November 10, 2026</a></li>
+                    <li><a href="#music-2026-11-07">November 7, 2026</a></li>
+                    <li><a href="#music-2026-10-27">October 27, 2026</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#lumae-radio">Lumae Radio</a>
+                  <ol role="list">
+                    <li><a href="#radio-0-6-13">0.6.13</a></li>
+                    <li><a href="#radio-0-6-12">0.6.12</a></li>
+                    <li><a href="#radio-0-6-11">0.6.11</a></li>
+                    <li><a href="#radio-0-6-10">0.6.10</a></li>
+                    <li><a href="#radio-0-6-8">0.6.8</a></li>
+                    <li><a href="#radio-0-6-7">0.6.7</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </details>
+          </nav>
+          <article class="prose changelog">
+            <p>What changed in each Lumae beta build and update, and in each Lumae Radio release. Newest first. An update reaches the build it names by itself; a new build comes through TestFlight on iPhone and Google Play on Android (<a href="../beta/" rel="noopener">how to join the beta</a>).</p>
+            <p>The list starts with the updates of late October 2026. Earlier betas aren’t listed.</p>
+            <h2 id="lumae-music">Lumae Music</h2>
+            <section class="change" aria-labelledby="music-2026-11-10">
+              <header class="change-head">
+                <h3 id="music-2026-11-10"><time datetime="2026-11-10">November 10, 2026</time></h3>
+                <p class="change-meta">Update for Android 1.0.0 (38) and iPhone 1.0.0 (32)</p>
+              </header>
+              <h4 id="music-2026-11-10-new">New</h4>
+              <ul>
+              <li><strong>AI DJ.</strong> In Discuss with AI, switch from Quick picks to AI DJ and talk about the moment: who’s there, how it should feel, what to leave out. The DJ asks a question or two, proposes a mix from your library, and plays it as a live set you can keep steering from the queue. Needs your own AI service.</li>
+              <li><strong>Undertone plays as one session.</strong> One player for a session, with its loop, details and stars. Stars sync with Undertone’s music server, track rows show the album and tags, and the library is a tap away.</li>
+              </ul>
+              <h4 id="music-2026-11-10-better">Better</h4>
+              <ul>
+              <li><strong>A song you start stays in charge.</strong> The songs queued after a song you start stay closer to it.</li>
+              <li><strong>Undertone’s filter</strong> hides choices that would find nothing, and categories with the same name fold into one.</li>
+              <li><strong>A repeating track keeps playing</strong> in Undertone, and a preset you tap after its session ended starts again.</li>
+              </ul>
+              <h4 id="music-2026-11-10-fixed">Fixed</h4>
+              <ul>
+              <li>In the car, a song your music server won’t stream plays from downloads when it’s kept offline.</li>
+              <li>Moving Undertone’s library never deletes the details you added.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="music-2026-11-07">
+              <header class="change-head">
+                <h3 id="music-2026-11-07"><time datetime="2026-11-07">November 7, 2026</time></h3>
+                <p class="change-meta">Android 1.0.0 (38) on Google Play, iPhone 1.0.0 (32) on TestFlight</p>
+              </header>
+              <p>On Android, this build also brings everything in the iPhone’s October 27 build below, and on a speaker the volume buttons move by the step you choose in Settings.</p>
+              <h4 id="music-2026-11-07-new">New</h4>
+              <ul>
+              <li><strong>Undertone.</strong> Focus, study and sleep music, kept apart from your library: pick an album, folder or track and it plays on repeat, with presets in categories, a timer and an alarm. The alarm needs Android’s alarm permission, or iOS 26 or later on iPhone. Undertone is always off the record.</li>
+              <li><strong>Home-screen widgets.</strong> The Lumae Radio widget on Android and iPhone (iOS 17 or later), and a Now playing widget for Lumae itself on Android.</li>
+              <li><strong>Search the words.</strong> Find a track by a line you remember, and start it at that line when its lyrics are synced. When AudioMuse-AI has analyzed lyrics, Search also finds songs about what you type, and Mood Compass and Discuss with AI use it too.</li>
+              <li><strong>Sonic Bridge</strong> plays a path from one song to another. Choose its length and route, swap or pin a stop, and save the path as a playlist or a journey.</li>
+              <li><strong>Wander</strong> (formerly Drift in Discover) walks outward from one track, says how far each step goes, and can keep going from the last song.</li>
+              <li><strong>Rabbit Hole</strong> deals six choices as covers, in lanes for direction, mood and era, and lets you go back to an earlier track.</li>
+              <li><strong>UPnP/DLNA speakers</strong> on Android, next to Sonos and Marantz: TVs, streamers, receivers, Kodi. Mark speakers as favorites or hide them.</li>
+              <li><strong>Ease loud starts.</strong> When a quiet ending runs into a much louder opening, the next song comes in lower and rises to its level after the fade. Settings → Sound.</li>
+              <li><strong>Playlists sync by themselves</strong> whenever Lumae syncs, sets up or opens.</li>
+              </ul>
+              <h4 id="music-2026-11-07-better">Better</h4>
+              <ul>
+              <li><strong>Offline means downloaded.</strong> With Offline mode on, lists, search, suggestions and the Vibe tools show only songs on this phone.</li>
+              <li><strong>Downloads</strong> stop before the phone’s storage fills, every downloaded album keeps its cover, and changing mirror quality swaps files without a gap.</li>
+              <li><strong>Home has a speaker button</strong>, so you can choose a speaker before choosing music.</li>
+              <li><strong>Sonic DNA and the Sonic Fingerprint</strong> draw a radar and a chart that follow the sliders.</li>
+              <li><strong>Quick Vibe</strong> opens as a sheet, and every sheet closes with a swipe down.</li>
+              <li><strong>On Android</strong>, tapping the media notification opens the player.</li>
+              </ul>
+              <h4 id="music-2026-11-07-fixed">Fixed</h4>
+              <ul>
+              <li>A resumed queue keeps getting songs, for whatever it was playing.</li>
+              <li>A Back by accident keeps what you were building: tool pages, radio stations and Undertone presets.</li>
+              <li>A cover changed on your music server replaces the one Lumae saved.</li>
+              <li>While casting to a UPnP/DLNA speaker, Next moves one track and the screen stays lit.</li>
+              <li>The radio remote’s clock no longer jumps back.</li>
+              <li>Android Auto no longer shows an error when a second tap replaces the first.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="music-2026-10-27">
+              <header class="change-head">
+                <h3 id="music-2026-10-27"><time datetime="2026-10-27">October 27, 2026</time></h3>
+                <p class="change-meta">iPhone 1.0.0 (30) on TestFlight, and an update the same day</p>
+              </header>
+              <p>Android got these with 1.0.0 (38).</p>
+              <h4 id="music-2026-10-27-new">New</h4>
+              <ul>
+              <li><strong>Journeys.</strong> Put albums in an order and play them chapter by chapter. Grow a journey with new releases, keep the next chapter offline, and pick it up with Continue journey in the car. Journeys sync between phones with Lumae Analysis 1.9.0 or newer.</li>
+              <li><strong>Lyrics on Now Playing</strong>, with the cover shrunk into a header row.</li>
+              <li><strong>Volume leveling.</strong> Quiet, Normal or Loud in Settings → Sound, with album gain over whole albums. Lumae reads loudness from Lumae Analysis, ReplayGain tags or Jellyfin. Casting says it isn’t leveled.</li>
+              <li><strong>Lumae Radio from the phone.</strong> Play an album, playlist or collection on the radio from its sheet, and tune the radio’s Parametric EQ and Room tuning from the remote.</li>
+              </ul>
+              <h4 id="music-2026-10-27-better">Better</h4>
+              <ul>
+              <li><strong>Fades avoid two singers at once</strong> when lyrics are synced.</li>
+              <li><strong>Comfort and Momentum mixes</strong> order songs by tempo and key.</li>
+              <li><strong>Every replay sounds different.</strong> A single, album or vibe continues differently each time, and songs heard in the last four hours rank lower everywhere.</li>
+              <li><strong>Sync status</strong> opens with the health of your servers and the last sync.</li>
+              </ul>
+              <h4 id="music-2026-10-27-fixed">Fixed</h4>
+              <ul>
+              <li>Plays heard with the screen locked reach your music server.</li>
+              <li>A song whose clock freezes while playing recovers by itself on iPhone.</li>
+              <li>AirPlay plays the music, never a video of it.</li>
+              <li>The Album Shelf and Artist Shelf open with their art drawn.</li>
+              </ul>
+            </section>
+            <h2 id="lumae-radio">Lumae Radio</h2>
+            <p>Radios on 0.5.1 or later update themselves within a day. The <a href="../radio/docs/#upgrade" rel="noopener">Lumae Radio guide</a> shows how to upgrade by hand.</p>
+            <section class="change" aria-labelledby="radio-0-6-13">
+              <header class="change-head">
+                <h3 id="radio-0-6-13">0.6.13</h3>
+                <p class="change-meta"><time datetime="2026-11-13">November 13, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.13" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>Stop, Pause, Skip and Volume answer at once.</strong> While the radio downloaded songs ahead, a press could wait up to half a minute. Playback now goes first.</li>
+              <li><strong>A slow clock check no longer pauses the music.</strong> The radio keeps playing when it can’t read the time for a moment.</li>
+              <li><strong>A list moves on from a song that won’t play.</strong> After three tries the radio passes over the song, and it downloads a damaged file again.</li>
+              <li><strong>A library that shrinks by more than half is held.</strong> The radio keeps the music it has and says so. Press Sync now again to accept the smaller library; the automatic sync never accepts it.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="radio-0-6-12">
+              <header class="change-head">
+                <h3 id="radio-0-6-12">0.6.12</h3>
+                <p class="change-meta"><time datetime="2026-11-07">November 7, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.12" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>The remote’s clock stays put.</strong> While the radio filled its queue or prepared a station, the phone’s timeline could jump back. The radio now says where the song is right now.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="radio-0-6-11">
+              <header class="change-head">
+                <h3 id="radio-0-6-11">0.6.11</h3>
+                <p class="change-meta"><time datetime="2026-11-06">November 6, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.11" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>One song, however many copies.</strong> A song you own on several albums counts as one song, even when the tags spell it differently. Once it plays, every copy rests.</li>
+              <li><strong>Songs on many albums still come round more often</strong>, so the songs you own most stay on the air.</li>
+              <li><strong>Ban and Rest follow the song</strong> to every copy on that station. Favor and Less still apply to the one track.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="radio-0-6-10">
+              <header class="change-head">
+                <h3 id="radio-0-6-10">0.6.10</h3>
+                <p class="change-meta"><time datetime="2026-11-04">November 4, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.10" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>Check a station’s songs.</strong> The station editor deals 10 songs with clips. Answer Keep, Ban or Skip, and the radio shows what it guessed and why it asked.</li>
+              <li><strong>Loud starts come in gently</strong>: up to 6 dB lower, rising over 8 seconds after the fade. Preferences → SmoothFade → Ease loud starts. Party mode leaves it off.</li>
+              <li><strong>Songs between two regions play again.</strong> A song in two of a station’s regions counts by whichever is most due.</li>
+              <li><strong>Shuffle weighs sound</strong>, not only how well two songs fade.</li>
+              <li><strong>The radio says why a Vibe or collection has no music</strong>, and names each music server.</li>
+              <li><strong>The album year</strong> reaches the remote and the home-screen widget.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="radio-0-6-8">
+              <header class="change-head">
+                <h3 id="radio-0-6-8">0.6.8</h3>
+                <p class="change-meta"><time datetime="2026-10-27">October 27, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.8" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>Smoother song changes.</strong> Among the songs a station would play next anyway, it picks the one that fades best from the song before.</li>
+              <li><strong>Calm hours stay calm, not silent.</strong> A station’s energy margin follows its own range of songs.</li>
+              <li><strong>No more near-silent starts.</strong> A station passes over a song whose first 30 seconds are near silence. Lists still play every song.</li>
+              <li><strong>Cache fills leave room on the Wi-Fi</strong>, so the remote stays quick while they run.</li>
+              </ul>
+            </section>
+            <section class="change" aria-labelledby="radio-0-6-7">
+              <header class="change-head">
+                <h3 id="radio-0-6-7">0.6.7</h3>
+                <p class="change-meta"><time datetime="2026-10-25">October 25, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.7" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>Parametric EQ.</strong> Shape the radio’s sound for your speakers and room: presets of up to 10 filters, a response graph, and Compare. Import AutoEq, Equalizer APO or REW files. The EQ never makes the radio louder.</li>
+              <li><strong>Room tuning.</strong> With a USB measurement microphone on the radio, Room tuning measures your speakers at your seat and makes a preset that cuts the room’s bass peaks. The radio keeps no recording.</li>
+              <li><strong>Signing in again.</strong> When a session ends, the radio’s page asks you to sign in, and the app’s remote signs in again by itself.</li>
+              </ul>
+            </section>
+            <p class="doc-source">
+              This page is generated from
+              <a href="https://github.com/rendyhd/lumae/blob/main/CHANGELOG.md">CHANGELOG.md on GitHub</a>. Follow it in a feed
+              reader with the <a href="feed.xml">Atom feed</a>.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- site-footer:start -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="../">
+              <img class="only-dark" src="../assets/img/brand/mark.svg" alt="" width="30" height="30" />
+              <img class="only-light" src="../assets/img/brand/mark-light.svg" alt="" width="30" height="30" />
+              <span>Lumae</span>
+            </a>
+            <p class="footer-tag">For people who listen. A music player for the library you already own.</p>
+          </div>
+          <nav aria-labelledby="footer-music">
+            <h2 id="footer-music">Lumae Music</h2>
+            <ul role="list">
+              <li><a href="../#features">Features</a></li>
+              <li><a href="../#library">Album Shelf</a></li>
+              <li><a href="../#need">What you need</a></li>
+              <li><a href="../#setup">Set up</a></li>
+              <li><a href="../guide/">Guide</a></li>
+              <li><a href="../changelog/">What’s new</a></li>
+              <li><a href="../beta/">Join the beta</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-radio">
+            <h2 id="footer-radio">Lumae Radio</h2>
+            <ul role="list">
+              <li><a href="../radio/">Overview</a></li>
+              <li><a href="../radio/docs/#install">Install guide</a></li>
+              <li><a href="../radio/docs/#home-assistant">Home Assistant</a></li>
+              <li><a href="../radio/docs/#api">API</a></li>
+              <li><a href="../changelog/#lumae-radio">What’s new</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="footer-about">
+            <h2 id="footer-about">About</h2>
+            <ul role="list">
+              <li><a href="../privacy/">Privacy</a></li>
+              <li><a href="https://github.com/rendyhd/lumae">GitHub</a></li>
+              <li><a href="https://github.com/rendyhd/lumae/issues">Report an issue</a></li>
+              <li><a href="mailto:apps@rendyjansen.com">Email</a></li>
+              <li><a href="https://ko-fi.com/rendyhd">Support on Ko-fi</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-note">
+          <span>Lumae is an independent project, not affiliated with AudioMuse-AI, Navidrome or Jellyfin.</span>
+          <span>lumaemusic.app</span>
+        </div>
+      </div>
+    </footer>
+    <!-- site-footer:end -->
+  </body>
+</html>
