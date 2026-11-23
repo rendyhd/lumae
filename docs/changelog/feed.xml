@@ -5,9 +5,133 @@
   <id>https://lumaemusic.app/changelog/</id>
   <link rel="self" type="application/atom+xml" href="https://lumaemusic.app/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/" />
-  <updated>2026-11-13T00:00:00Z</updated>
+  <updated>2026-11-22T00:00:00Z</updated>
   <author><name>Lumae</name></author>
   <icon>https://lumaemusic.app/assets/img/brand/favicon-32.png</icon>
+  <entry>
+    <title>Lumae Radio · 0.6.15</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-15</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-15" />
+    <updated>2026-11-22T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 22, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.15&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The radio stays reachable on Wi-Fi.&lt;/strong&gt; After days on one connection, a Raspberry Pi’s Wi-Fi can stop hearing the network: the radio plays on, but phones can’t find it. The radio now keeps Wi-Fi power saving off and reconnects when that happens. It needs the &lt;code&gt;iw&lt;/code&gt; package: &lt;code&gt;sudo apt install iw&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fewer stops in the middle of a song.&lt;/strong&gt; The music could go quiet for 5 to 20 seconds while the radio began downloading songs ahead. That work is now small and paced, and a song that was cut off plays on after about 5 seconds.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 20, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-20</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-20" />
+    <updated>2026-11-20T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (45) on Google Play, iPhone 1.0.0 (37) and (38) on TestFlight&lt;/p&gt;
+&lt;p&gt;iPhone 38 followed the same day: the same app, built with Apple’s newer developer tools.&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-20-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Pulse changes from day to day.&lt;/strong&gt; It draws its 20 songs from the 600 that fit best, at most two per artist. Before, it took the nearest 20, which were nearly the same every day.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A Pulse song rests after you hear it.&lt;/strong&gt; Played or skipped, it stays off the card for 14 days and comes back gradually over about a month. A small library, or only your downloads while offline, shortens the rest.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Pulse takes turns between the sides of your taste&lt;/strong&gt;, so one side no longer leads every card.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-20-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Home tiles and the offline Pulse keep their covers.&lt;/li&gt;
+&lt;li&gt;Setup’s history step says that Navidrome 0.64 or later tells Lumae when each play happened.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 19, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-19</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-19" />
+    <updated>2026-11-19T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (44) on Google Play, iPhone 1.0.0 (35) on TestFlight&lt;/p&gt;
+&lt;p&gt;On iPhone, this build also brings everything in Android’s November 15 build below.&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-19-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Foldables.&lt;/strong&gt; On Android, an unfolded screen shows Now Playing docked beside the app, and pop-ups stay on the side they were opened from. A short window, such as a flip phone’s cover screen, puts the cover beside the song’s details.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gemini&lt;/strong&gt; is an AI service you can connect, next to Anthropic and OpenAI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-19-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Offline is a mark on the player&lt;/strong&gt;, not a banner over every screen. With no network, Lumae says once that only downloads will play. An unreachable music server keeps its banner, which you can now close.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home.&lt;/strong&gt; Search is a field, and Quick Vibe is a row with three slots for the songs you pick.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One version of a song.&lt;/strong&gt; A queue Lumae builds plays a song once across its studio and live versions, and counts a band once across its credits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auto quality follows the connection.&lt;/strong&gt; When a Wi-Fi network can’t carry the original, Auto streams Opus 192 (MP3 192 on iPhone) for 30 minutes. Lossless, downloads and speakers are left alone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-19-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Scrubbing in a transcoded song goes where you drop it. It could play the song from its beginning while the clock showed the new position.&lt;/li&gt;
+&lt;li&gt;On iPhone, a streamed song no longer drops to near silence with a crawling clock.&lt;/li&gt;
+&lt;li&gt;On Android, a song on a slow connection stops to load and plays on. It used to stop for good after about 20 seconds.&lt;/li&gt;
+&lt;li&gt;On Android, a batch of downloads shows one notification, not a row of blank ones.&lt;/li&gt;
+&lt;li&gt;Music you start from your library replaces an Undertone session; it no longer plays inside Undertone’s player.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 15, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-15</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-15" />
+    <updated>2026-11-15T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (43) on Google Play&lt;/p&gt;
+&lt;p&gt;On Android, this build also brings everything in the iPhone’s November 14 build below. iPhone got the changes here with 1.0.0 (35).&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-15-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Artists in a Palette.&lt;/strong&gt; Add an artist to a Palette and it brings every song the artist is credited on. The Add an item sheet searches as Search does.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save a walk.&lt;/strong&gt; Wander gains Save as playlist, and Sonic Bridge has it beside Play.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Play at 44.1 kHz&lt;/strong&gt;, on Android. For music players such as the HiBy R4 that go silent for a moment before every song change. Settings → Sound → Compatibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-15-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Vibe player shows its queue&lt;/strong&gt;: how many tracks it holds and how many are to go, their real playing time, and the next four songs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Play from any track.&lt;/strong&gt; In a Vibe builder’s list, tap a track to play from there, or hold it for its menu.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Builders remember for 15 minutes.&lt;/strong&gt; Leave Mood Compass, DNA Vibe, Palette Builder, the Sonic Fingerprint, Vibe Alchemy, Wander, Sonic Bridge or Memory Lane and come back to what you were building, songs included. The Vibe builders, Wander and Sonic Bridge have Reset.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One track count and time on every list&lt;/strong&gt;, from the songs' real lengths.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Palette items show their covers and names.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;An Undertone preset’s editor shows what it plays&lt;/strong&gt;, with Keep offline near the top.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-15-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Moving a slider in the Vibe player keeps every song of the vibe. It could leave 4 of 20.&lt;/li&gt;
+&lt;li&gt;A queue that came up short says so and offers Try again.&lt;/li&gt;
+&lt;li&gt;On Android, Settings pages lift above the keyboard.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · 0.6.14</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-14</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-14" />
+    <updated>2026-11-15T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 15, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.14&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Palette’s artists play on the radio.&lt;/strong&gt; A station that follows a Vibe with an artist in its Palette plays that artist’s songs. The station’s notes count the artists that aren’t in the radio’s library.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 14, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-14</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-14" />
+    <updated>2026-11-14T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;iPhone 1.0.0 (33) on TestFlight&lt;/p&gt;
+&lt;p&gt;Android got these with 1.0.0 (43).&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-14-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Navidrome play history, with dates.&lt;/strong&gt; With Navidrome 0.64 or later, Lumae reads when each play happened, at setup and on every sync, so plays from other apps show in Play History. Settings → Servers &amp;amp; accounts → Scrobbling → Keep syncing plays from my music server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-14-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Comfort Mix plays one version of a song&lt;/strong&gt;, not the studio take and the live one in a row.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;An Undertone session comes back.&lt;/strong&gt; If the phone ended Lumae while a session played, the session plays again when you open Lumae, if it was playing within the last 6 hours and its timer hasn’t run out.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lumae uses less memory&lt;/strong&gt; with the screen off.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-14-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pause during a stalled stream stays paused.&lt;/li&gt;
+&lt;li&gt;A failed answer from your music server is never taken for an empty one: libraries, ratings and play history stay as they were.&lt;/li&gt;
+&lt;li&gt;Chromecast plays are counted with the phone locked.&lt;/li&gt;
+&lt;li&gt;Downloads left over from a closed Lumae no longer hold up new ones.&lt;/li&gt;
+&lt;li&gt;On Android 15 and older, music downloaded to an SD card keeps its files, and files lost before download again.&lt;/li&gt;
+&lt;li&gt;On Android, the equalizer keeps its filters and preamp when the sound moves to another output.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Lumae Radio · 0.6.13</title>
     <id>https://lumaemusic.app/changelog/#radio-0-6-13</id>
@@ -19,6 +143,28 @@
 &lt;li&gt;&lt;strong&gt;A slow clock check no longer pauses the music.&lt;/strong&gt; The radio keeps playing when it can’t read the time for a moment.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A list moves on from a song that won’t play.&lt;/strong&gt; After three tries the radio passes over the song, and it downloads a damaged file again.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A library that shrinks by more than half is held.&lt;/strong&gt; The radio keeps the music it has and says so. Press Sync now again to accept the smaller library; the automatic sync never accepts it.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · November 11, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-11</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-11" />
+    <updated>2026-11-11T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (39) on Google Play, and updates on November 11 and 12 for Android 1.0.0 (38) and (39) and iPhone 1.0.0 (32)&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-11-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Keep offline in Undertone.&lt;/strong&gt; Albums, groups and presets have Keep offline. Downloaded tracks play from the phone when you’re online too, so a night of sleep sounds doesn’t stream for hours.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-11-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Setup is shorter.&lt;/strong&gt; Listening history is one choice, the AI step connects one service, and setup ends on one screen that shows the first sync. The tour is optional.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Downloads and the mirror pick up again&lt;/strong&gt; after the connection drops for a moment, in the background too.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-11-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;On Android, Undertone no longer stops overnight when Android clears Lumae from the recent apps by itself. Needs build 39.&lt;/li&gt;
+&lt;li&gt;With no AI service set up, the AI DJ points to Settings → Taste &amp;amp; discovery → AI Discovery.&lt;/li&gt;
+&lt;li&gt;Choosing Anthropic as your AI service starts with Claude Haiku 5.5. A model you chose is kept.&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
   <entry>

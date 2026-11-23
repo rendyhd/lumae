@@ -6,6 +6,120 @@ The list starts with the updates of late October 2026. Earlier betas aren't list
 
 ## Lumae Music
 
+### November 20, 2026 {#music-2026-11-20}
+
+> Android 1.0.0 (45) on Google Play, iPhone 1.0.0 (37) and (38) on TestFlight
+
+iPhone 38 followed the same day: the same app, built with Apple's newer developer tools.
+
+#### Better
+
+- **The Pulse changes from day to day.** It draws its 20 songs from the 600 that fit best, at most two per artist. Before, it took the nearest 20, which were nearly the same every day.
+- **A Pulse song rests after you hear it.** Played or skipped, it stays off the card for 14 days and comes back gradually over about a month. A small library, or only your downloads while offline, shortens the rest.
+- **The Pulse takes turns between the sides of your taste**, so one side no longer leads every card.
+
+#### Fixed
+
+- Home tiles and the offline Pulse keep their covers.
+- Setup's history step says that Navidrome 0.64 or later tells Lumae when each play happened.
+
+### November 19, 2026 {#music-2026-11-19}
+
+> Android 1.0.0 (44) on Google Play, iPhone 1.0.0 (35) on TestFlight
+
+On iPhone, this build also brings everything in Android's November 15 build below.
+
+#### New
+
+- **Foldables.** On Android, an unfolded screen shows Now Playing docked beside the app, and pop-ups stay on the side they were opened from. A short window, such as a flip phone's cover screen, puts the cover beside the song's details.
+- **Gemini** is an AI service you can connect, next to Anthropic and OpenAI.
+
+#### Better
+
+- **Offline is a mark on the player**, not a banner over every screen. With no network, Lumae says once that only downloads will play. An unreachable music server keeps its banner, which you can now close.
+- **Home.** Search is a field, and Quick Vibe is a row with three slots for the songs you pick.
+- **One version of a song.** A queue Lumae builds plays a song once across its studio and live versions, and counts a band once across its credits.
+- **Auto quality follows the connection.** When a Wi-Fi network can't carry the original, Auto streams Opus 192 (MP3 192 on iPhone) for 30 minutes. Lossless, downloads and speakers are left alone.
+
+#### Fixed
+
+- Scrubbing in a transcoded song goes where you drop it. It could play the song from its beginning while the clock showed the new position.
+- On iPhone, a streamed song no longer drops to near silence with a crawling clock.
+- On Android, a song on a slow connection stops to load and plays on. It used to stop for good after about 20 seconds.
+- On Android, a batch of downloads shows one notification, not a row of blank ones.
+- Music you start from your library replaces an Undertone session; it no longer plays inside Undertone's player.
+
+### November 15, 2026 {#music-2026-11-15}
+
+> Android 1.0.0 (43) on Google Play
+
+On Android, this build also brings everything in the iPhone's November 14 build below. iPhone got the changes here with 1.0.0 (35).
+
+#### New
+
+- **Artists in a Palette.** Add an artist to a Palette and it brings every song the artist is credited on. The Add an item sheet searches as Search does.
+- **Save a walk.** Wander gains Save as playlist, and Sonic Bridge has it beside Play.
+- **Play at 44.1 kHz**, on Android. For music players such as the HiBy R4 that go silent for a moment before every song change. Settings → Sound → Compatibility.
+
+#### Better
+
+- **The Vibe player shows its queue**: how many tracks it holds and how many are to go, their real playing time, and the next four songs.
+- **Play from any track.** In a Vibe builder's list, tap a track to play from there, or hold it for its menu.
+- **Builders remember for 15 minutes.** Leave Mood Compass, DNA Vibe, Palette Builder, the Sonic Fingerprint, Vibe Alchemy, Wander, Sonic Bridge or Memory Lane and come back to what you were building, songs included. The Vibe builders, Wander and Sonic Bridge have Reset.
+- **One track count and time on every list**, from the songs' real lengths.
+- **Palette items show their covers and names.**
+- **An Undertone preset's editor shows what it plays**, with Keep offline near the top.
+
+#### Fixed
+
+- Moving a slider in the Vibe player keeps every song of the vibe. It could leave 4 of 20.
+- A queue that came up short says so and offers Try again.
+- On Android, Settings pages lift above the keyboard.
+
+### November 14, 2026 {#music-2026-11-14}
+
+> iPhone 1.0.0 (33) on TestFlight
+
+Android got these with 1.0.0 (43).
+
+#### New
+
+- **Navidrome play history, with dates.** With Navidrome 0.64 or later, Lumae reads when each play happened, at setup and on every sync, so plays from other apps show in Play History. Settings → Servers & accounts → Scrobbling → Keep syncing plays from my music server.
+
+#### Better
+
+- **A Comfort Mix plays one version of a song**, not the studio take and the live one in a row.
+- **An Undertone session comes back.** If the phone ended Lumae while a session played, the session plays again when you open Lumae, if it was playing within the last 6 hours and its timer hasn't run out.
+- **Lumae uses less memory** with the screen off.
+
+#### Fixed
+
+- Pause during a stalled stream stays paused.
+- A failed answer from your music server is never taken for an empty one: libraries, ratings and play history stay as they were.
+- Chromecast plays are counted with the phone locked.
+- Downloads left over from a closed Lumae no longer hold up new ones.
+- On Android 15 and older, music downloaded to an SD card keeps its files, and files lost before download again.
+- On Android, the equalizer keeps its filters and preamp when the sound moves to another output.
+
+### November 11, 2026 {#music-2026-11-11}
+
+> Android 1.0.0 (39) on Google Play, and updates on November 11 and 12 for Android 1.0.0 (38) and (39) and iPhone 1.0.0 (32)
+
+#### New
+
+- **Keep offline in Undertone.** Albums, groups and presets have Keep offline. Downloaded tracks play from the phone when you're online too, so a night of sleep sounds doesn't stream for hours.
+
+#### Better
+
+- **Setup is shorter.** Listening history is one choice, the AI step connects one service, and setup ends on one screen that shows the first sync. The tour is optional.
+- **Downloads and the mirror pick up again** after the connection drops for a moment, in the background too.
+
+#### Fixed
+
+- On Android, Undertone no longer stops overnight when Android clears Lumae from the recent apps by itself. Needs build 39.
+- With no AI service set up, the AI DJ points to Settings → Taste & discovery → AI Discovery.
+- Choosing Anthropic as your AI service starts with Claude Haiku 5.5. A model you chose is kept.
+
 ### November 10, 2026 {#music-2026-11-10}
 
 > Update for Android 1.0.0 (38) and iPhone 1.0.0 (32)
@@ -92,6 +206,19 @@ Android got these with 1.0.0 (38).
 ## Lumae Radio
 
 Radios on 0.5.1 or later update themselves within a day. The [Lumae Radio guide](https://lumaemusic.app/radio/docs/#upgrade) shows how to upgrade by hand.
+
+### 0.6.15 {#radio-0-6-15}
+
+> November 22, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.15)
+
+- **The radio stays reachable on Wi-Fi.** After days on one connection, a Raspberry Pi's Wi-Fi can stop hearing the network: the radio plays on, but phones can't find it. The radio now keeps Wi-Fi power saving off and reconnects when that happens. It needs the `iw` package: `sudo apt install iw`.
+- **Fewer stops in the middle of a song.** The music could go quiet for 5 to 20 seconds while the radio began downloading songs ahead. That work is now small and paced, and a song that was cut off plays on after about 5 seconds.
+
+### 0.6.14 {#radio-0-6-14}
+
+> November 15, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.14)
+
+- **A Palette's artists play on the radio.** A station that follows a Vibe with an artist in its Palette plays that artist's songs. The station's notes count the artists that aren't in the radio's library.
 
 ### 0.6.13 {#radio-0-6-13}
 
