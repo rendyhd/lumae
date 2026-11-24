@@ -315,11 +315,23 @@ const MONTHS = [
 ];
 const DATE = new RegExp(`\\b(${MONTHS.join('|')}) (\\d{1,2}), (\\d{4})\\b`);
 
+// A month summary names only its month ("October 2026"): it sorts before the
+// releases of that month and its feed entry is dated to the month's last day.
+const MONTH = new RegExp(`\\b(${MONTHS.join('|')}) (\\d{4})\\b`);
+
 function findDate(text) {
-  const m = DATE.exec(text);
+  let m = DATE.exec(text);
+  if (m) {
+    const month = String(MONTHS.indexOf(m[1]) + 1).padStart(2, '0');
+    const iso = `${m[3]}-${month}-${m[2].padStart(2, '0')}`;
+    return { text: m[0], iso, day: iso };
+  }
+  m = MONTH.exec(text);
   if (!m) return null;
-  const month = String(MONTHS.indexOf(m[1]) + 1).padStart(2, '0');
-  return { text: m[0], iso: `${m[3]}-${month}-${m[2].padStart(2, '0')}` };
+  const index = MONTHS.indexOf(m[1]);
+  const last = new Date(Date.UTC(Number(m[2]), index + 1, 0)).getUTCDate();
+  const iso = `${m[2]}-${String(index + 1).padStart(2, '0')}`;
+  return { text: m[0], iso, day: `${iso}-${last}` };
 }
 
 function parseChangelog() {
@@ -360,7 +372,7 @@ function parseChangelog() {
     if (ids.has(r.id)) throw new Error(`CHANGELOG.md: two releases use {#${r.id}}`);
     ids.add(r.id);
     r.date = findDate(r.name) || findDate(r.meta);
-    if (!r.date) throw new Error(`CHANGELOG.md: "${r.name}" names no date, like "November 7, 2026"`);
+    if (!r.date) throw new Error(`CHANGELOG.md: "${r.name}" names no date, like "November 7, 2026" or "October 2026"`);
     r.html = markdown(r.body.join('\n'), `${r.id}-`).html;
   }
   return { title, intro: markdown(intro.join('\n')).html, groups, ids };
@@ -462,7 +474,7 @@ function changelogFeed() {
     <title>${escapeXml(`${r.group.name} · ${r.name}`)}</title>
     <id>${page}#${r.id}</id>
     <link rel="alternate" type="text/html" href="${page}#${r.id}" />
-    <updated>${r.date.iso}T00:00:00Z</updated>
+    <updated>${r.date.day}T00:00:00Z</updated>
     <content type="html">${escapeXml(content)}</content>
   </entry>`;
     })
@@ -474,7 +486,7 @@ function changelogFeed() {
   <id>${page}</id>
   <link rel="self" type="application/atom+xml" href="${page}feed.xml" />
   <link rel="alternate" type="text/html" href="${page}" />
-  <updated>${releases[0].date.iso}T00:00:00Z</updated>
+  <updated>${releases[0].date.day}T00:00:00Z</updated>
   <author><name>Lumae</name></author>
   <icon>${SITE}/assets/img/brand/favicon-32.png</icon>
 ${entries}

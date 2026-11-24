@@ -20,6 +20,30 @@
 &lt;/ul&gt;</content>
   </entry>
   <entry>
+    <title>Lumae Music · November 23, 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-11-23</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-11-23" />
+    <updated>2026-11-23T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Android 1.0.0 (46) on Google Play, iPhone 1.0.0 (39) on TestFlight&lt;/p&gt;
+&lt;h4 id=&quot;music-2026-11-23-new&quot;&gt;New&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Exclude from Keep playing.&lt;/strong&gt; A list of songs Lumae never picks on its own: not for The Pulse, vibes, mixes or Keep playing. They still play when you choose them. Build the list with the rules of a smart playlist, with a preview of what it excludes, or use Exclude from Keep playing in a song’s menu. Settings → Libraries → Exclude from Keep playing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-23-better&quot;&gt;Better&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Vibes leave out one-star songs&lt;/strong&gt;, as Keep playing already did.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smart downloads leave out excluded songs.&lt;/strong&gt; One already on the phone stays.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;music-2026-11-23-fixed&quot;&gt;Fixed&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A song’s stars no longer stay on the next song, where a tap could change the wrong song’s rating.&lt;/li&gt;
+&lt;li&gt;In CarPlay, the heart shows the playing song’s own rating. It could stay filled for every song that followed, and a tap then saved the opposite.&lt;/li&gt;
+&lt;li&gt;An Undertone session keeps adding tracks with the screen off. It could end when its queue ran out.&lt;/li&gt;
+&lt;li&gt;On Android 16 and later, a backup of the phone no longer ends Lumae while it plays. It did about every fourth night, which stopped sleep sounds.&lt;/li&gt;
+&lt;li&gt;On Android, pressing Play on a headset or in a car with nothing to resume no longer crashes Lumae in the background.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
     <title>Lumae Radio · 0.6.15</title>
     <id>https://lumaemusic.app/changelog/#radio-0-6-15</id>
     <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-15" />
@@ -328,6 +352,151 @@
 &lt;li&gt;&lt;strong&gt;Parametric EQ.&lt;/strong&gt; Shape the radio’s sound for your speakers and room: presets of up to 10 filters, a response graph, and Compare. Import AutoEq, Equalizer APO or REW files. The EQ never makes the radio louder.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Room tuning.&lt;/strong&gt; With a USB measurement microphone on the radio, Room tuning measures your speakers at your seat and makes a preset that cuts the room’s bass peaks. The radio keeps no recording.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Signing in again.&lt;/strong&gt; When a session ends, the radio’s page asks you to sign in, and the app’s remote signs in again by itself.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · October 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-10</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-10" />
+    <updated>2026-10-31T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of October 1 to 26. The public beta opened this month, on TestFlight and Google Play.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The public beta.&lt;/strong&gt; Anyone can join from &lt;a href=&quot;https://lumaemusic.app/beta/&quot; rel=&quot;noopener&quot;&gt;lumaemusic.app/beta&lt;/a&gt;, and lumaemusic.app went live.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Jellyfin.&lt;/strong&gt; Lumae plays from Jellyfin 12.0 or later, as well as Navidrome. Needs Lumae Analysis 1.6.0.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A light theme&lt;/strong&gt;, next to the dark one. Settings → Appearance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lumae Radio from the phone.&lt;/strong&gt; Find a radio on your network, claim it, and control it from the remote.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Covers for vibes&lt;/strong&gt;: pictures that tell vibes apart, or a photo of your own, and they sync.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lumae picks up where you left off.&lt;/strong&gt; The last queue comes back after Lumae closes, and Play on a car or headset resumes it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quick Launch&lt;/strong&gt; for what you play most, and a &lt;strong&gt;Home layout&lt;/strong&gt; you choose in Settings → Appearance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Featherweight&lt;/strong&gt;, a lighter Album Shelf, and &lt;strong&gt;Beyond your shelf&lt;/strong&gt;: albums you play but haven’t put on your shelf, eight at a time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Buffer ahead&lt;/strong&gt; downloads the next songs whole, so a weak connection doesn’t stop the music.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Party mode&lt;/strong&gt; (Settings → Sound): songs follow each other like a DJ set, the next one rising under the end of the last.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In the car&lt;/strong&gt;: search answers in groups in Android Auto, CarPlay’s Library jumps from A to Z, and both cars have a queue button.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Choose how far&lt;/strong&gt; the volume buttons move a speaker (Settings → Speakers).&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Radio · October 2026</title>
+    <id>https://lumaemusic.app/changelog/#radio-2026-10</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-2026-10" />
+    <updated>2026-10-31T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of 0.5.0 to 0.6.6, October 13 to 24. Their files are no longer on GitHub; 0.6.7 and later carry everything in them.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The first public release&lt;/strong&gt;, 0.5.0, for a Raspberry Pi or a Linux PC, with a page to set it up and stations that follow your vibes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The radio updates itself&lt;/strong&gt; from 0.5.1, at night or when nothing plays, and goes back to the version before if an update fails.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Albums, playlists and collections&lt;/strong&gt; play on the radio, and its songs are leveled like the phone’s: Quiet, Normal or Loud.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The phone finds and claims a radio&lt;/strong&gt; on your network, and its remote plays, skips and bans.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home Assistant&lt;/strong&gt; shows the radio and controls it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A station keeps to its energy all day&lt;/strong&gt;, and fades never put two singers on top of each other.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A library that grew&lt;/strong&gt; syncs again, and an account that sees only some libraries plays only those.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · September 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-09</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-09" />
+    <updated>2026-09-30T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of the month, before the public beta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Album Shelf.&lt;/strong&gt; Library opens on your albums as a cover flow, with their stars, year and type.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CarPlay&lt;/strong&gt;, with the same Home, Library and vibes as Android Auto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A player pill&lt;/strong&gt; in the tab bar replaces the mini-player, and album pages were redesigned.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comfort Mixes&lt;/strong&gt;, grouped by how you listen, and &lt;strong&gt;daily mixes&lt;/strong&gt; on Home.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wander&lt;/strong&gt;: walk from song to song and build a playlist as you go.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Foldables.&lt;/strong&gt; Now Playing fits a folded or unfolded screen, and an unfolded phone shows the app in a phone-shaped column.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fades shaped by each song’s own ending and intro&lt;/strong&gt;, measured by Lumae Analysis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Downloads keep going in the background&lt;/strong&gt; on Android, behind a progress notification.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Self-hosted AI&lt;/strong&gt;: connect a model you run yourself through an OpenAI-compatible server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Every play is kept&lt;/strong&gt;, no longer only the last 90 days, and older plays come back from Koito.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · August 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-08</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-08" />
+    <updated>2026-08-31T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of the month, before the public beta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Parametric EQ&lt;/strong&gt; on Android: shape the sound for your headphones or speakers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your data stays put when Navidrome renumbers songs.&lt;/strong&gt; Ratings, plays and downloads follow a song to its new ID.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keep playing is more dependable&lt;/strong&gt;: it adds songs in time, and no longer adds them to a queue you have since replaced.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Faster after a sync&lt;/strong&gt;, with a large library too.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · July 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-07</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-07" />
+    <updated>2026-07-31T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of the month, before the public beta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Lumae’s own player.&lt;/strong&gt; Crossfades moved into a player built for Lumae on Android and iPhone, for downloads and streams alike.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lumae Analysis&lt;/strong&gt;, Lumae’s plugin for AudioMuse-AI. It measures how each song starts and ends, so fades fit the music, and setup shows its status.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ReplayGain tags&lt;/strong&gt; are read for volume leveling.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collections&lt;/strong&gt;: your own groups of albums, songs and playlists.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smart playlists&lt;/strong&gt;, built from rules.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ratings&lt;/strong&gt; get their own page in Library.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Artist pages&lt;/strong&gt; list albums, singles and live releases apart, and Now Playing opens a live song’s setlist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Updates arrive by themselves&lt;/strong&gt;: smaller changes reach the app without a new build.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sonic DNA&lt;/strong&gt; is built from what you actually play.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · June 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-06</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-06" />
+    <updated>2026-06-30T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of the month, before the public beta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Downloads and offline, rebuilt&lt;/strong&gt;: a download queue that survives restarts, smart downloads and a Downloads page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Speakers&lt;/strong&gt;: Sonos and Marantz/Denon (HEOS) next to Chromecast, and AirPlay on iPhone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discuss with AI&lt;/strong&gt;: describe a mood and Lumae makes a vibe from your library. Needs your own AI service.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Memory Lane&lt;/strong&gt; brings back music you loved in other years.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Home and Search redesigned.&lt;/strong&gt; With an AI service, The Pulse gets a headline written for the day, and search matches across artist, album and title.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quick Vibe&lt;/strong&gt; and &lt;strong&gt;DNA Vibe&lt;/strong&gt;, and vibe codes to share a vibe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stealth mode&lt;/strong&gt;: for a while, Lumae records no plays.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Koito&lt;/strong&gt; for listening history.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ratings sync&lt;/strong&gt; with Navidrome.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Artist pages show where an artist appears&lt;/strong&gt; on other artists' albums.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Never the same artist twice in a row&lt;/strong&gt; in a queue Lumae orders.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · May 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-05</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-05" />
+    <updated>2026-05-31T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Summary of the month, before the public beta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Chromecast.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Vibe tab, rebuilt&lt;/strong&gt;: Mood Compass starts from words, Palette Builder weighs its songs, and saved vibes have their own library.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Keep playing for everything.&lt;/strong&gt; An album, a search, a vibe or The Pulse each continues in its own way when the queue ends.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-star songs&lt;/strong&gt; are never picked by Lumae.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Navidrome playlists&lt;/strong&gt;, and &lt;strong&gt;libraries&lt;/strong&gt; you can switch off.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Offline mode&lt;/strong&gt; and keeping vibes offline.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sonic Bridge&lt;/strong&gt;: a path of songs from one to another.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discover redesigned.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Volume leveling&lt;/strong&gt; per song, a new app icon and a first-run tour.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sign in to AudioMuse-AI&lt;/strong&gt; with a username and password.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Lumae Music · April 2026</title>
+    <id>https://lumaemusic.app/changelog/#music-2026-04</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#music-2026-04" />
+    <updated>2026-04-30T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Lumae’s first month.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The first build&lt;/strong&gt;: your Navidrome library, Now Playing, search and setup.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anti-shuffle&lt;/strong&gt;: queues ordered by how songs sound, instead of at random.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sonic analysis from AudioMuse-AI&lt;/strong&gt;, synced to the phone.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Palettes, Mood Compass, The Pulse and the Obsession Loop.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Album and song ratings.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vibe Drift, Sonic Fingerprint, Vibe Alchemy and Deep Listen.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lyrics.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Android Auto&lt;/strong&gt;, and &lt;strong&gt;downloads&lt;/strong&gt; to play offline.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Crossfades&lt;/strong&gt; planned for each pair of songs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The iPhone version&lt;/strong&gt; began.&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
 </feed>

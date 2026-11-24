@@ -109,9 +109,14 @@ leads into the next.
 
 ## What's new
 
-In the current builds, 1.0.0 (38) on Android and 1.0.0 (32) on iPhone from
+In the current builds, 1.0.0 (46) on Android and 1.0.0 (39) on iPhone from
 Google Play and TestFlight, with their latest automatic update:
 
+- **Exclude from Keep playing** (Settings → Libraries): songs Lumae never picks
+  on its own, for The Pulse, vibes, mixes or Keep playing. They still play when
+  you choose them.
+- **The Pulse changes from day to day**, and a song rests after you hear it.
+- **Foldables**: an unfolded Android phone shows Now Playing beside the app.
 - **AI DJ**: tell it what the moment is, and it plans a set from your library
   and keeps it going. Talk to it from the queue as the set plays. Needs your own
   AI service.
