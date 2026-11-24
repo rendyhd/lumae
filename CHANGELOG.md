@@ -207,6 +207,13 @@ Android got these with 1.0.0 (38).
 
 Radios on 0.5.1 or later update themselves within a day. The [Lumae Radio guide](https://lumaemusic.app/radio/docs/#upgrade) shows how to upgrade by hand.
 
+### 0.6.16 {#radio-0-6-16}
+
+> November 24, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.16)
+
+- **Library sync works when AudioMuse-AI skips one of your libraries.** If your music server account can open a library that AudioMuse-AI doesn't analyze, such as one you keep for Undertone, every sync stopped with "The radio couldn't prove it reaches the same music library as your phone." The radio now leaves that library out and syncs the rest.
+- **The sync card keeps its numbers after a failed sync.** The track count and the time of the last sync that worked stay on the radio's page and in the app.
+
 ### 0.6.15 {#radio-0-6-15}
 
 > November 22, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.15)

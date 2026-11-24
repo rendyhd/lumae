@@ -80,7 +80,7 @@
         <header class="wrap doc-head">
           <p class="kicker">Changelog</p>
           <h1>What’s new in Lumae</h1>
-          <p class="doc-meta">Updated November 22, 2026 · <a href="feed.xml">Atom feed</a></p>
+          <p class="doc-meta">Updated November 24, 2026 · <a href="feed.xml">Atom feed</a></p>
         </header>
         <div class="wrap doc">
           <nav class="doc-toc doc-toc--nested" data-toc aria-label="On this page">
@@ -103,6 +103,7 @@
                 <li>
                   <a href="#lumae-radio">Lumae Radio</a>
                   <ol role="list">
+                    <li><a href="#radio-0-6-16">0.6.16</a></li>
                     <li><a href="#radio-0-6-15">0.6.15</a></li>
                     <li><a href="#radio-0-6-14">0.6.14</a></li>
                     <li><a href="#radio-0-6-13">0.6.13</a></li>
@@ -329,6 +330,16 @@
             </section>
             <h2 id="lumae-radio">Lumae Radio</h2>
             <p>Radios on 0.5.1 or later update themselves within a day. The <a href="../radio/docs/#upgrade" rel="noopener">Lumae Radio guide</a> shows how to upgrade by hand.</p>
+            <section class="change" aria-labelledby="radio-0-6-16">
+              <header class="change-head">
+                <h3 id="radio-0-6-16">0.6.16</h3>
+                <p class="change-meta"><time datetime="2026-11-24">November 24, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.16" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>Library sync works when AudioMuse-AI skips one of your libraries.</strong> If your music server account can open a library that AudioMuse-AI doesn’t analyze, such as one you keep for Undertone, every sync stopped with "The radio couldn’t prove it reaches the same music library as your phone." The radio now leaves that library out and syncs the rest.</li>
+              <li><strong>The sync card keeps its numbers after a failed sync.</strong> The track count and the time of the last sync that worked stay on the radio’s page and in the app.</li>
+              </ul>
+            </section>
             <section class="change" aria-labelledby="radio-0-6-15">
               <header class="change-head">
                 <h3 id="radio-0-6-15">0.6.15</h3>

@@ -5,9 +5,20 @@
   <id>https://lumaemusic.app/changelog/</id>
   <link rel="self" type="application/atom+xml" href="https://lumaemusic.app/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/" />
-  <updated>2026-11-22T00:00:00Z</updated>
+  <updated>2026-11-24T00:00:00Z</updated>
   <author><name>Lumae</name></author>
   <icon>https://lumaemusic.app/assets/img/brand/favicon-32.png</icon>
+  <entry>
+    <title>Lumae Radio · 0.6.16</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-16</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-16" />
+    <updated>2026-11-24T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 24, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.16&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Library sync works when AudioMuse-AI skips one of your libraries.&lt;/strong&gt; If your music server account can open a library that AudioMuse-AI doesn’t analyze, such as one you keep for Undertone, every sync stopped with &quot;The radio couldn’t prove it reaches the same music library as your phone.&quot; The radio now leaves that library out and syncs the rest.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The sync card keeps its numbers after a failed sync.&lt;/strong&gt; The track count and the time of the last sync that worked stay on the radio’s page and in the app.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Lumae Radio · 0.6.15</title>
     <id>https://lumaemusic.app/changelog/#radio-0-6-15</id>
