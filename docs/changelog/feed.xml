@@ -5,9 +5,23 @@
   <id>https://lumaemusic.app/changelog/</id>
   <link rel="self" type="application/atom+xml" href="https://lumaemusic.app/changelog/feed.xml" />
   <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/" />
-  <updated>2026-11-24T00:00:00Z</updated>
+  <updated>2026-11-25T00:00:00Z</updated>
   <author><name>Lumae</name></author>
   <icon>https://lumaemusic.app/assets/img/brand/favicon-32.png</icon>
+  <entry>
+    <title>Lumae Radio · 0.6.17</title>
+    <id>https://lumaemusic.app/changelog/#radio-0-6-17</id>
+    <link rel="alternate" type="text/html" href="https://lumaemusic.app/changelog/#radio-0-6-17" />
+    <updated>2026-11-25T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;November 25, 2026 · &lt;a href=&quot;https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.17&quot; rel=&quot;noopener&quot;&gt;Files on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A sync, a ban or a new station no longer waits behind saving music.&lt;/strong&gt; While the radio saved songs to play without the server, everything else waited, sometimes for half an hour. Saving music now steps aside for any other job, and a job that hasn’t started says what it is waiting for.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Play starts sooner.&lt;/strong&gt; The radio keeps its play history between plans and loads a station ahead of time: after a sync, a ban or a preparation, after you switch libraries, after a restart and two minutes before a scheduled start. If the first song takes more than 6 seconds to download, it starts with a song it already has.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The remote no longer shows a finished song as playing.&lt;/strong&gt; While the radio fetches the next song, its status names the song on air.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;More SmoothFades on a slow network.&lt;/strong&gt; The radio asks AudioMuse-AI about a song as soon as it chooses it and keeps a late answer for the next fade. A fade without one now says &quot;AudioMuse-AI answered too late&quot;, not that it can’t be reached.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Wi-Fi watch fixes a slow link.&lt;/strong&gt; When the radio’s Wi-Fi receives under 15 Mbit/s with a good signal through 10 minutes of traffic, it reconnects.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Lumae Radio · 0.6.16</title>
     <id>https://lumaemusic.app/changelog/#radio-0-6-16</id>

@@ -329,6 +329,16 @@ Android got these with 1.0.0 (38).
 
 Radios on 0.5.1 or later update themselves within a day. The [Lumae Radio guide](https://lumaemusic.app/radio/docs/#upgrade) shows how to upgrade by hand.
 
+### 0.6.17 {#radio-0-6-17}
+
+> November 25, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.17)
+
+- **A sync, a ban or a new station no longer waits behind saving music.** While the radio saved songs to play without the server, everything else waited, sometimes for half an hour. Saving music now steps aside for any other job, and a job that hasn't started says what it is waiting for.
+- **Play starts sooner.** The radio keeps its play history between plans and loads a station ahead of time: after a sync, a ban or a preparation, after you switch libraries, after a restart and two minutes before a scheduled start. If the first song takes more than 6 seconds to download, it starts with a song it already has.
+- **The remote no longer shows a finished song as playing.** While the radio fetches the next song, its status names the song on air.
+- **More SmoothFades on a slow network.** The radio asks AudioMuse-AI about a song as soon as it chooses it and keeps a late answer for the next fade. A fade without one now says "AudioMuse-AI answered too late", not that it can't be reached.
+- **The Wi-Fi watch fixes a slow link.** When the radio's Wi-Fi receives under 15 Mbit/s with a good signal through 10 minutes of traffic, it reconnects.
+
 ### 0.6.16 {#radio-0-6-16}
 
 > November 24, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.16)

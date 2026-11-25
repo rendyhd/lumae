@@ -80,7 +80,7 @@
         <header class="wrap doc-head">
           <p class="kicker">Changelog</p>
           <h1>What’s new in Lumae</h1>
-          <p class="doc-meta">Updated November 24, 2026 · <a href="feed.xml">Atom feed</a></p>
+          <p class="doc-meta">Updated November 25, 2026 · <a href="feed.xml">Atom feed</a></p>
         </header>
         <div class="wrap doc">
           <nav class="doc-toc doc-toc--nested" data-toc aria-label="On this page">
@@ -111,6 +111,7 @@
                 <li>
                   <a href="#lumae-radio">Lumae Radio</a>
                   <ol role="list">
+                    <li><a href="#radio-0-6-17">0.6.17</a></li>
                     <li><a href="#radio-0-6-16">0.6.16</a></li>
                     <li><a href="#radio-0-6-15">0.6.15</a></li>
                     <li><a href="#radio-0-6-14">0.6.14</a></li>
@@ -484,6 +485,19 @@
             </section>
             <h2 id="lumae-radio">Lumae Radio</h2>
             <p>Radios on 0.5.1 or later update themselves within a day. The <a href="../radio/docs/#upgrade" rel="noopener">Lumae Radio guide</a> shows how to upgrade by hand.</p>
+            <section class="change" aria-labelledby="radio-0-6-17">
+              <header class="change-head">
+                <h3 id="radio-0-6-17">0.6.17</h3>
+                <p class="change-meta"><time datetime="2026-11-25">November 25, 2026</time> · <a href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.17" rel="noopener">Files on GitHub</a></p>
+              </header>
+              <ul>
+              <li><strong>A sync, a ban or a new station no longer waits behind saving music.</strong> While the radio saved songs to play without the server, everything else waited, sometimes for half an hour. Saving music now steps aside for any other job, and a job that hasn’t started says what it is waiting for.</li>
+              <li><strong>Play starts sooner.</strong> The radio keeps its play history between plans and loads a station ahead of time: after a sync, a ban or a preparation, after you switch libraries, after a restart and two minutes before a scheduled start. If the first song takes more than 6 seconds to download, it starts with a song it already has.</li>
+              <li><strong>The remote no longer shows a finished song as playing.</strong> While the radio fetches the next song, its status names the song on air.</li>
+              <li><strong>More SmoothFades on a slow network.</strong> The radio asks AudioMuse-AI about a song as soon as it chooses it and keeps a late answer for the next fade. A fade without one now says "AudioMuse-AI answered too late", not that it can’t be reached.</li>
+              <li><strong>The Wi-Fi watch fixes a slow link.</strong> When the radio’s Wi-Fi receives under 15 Mbit/s with a good signal through 10 minutes of traffic, it reconnects.</li>
+              </ul>
+            </section>
             <section class="change" aria-labelledby="radio-0-6-16">
               <header class="change-head">
                 <h3 id="radio-0-6-16">0.6.16</h3>
