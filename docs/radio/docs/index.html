@@ -86,7 +86,7 @@
         <header class="wrap doc-head">
           <p class="kicker kicker--teal">Lumae Radio guide</p>
           <h1>Install, set up and connect your radio</h1>
-          <p class="doc-meta">For Lumae Radio 0.6.17 · Updated November 25, 2026</p>
+          <p class="doc-meta">For Lumae Radio 0.6.18 · Updated November 28, 2026</p>
         </header>
         <div class="wrap doc">
           <nav class="doc-toc" data-toc aria-label="On this page">
@@ -130,10 +130,10 @@
             <h2 id="install">Install on the Pi</h2>
             <div class="release-card">
               <div class="release-head">
-                <p class="release-name">Lumae Radio <span class="release-id">0.6.17</span></p>
-                <p class="release-meta">November 25, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
+                <p class="release-name">Lumae Radio <span class="release-id">0.6.18</span></p>
+                <p class="release-meta">November 28, 2026 · Raspberry Pi (64-bit) · 45 MB</p>
               </div>
-              <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.17">Files on GitHub</a>
+              <a class="btn btn--primary btn--small" href="https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.18">Files on GitHub</a>
             </div>
             <p>
               The radio installs over SSH. The files come from GitHub; the checks below come from this page, so a changed
@@ -157,8 +157,8 @@ sudo apt-get install -y --no-install-recommends python3 openssl ca-certificates 
               <li>
                 <h3>Download</h3>
                 <pre class="cmd"><code>mkdir -p ~/lumae-radio &amp;&amp; cd ~/lumae-radio
-r=lumae-radio-0.6.17-linux-arm64
-url=https://github.com/rendyhd/lumae/releases/download/radio-v0.6.17
+r=lumae-radio-0.6.18-linux-arm64
+url=https://github.com/rendyhd/lumae/releases/download/radio-v0.6.18
 for f in $r.tar.gz $r.manifest.json $r.manifest.sig $r.install.py release-key.pem; do
   curl -fLO "$url/$f"
 done</code></pre>
@@ -168,7 +168,7 @@ done</code></pre>
                 <p>Both lines must say <code>OK</code>. If either doesn't, stop and don't install.</p>
                 <pre class="cmd"><code>sha256sum -c &lt;&lt;'EOF'
 cccccba7914ad03c6f70c6e7c9a8daf350c3230717ac47fe589a8f90ca1d2ee4  release-key.pem
-5ce5749f02ec3689102496970c8acfa46cb67b13db5b5b2ad9623f3b071fe9ad  lumae-radio-0.6.17-linux-arm64.install.py
+5ce5749f02ec3689102496970c8acfa46cb67b13db5b5b2ad9623f3b071fe9ad  lumae-radio-0.6.18-linux-arm64.install.py
 EOF</code></pre>
                 <p>Then keep the key where the installer looks for it. Every release is signed with it.</p>
                 <pre class="cmd"><code>sudo install -d -o root -g root -m 755 /etc/lumae-radio
@@ -204,8 +204,8 @@ sudo python3 -I -B $r.install.py $args --install</code></pre>
               <div class="req">
                 <dt>Archive</dt>
                 <dd>
-                  SHA-256 of <code>lumae-radio-0.6.17-linux-arm64.tar.gz</code>:
-                  <code class="hash">ee949584437c758e5a5ccf4833225f5e4d7d9db38eda5a895cc41c0df7a207cd</code>. The installer
+                  SHA-256 of <code>lumae-radio-0.6.18-linux-arm64.tar.gz</code>:
+                  <code class="hash">832c1c16e6bccd12a47326273175df5f2d88965c8c05fb8d5362078a469454c5</code>. The installer
                   checks it against the signed manifest itself.
                 </dd>
               </div>

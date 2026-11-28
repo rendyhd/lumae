@@ -329,6 +329,14 @@ Android got these with 1.0.0 (38).
 
 Radios on 0.5.1 or later update themselves within a day. The [Lumae Radio guide](https://lumaemusic.app/radio/docs/#upgrade) shows how to upgrade by hand.
 
+### 0.6.18 {#radio-0-6-18}
+
+> November 28, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.18)
+
+- **Fewer loud endings into a quiet start.** A station's next song and a shuffled album or playlist now steer away from following a song that ends at full level with one that opens far quieter. The radio reads how each song starts and ends from AudioMuse-AI, a share of the library with each sync, so the first few syncs take a little longer.
+- **Fade length.** Settings → Preferences has a slider that makes every SmoothFade shorter or longer. The middle is the fade the radio chooses, as before.
+- **Exclude from Keep playing.** Songs you exclude in the Lumae app stay out of every station, while an album or playlist you start still plays them. The list comes from Lumae Analysis 1.12.0 or newer.
+
 ### 0.6.17 {#radio-0-6-17}
 
 > November 25, 2026 · [Files on GitHub](https://github.com/rendyhd/lumae/releases/tag/radio-v0.6.17)
